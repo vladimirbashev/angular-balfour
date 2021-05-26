@@ -135,7 +135,6 @@
                 <mat-step *ngFor="let qg of details?.product?.question_groups; trackBy: trackById"
                     [stepControl]="formlyForm.get(qg.id)">
                     <ng-template matStepLabel>{{ qg?.name }}</ng-template>
-                    {{formlyForm.get(qg.id).value | json}}
                     <formly-form class="scrolled
                     -block" [form]="formlyForm"
                         [model]="formlyModel" [fields]="formlySteps[qg.id].fields"
