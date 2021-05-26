@@ -1,0 +1,1373 @@
+{
+	"salesProduct": {
+		"id": "1",
+		"type": "Ring",
+		"question_groups": [
+			{
+				"id": "1",
+				"name": "Ring"
+			},
+			{
+				"id": "2",
+				"name": "Metal choices"
+			},
+			{
+				"id": "3",
+				"name": "Sides"
+			},
+			{
+				"id": "4",
+				"name": "Stone"
+			},
+			{
+				"id": "5",
+				"name": "Other"
+			},
+			{
+				"id": "6",
+				"name": "XRL/DCP"
+			}
+		],
+		"questions": [
+			{
+				"id": "1",
+				"name": "Ring size",
+				"display_name": {
+					"en_US": "Ring size"
+				},
+				"control": "TextInput",
+				"answers": [],
+				"group_id": "1",
+				"input_validation": "number_only",
+				"required": true
+			},
+			{
+				"id": "2",
+				"name": "Graduation Year Date",
+				"display_name": {
+					"en_US": "Graduation Year Date"
+				},
+				"control": "TextInput",
+				"answers": [],
+				"group_id": "1",
+				"input_validation": "number_only",
+				"required": true
+			},
+			{
+				"id": "3",
+				"name": "Style num.",
+				"display_name": {
+					"en_US": "Style num."
+				},
+				"control": "TextInput",
+				"answers": [],
+				"group_id": "1",
+				"input_validation": "number_only",
+				"required": true
+			},
+			{
+				"id": "4",
+				"name": "Hand",
+				"display_name": {
+					"en_US": ""
+				},
+				"control": "InputRadio",
+				"answers": [
+					{
+						"id": "1",
+						"option_id": "1"
+					},
+					{
+						"id": "2",
+						"option_id": "2"
+					}
+				],
+				"group_id": "1",
+				"required": false
+			},
+			{
+				"id": "5",
+				"name": "Upgrade my CZ(s) to diamond(s)",
+				"extra_note": "(Additional charge applies)",
+				"display_name": {
+					"en_US": "Upgrade my CZ(s) to diamond(s)"
+				},
+				"control": "InputRadio",
+				"answers": [
+					{
+						"id": "3",
+						"option_id": "3"
+					},
+					{
+						"id": "4",
+						"option_id": "4"
+					}
+				],
+				"group_id": "1",
+				"default": true
+			},
+			{
+				"id": "6",
+				"name": "Top Initials",
+				"extra_note": "(‘‘L’’ , I16 and I26 rings only)",
+				"display_name": {
+					"en_US": "Top Initials"
+				},
+				"control": "TextInput",
+				"answers": [],
+				"group_id": "1"
+			},
+			{
+				"id": "7",
+				"name": "Metal type",
+				"display_name": {
+					"en_US": "Metal type"
+				},
+				"control": "InputRadio",
+				"answers": [
+					{
+						"id": "5",
+						"option_id": "5",
+						"default": true
+					},
+					{
+						"id": "6",
+						"option_id": "6"
+					},
+					{
+						"id": "7",
+						"option_id": "7"
+					},
+					{
+						"id": "8",
+						"option_id": "8"
+					},
+					{
+						"id": "9",
+						"option_id": "9"
+					},
+					{
+						"id": "10",
+						"option_id": "10"
+					},
+					{
+						"id": "11",
+						"option_id": "11"
+					},
+					{
+						"id": "12",
+						"option_id": "12"
+					},
+					{
+						"id": "13",
+						"option_id": "13"
+					},
+					{
+						"id": "14",
+						"option_id": "14"
+					},
+					{
+						"id": "15",
+						"option_id": "15"
+					},
+					{
+						"id": "16",
+						"option_id": "16"
+					},
+					{
+						"id": "17",
+						"option_id": "17"
+					},
+					{
+						"id": "18",
+						"option_id": "18"
+					},
+					{
+						"id": "61",
+						"option_id": "61",
+						"default": false
+					}
+				],
+				"group_id": "2",
+				"required": false
+			},
+			{
+				"id": "8",
+				"name": "other metal",
+				"display_name": {
+					"en_US": "other metal"
+				},
+				"control": "TextInput",
+				"answers": [],
+				"group_id": "2"
+			},
+			{
+				"id": "9",
+				"name": "Metal finish",
+				"display_name": {
+					"en_US": "Metal finish"
+				},
+				"control": "InputRadio",
+				"answers": [
+					{
+						"id": "19",
+						"option_id": "19",
+						"default": true
+					},
+					{
+						"id": "20",
+						"option_id": "20"
+					},
+					{
+						"id": "21",
+						"option_id": "21"
+					},
+					{
+						"id": "22",
+						"option_id": "22"
+					},
+					{
+						"id": "62",
+						"option_id": "62",
+						"default": false
+					}
+				],
+				"group_id": "2",
+				"required": false
+			},
+			{
+				"id": "10",
+				"name": "camo",
+				"display_name": {
+					"en_US": "camo"
+				},
+				"control": "TextInput",
+				"answers": [],
+				"group_id": "2"
+			},
+			{
+				"id": "11",
+				"name": "other finish",
+				"display_name": {
+					"en_US": "other finish"
+				},
+				"control": "TextInput",
+				"answers": [],
+				"group_id": "2"
+			},
+			{
+				"id": "12",
+				"name": "Palm side",
+				"display_name": {
+					"en_US": "Palm side"
+				},
+				"control": "InputRadio",
+				"answers": [
+					{
+						"id": "23",
+						"option_id": "23",
+						"default": true
+					},
+					{
+						"id": "24",
+						"option_id": "24"
+					}
+				],
+				"group_id": "2",
+				"required": false
+			},
+			{
+				"id": "13",
+				"name": "Inside engraving",
+				"display_name": {
+					"en_US": "Inside engraving"
+				},
+				"control": "InputRadio",
+				"answers": [
+					{
+						"id": "25",
+						"option_id": "25"
+					},
+					{
+						"id": "26",
+						"option_id": "26"
+					}
+				],
+				"group_id": "2"
+			},
+			{
+				"id": "14",
+				"name": "Inside engraving text",
+				"display_name": {
+					"en_US": "Inside engraving text"
+				},
+				"control": "TextInput",
+				"answers": [],
+				"group_id": "2"
+			},
+			{
+				"id": "15",
+				"name": "Banner",
+				"display_name": {
+					"en_US": "Banner"
+				},
+				"control": "TextInput",
+				"answers": [],
+				"group_id": "2"
+			},
+			{
+				"id": "16",
+				"name": "I57 or I85 Letter/#(s)",
+				"display_name": {
+					"en_US": "I57 or I85 Letter/#(s)"
+				},
+				"control": "TextInput",
+				"answers": [],
+				"group_id": "2"
+			},
+			{
+				"id": "17",
+				"name": "Letter/# Color",
+				"display_name": {
+					"en_US": "Letter/# Color"
+				},
+				"control": "TextInput",
+				"answers": [],
+				"group_id": "2"
+			},
+			{
+				"id": "18",
+				"name": "Bezel Stones’ Color #",
+				"display_name": {
+					"en_US": "Bezel Stones’ Color #"
+				},
+				"control": "TextInput",
+				"answers": [],
+				"group_id": "2"
+			},
+			{
+				"id": "19",
+				"name": "Side 1 top",
+				"extra_note": "Second row for XtraNameSM which is available only on ‘‘I’’ rings except I22, I24, I46, I47and I68. Additional charge applies.",
+				"display_name": {
+					"en_US": "Side 1 top"
+				},
+				"control": "InputRadio",
+				"answers": [
+					{
+						"id": "27",
+						"option_id": "27",
+						"default": true
+					},
+					{
+						"id": "28",
+						"option_id": "28"
+					}
+				],
+				"group_id": "3",
+				"required": false
+			},
+			{
+				"id": "20",
+				"name": "Side 1 top text",
+				"display_name": {
+					"en_US": "Side 1 top text"
+				},
+				"control": "TextInput",
+				"answers": [],
+				"group_id": "3",
+				"required": true
+			},
+			{
+				"id": "21",
+				"name": "Decade Diamond side 1",
+				"extra_note": "For  \"I\",  \"L\",  and  \"S\"  rings  only,  except  I22,  I24,  I46,  I47,  I68  and  Camo  finish  rings.Additional  charge applies.",
+				"display_name": {
+					"en_US": "Decade Diamond"
+				},
+				"control": "InputRadio",
+				"answers": [
+					{
+						"id": "3",
+						"option_id": "3"
+					},
+					{
+						"id": "4",
+						"option_id": "4",
+						"default": true
+					}
+				],
+				"group_id": "3"
+			},
+			{
+				"id": "22",
+				"name": "Side 1 middle",
+				"extra_note": "NOTE:For DualSports /Activities in thedescriptionline, use aslash (/)betweenyour twochoices.(i.e. Baseball/Soccer)",
+				"display_name": {
+					"en_US": "Side 1 middle"
+				},
+				"control": "InputRadio",
+				"answers": [
+					{
+						"id": "29",
+						"option_id": "29",
+						"default": true
+					},
+					{
+						"id": "30",
+						"option_id": "30"
+					},
+					{
+						"id": "31",
+						"option_id": "31"
+					}
+				],
+				"group_id": "3",
+				"required": false
+			},
+			{
+				"id": "23",
+				"name": "Side 1 middle text",
+				"display_name": {
+					"en_US": "Side 1 middle text"
+				},
+				"control": "TextInput",
+				"group_id": "3",
+				"required": true
+			},
+			{
+				"id": "24",
+				"name": "Side 1 middle Jersey #",
+				"display_name": {
+					"en_US": "Jersey #"
+				},
+				"control": "TextInput",
+				"group_id": "3"
+			},
+			{
+				"id": "25",
+				"name": "Side 1 middle Position",
+				"display_name": {
+					"en_US": "Position"
+				},
+				"control": "TextInput",
+				"group_id": "3"
+			},
+			{
+				"id": "26",
+				"name": "Side 1 middle Description",
+				"extra_note": "1 Digits color or 2 split colors for LetterNOTE: Use a slash (/) between your two color choices.Top Color / Bottom Color. (i.e. Blue/Yellow)",
+				"display_name": {
+					"en_US": "Description"
+				},
+				"control": "TextInput",
+				"group_id": "3"
+			},
+			{
+				"id": "27",
+				"name": "Side 1 bottom Text",
+				"extra_note": "Only for Bottom Accent orDual Sports/Activities Jersey Number/Year Date",
+				"display_name": {
+					"en_US": "Side 1 bottom Text"
+				},
+				"control": "TextInput",
+				"group_id": "3",
+				"required": true
+			},
+			{
+				"id": "28",
+				"name": "Side 2 top",
+				"extra_note": "Second row for XtraNameSM which is available only on ‘‘I’’ rings except I22, I24, I46, I47and I68. Additional charge applies.",
+				"display_name": {
+					"en_US": "Side 2 top"
+				},
+				"control": "InputRadio",
+				"answers": [
+					{
+						"id": "27",
+						"option_id": "27",
+						"default": true
+					},
+					{
+						"id": "28",
+						"option_id": "28"
+					}
+				],
+				"group_id": "3",
+				"required": false
+			},
+			{
+				"id": "29",
+				"name": "Side 2 top text",
+				"display_name": {
+					"en_US": "Side 2 top text"
+				},
+				"control": "TextInput",
+				"answers": [],
+				"group_id": "3",
+				"required": true
+			},
+			{
+				"id": "30",
+				"name": "Decade Diamond side 2",
+				"extra_note": "For  \"I\",  \"L\",  and  \"S\"  rings  only,  except  I22,  I24,  I46,  I47,  I68  and  Camo  finish  rings.Additional  charge applies.",
+				"display_name": {
+					"en_US": "Decade Diamond"
+				},
+				"control": "InputRadio",
+				"answers": [
+					{
+						"id": "3",
+						"option_id": "3"
+					},
+					{
+						"id": "4",
+						"option_id": "4",
+						"default": true
+					}
+				],
+				"group_id": "3"
+			},
+			{
+				"id": "31",
+				"name": "Side 2 middle",
+				"extra_note": "NOTE:For DualSports /Activities in thedescriptionline, use aslash (/)betweenyour twochoices.(i.e. Baseball/Soccer)",
+				"display_name": {
+					"en_US": "Side 2 middle"
+				},
+				"control": "InputRadio",
+				"answers": [
+					{
+						"id": "29",
+						"option_id": "29",
+						"default": true
+					},
+					{
+						"id": "30",
+						"option_id": "30"
+					},
+					{
+						"id": "31",
+						"option_id": "31"
+					}
+				],
+				"group_id": "3",
+				"required": false
+			},
+			{
+				"id": "32",
+				"name": "Side 2 middle text",
+				"display_name": {
+					"en_US": "Side 1 middle text"
+				},
+				"control": "TextInput",
+				"group_id": "3",
+				"required": true
+			},
+			{
+				"id": "33",
+				"name": "Side 2 middle Jersey #",
+				"display_name": {
+					"en_US": "Jersey #"
+				},
+				"control": "TextInput",
+				"group_id": "3"
+			},
+			{
+				"id": "34",
+				"name": "Side 2 middle Position",
+				"display_name": {
+					"en_US": "Position"
+				},
+				"control": "TextInput",
+				"group_id": "3"
+			},
+			{
+				"id": "35",
+				"name": "Side 2 middle Description",
+				"extra_note": "1 Digits color or 2 split colors for LetterNOTE: Use a slash (/) between your two color choices.Top Color / Bottom Color. (i.e. Blue/Yellow)",
+				"display_name": {
+					"en_US": "Description"
+				},
+				"control": "TextInput",
+				"group_id": "3"
+			},
+			{
+				"id": "36",
+				"name": "Side 2 bottom Text",
+				"extra_note": "Only for Bottom Accent orDual Sports/Activities Jersey Number/Year Date",
+				"display_name": {
+					"en_US": "Side 2 bottom Text"
+				},
+				"control": "TextInput",
+				"group_id": "3",
+				"required": true
+			},
+			{
+				"id": "37",
+				"name": "Stone color",
+				"extra_note": "Simulated birthstones. NOTE: Clear Spinel Available only with Camo Finish rings. *Swarovski Zirconia Colors available for Journey Series only. ",
+				"display_name": {
+					"en_US": "Stone color"
+				},
+				"control": "InputRadio",
+				"answers": [
+					{
+						"id": "32",
+						"option_id": "32"
+					},
+					{
+						"id": "33",
+						"option_id": "33"
+					},
+					{
+						"id": "34",
+						"option_id": "34"
+					},
+					{
+						"id": "35",
+						"option_id": "35"
+					},
+					{
+						"id": "36",
+						"option_id": "36"
+					},
+					{
+						"id": "37",
+						"option_id": "37"
+					},
+					{
+						"id": "38",
+						"option_id": "38"
+					},
+					{
+						"id": "39",
+						"option_id": "39"
+					},
+					{
+						"id": "40",
+						"option_id": "40"
+					},
+					{
+						"id": "41",
+						"option_id": "41"
+					},
+					{
+						"id": "42",
+						"option_id": "42"
+					},
+					{
+						"id": "43",
+						"option_id": "43"
+					}
+				],
+				"group_id": "4"
+			},
+			{
+				"id": "38",
+				"name": "Specialty stones",
+				"extra_note": "(additional charges may apply)",
+				"display_name": {
+					"en_US": "Specialty stones"
+				},
+				"control": "InputRadio",
+				"answers": [
+					{
+						"id": "44",
+						"option_id": "44"
+					},
+					{
+						"id": "45",
+						"option_id": "45"
+					},
+					{
+						"id": "46",
+						"option_id": "46"
+					},
+					{
+						"id": "47",
+						"option_id": "47"
+					}
+				],
+				"group_id": "4"
+			},
+			{
+				"id": "39",
+				"name": "Two Colored Stones: Top Color",
+				"extra_note": "Available onI34, I44, I53, I63, L38, L39, L48 and L49.",
+				"display_name": {
+					"en_US": "Two Colored Stones: Top Color"
+				},
+				"control": "TextInput",
+				"group_id": "4"
+			},
+			{
+				"id": "40",
+				"name": "Two Colored Stones: Bottom Color",
+				"extra_note": "Available onI34, I44, I53, I63, L38, L39, L48 and L49.",
+				"display_name": {
+					"en_US": "Two Colored Stones: Bottom Color"
+				},
+				"control": "TextInput",
+				"group_id": "4"
+			},
+			{
+				"id": "41",
+				"name": "Stone cut",
+				"extra_note": "For ‘‘I’’, R26 andE25-E41  rings",
+				"display_name": {
+					"en_US": "Stone cut"
+				},
+				"control": "InputRadio",
+				"answers": [
+					{
+						"id": "48",
+						"option_id": "48"
+					},
+					{
+						"id": "49",
+						"option_id": "49"
+					},
+					{
+						"id": "50",
+						"option_id": "50"
+					},
+					{
+						"id": "51",
+						"option_id": "51"
+					},
+					{
+						"id": "52",
+						"option_id": "52"
+					}
+				],
+				"group_id": "4"
+			},
+			{
+				"id": "42",
+				"name": "Stone cut",
+				"extra_note": "For J Ring Only",
+				"display_name": {
+					"en_US": "Stone cut (For J Ring Only)"
+				},
+				"control": "InputRadio",
+				"answers": [
+					{
+						"id": "52",
+						"option_id": "52"
+					}
+				],
+				"group_id": "4"
+			},
+			{
+				"id": "43",
+				"name": "Stone cut",
+				"extra_note": "For Legend rings",
+				"display_name": {
+					"en_US": "Stone cut (For Legend rings)"
+				},
+				"control": "InputRadio",
+				"answers": [
+					{
+						"id": "48",
+						"option_id": "48"
+					},
+					{
+						"id": "49",
+						"option_id": "49"
+					},
+					{
+						"id": "50",
+						"option_id": "50"
+					},
+					{
+						"id": "53",
+						"option_id": "53"
+					}
+				],
+				"group_id": "4"
+			},
+			{
+				"id": "44",
+				"name": "Stone enhancement",
+				"display_name": {
+					"en_US": "Stone enhancement"
+				},
+				"control": "InputRadio",
+				"answers": [
+					{
+						"id": "54",
+						"option_id": "54"
+					},
+					{
+						"id": "55",
+						"option_id": "55"
+					},
+					{
+						"id": "56",
+						"option_id": "56"
+					},
+					{
+						"id": "57",
+						"option_id": "57"
+					},
+					{
+						"id": "58",
+						"option_id": "58"
+					},
+					{
+						"id": "59",
+						"option_id": "59"
+					},
+					{
+						"id": "60",
+						"option_id": "60"
+					}
+				],
+				"group_id": "4"
+			},
+			{
+				"id": "45",
+				"name": "Other Crests",
+				"display_name": {
+					"en_US": "Other Crests value"
+				},
+				"control": "TextInput",
+				"group_id": "4"
+			},
+			{
+				"id": "46",
+				"name": "w/ symbol #",
+				"display_name": {
+					"en_US": "w/ symbol #"
+				},
+				"control": "TextInput",
+				"group_id": "4"
+			},
+			{
+				"id": "47",
+				"name": "w/ letter",
+				"display_name": {
+					"en_US": "w/ letter"
+				},
+				"control": "TextInput",
+				"group_id": "4"
+			},
+			{
+				"id": "48",
+				"name": "Symbol name",
+				"display_name": {
+					"en_US": "Symbol name"
+				},
+				"control": "TextInput",
+				"group_id": "4"
+			},
+			{
+				"id": "49",
+				"name": "Symbol color",
+				"display_name": {
+					"en_US": "Symbol color"
+				},
+				"control": "TextInput",
+				"group_id": "4"
+			},
+			{
+				"id": "50",
+				"name": "Other #",
+				"display_name": {
+					"en_US": "Other #"
+				},
+				"control": "TextInput",
+				"group_id": "4"
+			},
+			{
+				"id": "51",
+				"name": "Other",
+				"extra_note": "(Additional charges may apply)",
+				"display_name": {
+					"en_US": "Other"
+				},
+				"control": "TextInput",
+				"group_id": "5"
+			},
+			{
+				"id": "52",
+				"name": "Extended Ring Loss Protection (XRL)",
+				"extra_note": "(Additional charges may apply)",
+				"display_name": {
+					"en_US": "Extended Ring Loss Protection (XRL)"
+				},
+				"answers": [
+					{
+						"id": "3",
+						"option_id": "3"
+					},
+					{
+						"id": "4",
+						"option_id": "4",
+						"default": true
+					}
+				],
+				"control": "InputRadio",
+				"group_id": "6"
+			},
+			{
+				"id": "53",
+				"name": "Deluxe Care Package (DCP)",
+				"extra_note": "(Additional charges may apply)",
+				"display_name": {
+					"en_US": "Deluxe Care Package (DCP)"
+				},
+				"answers": [
+					{
+						"id": "3",
+						"option_id": "3"
+					},
+					{
+						"id": "4",
+						"option_id": "4",
+						"default": true
+					}
+				],
+				"control": "InputRadio",
+				"group_id": "6"
+			}
+		],
+		"options": [
+			{
+				"id": "1",
+				"name": "Left",
+				"display_name": {
+					"en_US": "L"
+				}
+			},
+			{
+				"id": "2",
+				"name": "Right",
+				"display_name": {
+					"en_US": "R"
+				}
+			},
+			{
+				"id": "3",
+				"name": "yes",
+				"display_name": {
+					"en_US": "Yes!"
+				}
+			},
+			{
+				"id": "4",
+				"name": "no",
+				"display_name": {
+					"en_US": "No"
+				}
+			},
+			{
+				"id": "5",
+				"name": "Celestrium™",
+				"display_name": {
+					"en_US": "Celestrium™"
+				}
+			},
+			{
+				"id": "6",
+				"name": "Sterling Silver",
+				"display_name": {
+					"en_US": "Sterling Silver"
+				}
+			},
+			{
+				"id": "7",
+				"name": "Argentium® Silver",
+				"display_name": {
+					"en_US": "Argentium® Silver"
+				}
+			},
+			{
+				"id": "8",
+				"name": "10K White Gold",
+				"display_name": {
+					"en_US": "10K White Gold"
+				}
+			},
+			{
+				"id": "9",
+				"name": "14K White Gold",
+				"display_name": {
+					"en_US": "14K White Gold"
+				}
+			},
+			{
+				"id": "10",
+				"name": "18K White Gold",
+				"display_name": {
+					"en_US": "18K White Gold"
+				}
+			},
+			{
+				"id": "11",
+				"name": "Balfour Imperium™",
+				"display_name": {
+					"en_US": "Balfour Imperium™"
+				}
+			},
+			{
+				"id": "12",
+				"name": "10K Yellow Gold",
+				"display_name": {
+					"en_US": "10K Yellow Gold"
+				}
+			},
+			{
+				"id": "13",
+				"name": "14K Yellow Gold",
+				"display_name": {
+					"en_US": "14K Yellow Gold"
+				}
+			},
+			{
+				"id": "14",
+				"name": "18K Yellow Gold",
+				"display_name": {
+					"en_US": "18K Yellow Gold"
+				}
+			},
+			{
+				"id": "15",
+				"name": "Balfour Fusion™",
+				"display_name": {
+					"en_US": "Balfour Fusion™"
+				}
+			},
+			{
+				"id": "16",
+				"name": "10K Rose Gold",
+				"display_name": {
+					"en_US": "10K Rose Gold"
+				}
+			},
+			{
+				"id": "17",
+				"name": "14K Rose Gold",
+				"display_name": {
+					"en_US": "14K Rose Gold"
+				}
+			},
+			{
+				"id": "18",
+				"name": "18K Rose Gold",
+				"display_name": {
+					"en_US": "18K Rose Gold"
+				}
+			},
+			{
+				"id": "19",
+				"name": "Antique",
+				"display_name": {
+					"en_US": "Antique"
+				}
+			},
+			{
+				"id": "20",
+				"name": "Natural",
+				"display_name": {
+					"en_US": "Natural"
+				}
+			},
+			{
+				"id": "21",
+				"name": "RAW™",
+				"display_name": {
+					"en_US": "RAW™"
+				}
+			},
+			{
+				"id": "22",
+				"name": "Balfour Fusion™Matte",
+				"display_name": {
+					"en_US": "Balfour Fusion™Matte"
+				}
+			},
+			{
+				"id": "23",
+				"name": "Smooth",
+				"display_name": {
+					"en_US": "Smooth"
+				}
+			},
+			{
+				"id": "24",
+				"name": "Sculptured",
+				"display_name": {
+					"en_US": "Sculptured"
+				}
+			},
+			{
+				"id": "25",
+				"name": "Initials",
+				"display_name": {
+					"en_US": "Initials"
+				}
+			},
+			{
+				"id": "26",
+				"name": "Name",
+				"display_name": {
+					"en_US": "Name"
+				}
+			},
+			{
+				"id": "27",
+				"name": "Name,Mascotor or Date",
+				"display_name": {
+					"en_US": "Name,Mascotor or Date"
+				}
+			},
+			{
+				"id": "28",
+				"name": "XtraName",
+				"display_name": {
+					"en_US": "XtraName"
+				}
+			},
+			{
+				"id": "29",
+				"name": "Custom Mascot / Seal #",
+				"display_name": {
+					"en_US": "Custom Mascot / Seal #"
+				}
+			},
+			{
+				"id": "30",
+				"name": "‘‘Freedom of Choice’’ Side Design #",
+				"display_name": {
+					"en_US": "‘‘Freedom of Choice’’ Side Design #"
+				}
+			},
+			{
+				"id": "31",
+				"name": "Dual Sports/Activities Side Design",
+				"display_name": {
+					"en_US": "Dual Sports/Activities Side Design"
+				}
+			},
+			{
+				"id": "32",
+				"name": "Jan - Garnet - Dark Red*",
+				"display_name": {
+					"en_US": "Jan - Garnet - Dark Red*"
+				}
+			},
+			{
+				"id": "33",
+				"name": "Feb - Amethyst Spinel - Fancy Purple*",
+				"display_name": {
+					"en_US": "Feb - Amethyst Spinel - Fancy Purple*"
+				}
+			},
+			{
+				"id": "34",
+				"name": "Mar - Auqamarine - Greyish Blue*",
+				"display_name": {
+					"en_US": "Mar - Auqamarine - Greyish Blue*"
+				}
+			},
+			{
+				"id": "35",
+				"name": "Apr - White Spinel - White*",
+				"display_name": {
+					"en_US": "Apr - White Spinel - White*"
+				}
+			},
+			{
+				"id": "36",
+				"name": "May - Emeraid Spinel - Green*",
+				"display_name": {
+					"en_US": "May - Emeraid Spinel - Green*"
+				}
+			},
+			{
+				"id": "37",
+				"name": "June - Alexandrite - Purplish Pink*",
+				"display_name": {
+					"en_US": "June - Alexandrite - Purplish Pink*"
+				}
+			},
+			{
+				"id": "38",
+				"name": "July - Ruby - Red*",
+				"display_name": {
+					"en_US": "July - Ruby - Red*"
+				}
+			},
+			{
+				"id": "39",
+				"name": "Aug - Peridot - Spring Green*",
+				"display_name": {
+					"en_US": "Aug - Peridot - Spring Green*"
+				}
+			},
+			{
+				"id": "40",
+				"name": "Sep - Fire Blue Spinel - Fancy Blue*",
+				"display_name": {
+					"en_US": "Sep - Fire Blue Spinel - Fancy Blue*"
+				}
+			},
+			{
+				"id": "41",
+				"name": "Oct - Rose Sapphire - Fancy Pink*",
+				"display_name": {
+					"en_US": "Oct - Rose Sapphire - Fancy Pink*"
+				}
+			},
+			{
+				"id": "42",
+				"name": "Nov - Gold Sapphire - Amber*",
+				"display_name": {
+					"en_US": "Nov - Gold Sapphire - Amber*"
+				}
+			},
+			{
+				"id": "43",
+				"name": "Dec - Blue Zircon - Artic Blue*",
+				"display_name": {
+					"en_US": "Dec - Blue Zircon - Artic Blue*"
+				}
+			},
+			{
+				"id": "44",
+				"name": "Black Onyx",
+				"display_name": {
+					"en_US": "Black Onyx"
+				}
+			},
+			{
+				"id": "45",
+				"name": "Navy Blue Sapphire",
+				"display_name": {
+					"en_US": "Navy Blue Sapphire"
+				}
+			},
+			{
+				"id": "46",
+				"name": "Orange Sapphire",
+				"display_name": {
+					"en_US": "Orange Sapphire"
+				}
+			},
+			{
+				"id": "47",
+				"name": "Mother of Pearl",
+				"display_name": {
+					"en_US": "Mother of Pearl"
+				}
+			},
+			{
+				"id": "48",
+				"name": "Supreme Facet",
+				"display_name": {
+					"en_US": "Supreme Facet"
+				}
+			},
+			{
+				"id": "49",
+				"name": "Firebust Facet",
+				"display_name": {
+					"en_US": "Firebust Facet"
+				}
+			},
+			{
+				"id": "50",
+				"name": "Starflame Facet",
+				"display_name": {
+					"en_US": "Starflame Facet"
+				}
+			},
+			{
+				"id": "51",
+				"name": "Supreme Smooth",
+				"display_name": {
+					"en_US": "Supreme Smooth"
+				}
+			},
+			{
+				"id": "52",
+				"name": "Pure Brilliance",
+				"display_name": {
+					"en_US": "Pure Brilliance"
+				}
+			},
+			{
+				"id": "53",
+				"name": "No Crest",
+				"display_name": {
+					"en_US": "No Crest"
+				}
+			},
+			{
+				"id": "54",
+				"name": "Laser Emblem",
+				"display_name": {
+					"en_US": "Laser Emblem"
+				}
+			},
+			{
+				"id": "55",
+				"name": "Encrusting",
+				"display_name": {
+					"en_US": "Encrusting"
+				}
+			},
+			{
+				"id": "56",
+				"name": "Perma-crusting",
+				"display_name": {
+					"en_US": "No Crest"
+				}
+			},
+			{
+				"id": "57",
+				"name": "Old English Letter Crest",
+				"display_name": {
+					"en_US": "Old English Letter Crest"
+				}
+			},
+			{
+				"id": "58",
+				"name": "Polaris Star Crest",
+				"display_name": {
+					"en_US": "Polaris Star Crest"
+				}
+			},
+			{
+				"id": "59",
+				"name": "School Monogram Crest",
+				"display_name": {
+					"en_US": "School Monogram Crest"
+				}
+			},
+			{
+				"id": "60",
+				"name": "Other Crests",
+				"display_name": {
+					"en_US": "Other Crests"
+				}
+			},
+			{
+				"id": "61",
+				"name": "Other Metal",
+				"display_name": {
+					"en_US": "Other Metal"
+				}
+			},
+			{
+				"id": "62",
+				"name": "Other Finish",
+				"display_name": {
+					"en_US": "Other Finish"
+				}
+			}
+		]
+	}
+}

@@ -1,0 +1,18 @@
+:host {
+    display: block;
+    padding: 24px 12px;
+    // max-width: calc(100% - 320px);
+    // border-left: 1px solid;
+    // border-bottom: 1px solid #cccccc;
+    // border-right: 1px solid;
+    // border-radius: 0px 0px 4px 4px;
+    // background-color: #fff;
+
+    mat-form-field {
+        width: 100%;
+    }
+
+    .address-type {
+        padding: 8px 0;
+    }
+}

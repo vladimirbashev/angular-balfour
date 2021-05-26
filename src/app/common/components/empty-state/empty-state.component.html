@@ -1,0 +1,18 @@
+<ng-container>
+    <img class="rp-pic" src="./assets/images/states/empty.svg">
+    <div class="rp-title">{{ title }}</div>
+    <div class="rp-text" *ngIf="text">{{ text }}</div>
+    
+    <div fxLayout="row">
+        <button mat-stroked-button color="primary" class="rp-action" color="primary" 
+            (click)="onActionClick()">
+            RELOAD
+        </button>
+        <button mat-stroked-button color="primary" class="rp-action" color="primary" 
+            *ngIf="isFilter"
+            (click)="onResetClick()">
+            RESET FILTER
+        </button>
+    </div>
+
+</ng-container>

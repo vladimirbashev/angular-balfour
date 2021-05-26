@@ -1,0 +1,196 @@
+<ng-container *ngIf="ctx$ | async as ctx" [ngSwitch]="ctx.state">
+
+
+    <rp-menu-layout class="rp-organizations-menu" [single]="isSingle">
+        <div class="menu">
+
+            
+            <div class="rp-filter-container" *ngIf="(state$ | async) !== 'progress'">
+                <mat-expansion-panel [expanded]="isPanelExpanded" (opened)="onOpened();" (closed)="onClosed();">
+
+                    <mat-expansion-panel-header>
+                        <mat-panel-title *ngIf="!isPanelExpanded">
+                            {{ filterTitle }}
+                                <!-- <ng-content select="[rp-content-filter]"></ng-content> -->
+                        </mat-panel-title>
+                        <mat-panel-description *ngIf="isPanelExpanded">
+                            <button mat-stroked-button class="rp-filter-apply" color="primary"
+                                (click)="onApplyFilter($event)">APPLY</button>
+                            <button mat-stroked-button class="rp-filter-apply"
+                                (click)="onResetFilter($event)">RESET</button>
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
+
+                    <form [formGroup]="filterDetailsForm" autocomplete="off" fxLayout="column" fxFlex
+                        fxLayoutAlign="end">
+
+                        <h3 class="rp-filter-title" fxFlex>Search organizations by:</h3>
+
+                        <div fxLayout="row" class="rp-filter-item">
+                            <mat-form-field appearance="outline" fxFlex>
+                                <mat-label>Organization id</mat-label>
+                                <input type="text" matInput [placeholder]="id_placeholder" formControlName="id">
+                            </mat-form-field>
+                            <button matSuffix mat-icon-button color="accent" class="rp-filter-icon-button"
+                                (click)="onResetFilterValue('id')">
+                                <mat-icon>clear</mat-icon>
+                            </button>
+                        </div>
+                       <div fxLayout="row" class="rp-filter-item">
+                            <mat-form-field appearance="outline" fxFlex>
+                                <input type="text" matInput [placeholder]="name_placeholder"
+                                    formControlName="name">
+                            </mat-form-field>
+                            <button matSuffix mat-icon-button color="accent" class="rp-filter-icon-button"
+                                (click)="onResetFilterValue('name')">
+                                <mat-icon>clear</mat-icon>
+                            </button>
+                        </div>
+                       <div fxLayout="row" class="rp-filter-item">
+                            <mat-form-field appearance="outline" fxFlex>
+                                <input type="text" matInput [placeholder]="number_placeholder"
+                                    formControlName="number">
+                            </mat-form-field>
+                            <button matSuffix mat-icon-button color="accent" class="rp-filter-icon-button"
+                                (click)="onResetFilterValue('number')">
+                                <mat-icon>clear</mat-icon>
+                            </button>
+                        </div>
+                       <div fxLayout="row" class="rp-filter-item">
+                            <mat-form-field appearance="outline" fxFlex>
+                                <input type="text" matInput [placeholder]="city_placeholder" formControlName="city">
+                            </mat-form-field>
+                            <button matSuffix mat-icon-button color="accent" class="rp-filter-icon-button"
+                                (click)="onResetFilterValue('city')">
+                                <mat-icon>clear</mat-icon>
+                            </button>
+                        </div>
+                       <div fxLayout="row" class="rp-filter-item">
+                            <mat-form-field appearance="outline" fxFlex>
+                                <input type="text" matInput [placeholder]="state_placeholder"
+                                    formControlName="state">
+                            </mat-form-field>
+                            <button matSuffix mat-icon-button color="accent" class="rp-filter-icon-button"
+                                (click)="onResetFilterValue('state')">
+                                <mat-icon>clear</mat-icon>
+                            </button>
+                        </div>
+                       <div fxLayout="row" class="rp-filter-item">
+                            <mat-form-field appearance="outline" fxFlex>
+                                <input type="text" matInput [placeholder]="zip_placeholder" formControlName="zip">
+                            </mat-form-field>
+                            <button matSuffix mat-icon-button color="accent" class="rp-filter-icon-button"
+                                (click)="onResetFilterValue('zip')">
+                                <mat-icon>clear</mat-icon>
+                            </button>
+                        </div>
+                        <div fxLayout="row" class="rp-filter-item">
+                            <mat-form-field appearance="outline" fxFlex>
+                                <input type="text" matInput [placeholder]="owner_id_placeholder"
+                                    formControlName="owner_id">
+                            </mat-form-field>
+                            <button matSuffix mat-icon-button color="accent" class="rp-filter-icon-button"
+                                (click)="onResetFilterValue('owner_id')">
+                                <mat-icon>clear</mat-icon>
+                            </button>
+                        </div>
+                    </form>
+                </mat-expansion-panel>
+            </div>
+            
+            <div fxLayout="column" class="list-container" infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="50"
+                [scrollWindow]="false" (scrolled)="onScroll()">
+                <rp-organization-list-item [ngClass]="{'selected': ctx?.selectedItem?.id === organization?.id}"
+                    *ngFor="let organization of organizations$ | async; let i = index; trackBy: trackById"
+                    [organization]="organization" (click)="onSelect(organization?.id)">
+                </rp-organization-list-item>
+            
+                <rp-state [state]="(state$ | async)" *ngIf="!media.isActive('gt-sm') && (state$ | async) === 'progress'">
+                    <div class="rp-state-text">Schools/Organizations are loading</div>
+                </rp-state>
+                <rp-state [state]="(state$ | async)" *ngIf="!media.isActive('gt-sm') && (state$ | async) === 'empty'">
+                    <div class="rp-state-text">There are no schools or organizations.</div>
+                    <div>Please create new one or change filter parameters.</div>
+                    <button mat-stroked-button (click)="onAdd()">
+                        Create
+                    </button>
+                    <button mat-stroked-button (click)="onRefresh()">Reload</button>
+                    <button mat-stroked-button *ngIf="isFiltered" (click)="onResetFilter($event)">Reset filter</button>
+                </rp-state>
+                <rp-state [state]="(state$ | async)" *ngIf="!media.isActive('gt-sm') && (state$ | async) === 'error'">
+                    <div class="rp-state-text">{{ error$ | async }}</div>
+                    <button mat-stroked-button (click)="onRefresh()">Reload</button>
+                </rp-state>
+                <div class="rp-menu-empty rp-empty-layout"
+                    *ngIf="media.isActive('gt-sm') && ((state$ | async) === 'progress' || (state$ | async) === 'empty')">
+                </div>
+            </div>
+
+            <button mat-fab class="rp-create-button" *ngIf="(state$ | async) === 'data'" (click)="onAdd()">
+                <mat-icon>add</mat-icon>
+            </button>
+        </div>
+        <div class="menu-container" [ngSwitch]="state$ | async">
+            <rp-state [state]="(state$ | async)" *ngSwitchCase="'progress'">
+                <div class="rp-state-text">Schools/Organizations are loading</div>
+            </rp-state>
+            <rp-state [state]="(state$ | async)" *ngSwitchCase="'empty'">
+                <div class="rp-state-text">There are no schools or organizations.</div>
+                <div >Please create new one or change filter parameters.</div>
+                <button mat-stroked-button (click)="onAdd()">
+                    Create
+                </button>
+                <button mat-stroked-button (click)="onRefresh()">Reload</button>
+                <button mat-stroked-button *ngIf="isFiltered" (click)="onResetFilter($event)">Reset filter</button>
+            </rp-state>
+            <rp-state [state]="(state$ | async)" *ngSwitchCase="'error'">
+                <div class="rp-state-text">{{ error$ | async }}</div>
+                <button mat-stroked-button (click)="onRefresh()">Reload</button>
+            </rp-state>
+
+            <rp-document-layout *ngSwitchDefault>
+                <rp-document-content>
+                    <ng-container *ngIf="state$ | async as state">
+                        <rp-organization-details [organization]="state === 'data' ? (selectedItem$ | async) : null">
+                        </rp-organization-details>
+                    </ng-container>
+                </rp-document-content>
+                <rp-document-footer class="mat-elevation-z6">
+                    <div class="rp-document-footer-content" fxFlex="grow" fxLayout="row" fxLayoutAlign="center"
+                        fxLayoutGap="16px">
+                        <ng-container *ngIf="(state$ | async) === 'data'" class="mat-elevation-z8">
+                            <button *ngIf="inGroup(ctx.profile?.groups, ['Administrators'])" mat-stroked-button fxFlex="20%" (click)="deleteWithConfirm()" color="warn"
+                                class="footer-btns">
+                                <span>DELETE</span>
+                            </button>
+
+                            <button mat-stroked-button fxFlex="20%" (click)="save()" color="primary" class="footer-btns"
+                                [disabled]="!(hasChanges$ | async) || !(valid$ | async)">
+                                <span>APPLY</span>
+                            </button>
+
+                            <button mat-stroked-button fxFlex="20%" (click)="cancel()" class="footer-btns"
+                                [disabled]="!(hasChanges$ | async) && media.isActive('gt-sm')">
+                                <!-- [disabled]="!(hasChanges$ | async) || !(valid$ | async)"> -->
+                                <span>CANCEL</span>
+                            </button>
+                        </ng-container>
+
+                        <ng-container *ngIf="(state$ | async) === 'create'" class="mat-elevation-z8">
+                            <button mat-stroked-button fxFlex="20%" (click)="create()" color="primary"
+                                class="footer-btns" [disabled]="!(hasChanges$ | async) || !(valid$ | async)">
+                                <!-- <mat-icon>save</mat-icon> -->
+                                <span>SAVE</span>
+                            </button>
+
+                            <button mat-stroked-button fxFlex="20%" (click)="cancel()" class="footer-btns">
+                                <!-- <mat-icon>close</mat-icon> -->
+                                <span>CANCEL</span>
+                            </button>
+                        </ng-container>
+                    </div>
+                </rp-document-footer>
+            </rp-document-layout>
+        </div>
+    </rp-menu-layout>
+</ng-container>

@@ -1,0 +1,165 @@
+<ng-container *ngIf="ctx$ | async as ctx">
+    <rp-menu-layout class="rp-customer-orders-menu rp-menu-container" [single]="isSingle" >
+        <div class="menu"  fxLayout="column">
+            <div class="list-container" infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="50"
+                [scrollWindow]="false" (scrolled)="onScroll()">
+
+                <div class="rp-filter-container" *ngIf="ctx.state !== 'progress'">
+                    <mat-expansion-panel [expanded]="isPanelExpanded" (opened)="onOpened();" (closed)="onClosed();">
+    
+                        <mat-expansion-panel-header>
+                            <mat-panel-title *ngIf="!isPanelExpanded">
+                                {{ filterTitle }}
+                                    <!-- <ng-content select="[rp-content-filter]"></ng-content> -->
+                            </mat-panel-title>
+                            <mat-panel-description *ngIf="isPanelExpanded">
+                                <button mat-stroked-button class="rp-filter-apply" color="primary"
+                                    (click)="onApplyFilter($event)">APPLY</button>
+                                <button mat-stroked-button class="rp-filter-apply"
+                                    (click)="onResetFilter($event)">RESET</button>
+                            </mat-panel-description>
+                        </mat-expansion-panel-header>
+    
+                        <div fxLayout="column" fxFlex>
+                            <h3 class="rp-filter-title" fxFlex>Search customer orders by:</h3>
+
+                            <form [formGroup]="filterStatusForm" autocomplete="off" 
+                                fxLayoutAlign="end" fxLayout="column">
+                                <h3>Status</h3>
+                                <div fxLayoutGap="16px" fxLayoutAlign="start start" fxFlex="grow">
+                                    <mat-radio-group formControlName="vendor_order_status">
+                                        <mat-radio-button color="primary"
+                                            *ngFor="let item of filterVendorOrderStatues"
+                                            [value]="item[0]">{{ item[1] }}
+                                        </mat-radio-button>
+                                    </mat-radio-group>
+                                </div>
+                            </form>
+
+                            <form [formGroup]="filterDetailsForm" autocomplete="off" fxLayout="column" fxFlex
+                                fxLayoutAlign="end">
+                                <div fxLayout="row" class="rp-filter-item">
+                                    <mat-form-field appearance="outline" fxFlex>
+                                        <mat-label>{{ id_placeholder }}</mat-label>
+                                        <input type="text" matInput [placeholder]="id_placeholder" formControlName="id">
+                                    </mat-form-field>
+                                    <button matSuffix mat-icon-button color="accent" class="rp-filter-icon-button"
+                                        (click)="onResetFilterValue('id')">
+                                        <mat-icon>clear</mat-icon>
+                                    </button>
+                                </div>
+                                <div fxLayout="row" class="rp-filter-item">
+                                    <mat-form-field appearance="outline" fxFlex>
+                                        <input type="text" matInput [placeholder]="customer_name_placeholder"
+                                            formControlName="customer_name">
+                                    </mat-form-field>
+                                    <button matSuffix mat-icon-button color="accent" class="rp-filter-icon-button"
+                                        (click)="onResetFilterValue('customer_name')">
+                                        <mat-icon>clear</mat-icon>
+                                    </button>
+                                </div>
+                                <div fxLayout="row" class="rp-filter-item">
+                                    <mat-form-field appearance="outline" fxFlex>
+                                        <input type="text" matInput [placeholder]="customer_id_placeholder"
+                                            formControlName="customer_id">
+                                    </mat-form-field>
+                                    <button matSuffix mat-icon-button color="accent" class="rp-filter-icon-button"
+                                        (click)="onResetFilterValue('customer_id')">
+                                        <mat-icon>clear</mat-icon>
+                                    </button>
+                                </div>
+                                <div fxLayout="row" class="rp-filter-item">
+                                    <mat-form-field appearance="outline" fxFlex>
+                                        <input type="text" matInput [placeholder]="customer_phone_placeholder" formControlName="customer_phone">
+                                    </mat-form-field>
+                                    <button matSuffix mat-icon-button color="accent" class="rp-filter-icon-button"
+                                        (click)="onResetFilterValue('customer_phone')">
+                                        <mat-icon>clear</mat-icon>
+                                    </button>
+                                </div>
+                                <div fxLayout="row" class="rp-filter-item">
+                                    <mat-form-field appearance="outline" fxFlex>
+                                        <input type="text" matInput [placeholder]="product_id_placeholder"
+                                            formControlName="product_id">
+                                    </mat-form-field>
+                                    <button matSuffix mat-icon-button color="accent" class="rp-filter-icon-button"
+                                        (click)="onResetFilterValue('product_id')">
+                                        <mat-icon>clear</mat-icon>
+                                    </button>
+                                </div>
+                                <div fxLayout="row" class="rp-filter-item">
+                                    <mat-form-field appearance="outline" fxFlex>
+                                        <input type="text" matInput [placeholder]="vendor_order_id_placeholder" formControlName="vendor_order_id">
+                                    </mat-form-field>
+                                    <button matSuffix mat-icon-button color="accent" class="rp-filter-icon-button"
+                                        (click)="onResetFilterValue('vendor_order_id')">
+                                        <mat-icon>clear</mat-icon>
+                                    </button>
+                                </div>
+                                <div fxLayout="row" class="rp-filter-item">
+                                    <mat-form-field appearance="outline" fxFlex>
+                                        <input type="text" matInput [placeholder]="owner_id_placeholder"
+                                            formControlName="owner_id">
+                                    </mat-form-field>
+                                    <button matSuffix mat-icon-button color="accent" class="rp-filter-icon-button"
+                                        (click)="onResetFilterValue('owner_id')">
+                                        <mat-icon>clear</mat-icon>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+
+                    </mat-expansion-panel>
+                </div>
+
+                <rp-customer-order-list-item class="rp-menu-list-item"
+                    [ngClass]="{'selected': ctx?.selectedItem?.id === order?.id}"
+                    *ngFor="let order of customerOrders$ | async; trackBy: trackById" [order]="order"
+                    (click)="onSelect(order?.id)">
+                </rp-customer-order-list-item>
+            </div>
+
+            <rp-state [state]="ctx.state"*ngIf="!media.isActive('gt-sm') && ctx.state === 'progress'">
+                <div class="rp-state-text">Customer orders are loading</div>
+            </rp-state>
+            <rp-state [state]="ctx.state" *ngIf="!media.isActive('gt-sm') && ctx.state === 'empty'">
+                <div class="rp-state-text">There's no customer orders</div>
+                <div >Please create new one or change filter parameters.</div>
+                <div fxLayout="row">
+                    <button class="rp-action" mat-stroked-button (click)="onReload()">Reload</button>
+                    <button class="rp-action" *ngIf="isFiltered" mat-stroked-button (click)="onResetFilter($event)">Reset filter</button>
+                </div>
+            </rp-state>
+            <rp-state [state]="ctx.state" *ngIf="!media.isActive('gt-sm') && ctx.state === 'error'">
+                <div class="rp-state-text">{{ error$ | async }}</div>
+                <button mat-stroked-button (click)="onReload()">Reload</button>
+            </rp-state>
+            <div class="rp-menu-empty rp-empty-layout" *ngIf="media.isActive('gt-sm') && (ctx.state === 'progress' || ctx.state === 'empty')">
+            </div>
+        </div>
+        <div class="menu-container" [ngSwitch]="ctx.state"  fxLayout="column">
+
+            <rp-state [state]="ctx.state" *ngSwitchCase="'progress'">
+                <div class="rp-state-text">Customer orders are loading</div>
+            </rp-state>
+            <rp-state [state]="ctx.state" *ngSwitchCase="'empty'">
+                <div class="rp-state-text">There's no customer orders</div>
+                <div >Please create new one or change filter parameters.</div>
+                <div fxLayout="row">
+                    <button class="rp-action" mat-stroked-button (click)="onReload()">Reload</button>
+                    <button class="rp-action" mat-stroked-button *ngIf="isFiltered" (click)="onResetFilter($event)">Reset filter</button>
+                </div>
+            </rp-state>
+            <rp-state [state]="ctx.state" *ngSwitchCase="'error'">
+                <div class="rp-state-text">{{ error$ | async }}</div>
+                <button mat-stroked-button (click)="onReload()">Reload</button>
+            </rp-state>
+
+            <rp-document-layout  *ngSwitchDefault>
+                <rp-document-content>
+                    <rp-customer-order-details [order]="ctx?.selectedItem"></rp-customer-order-details>
+                </rp-document-content>
+            </rp-document-layout>
+        </div>
+    </rp-menu-layout>
+</ng-container>

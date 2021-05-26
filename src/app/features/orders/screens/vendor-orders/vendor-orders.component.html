@@ -1,0 +1,256 @@
+<ng-container *ngIf="ctx$ | async as ctx">
+    <ng-container>
+        <ng-container>
+            <rp-menu-layout class="rp-orders-menu" [single]="isSingle">
+                <div class="menu">
+
+                    <div fxLayout="row" class="rp-multi-change-status-panel"
+                        [ngClass]="{'rp-multi-change-status-panel-hidden': selectedVendorOrders.length == 0, 'rp-multi-change-status-panel-display': selectedVendorOrders.length > 0}">
+                        <button mat-stroked-button color=""
+                            (click)="changeStatusMulti(ctx.profile?.groups, ctx.profile)"
+                            class="rp-customer-order-btns">
+                            <span>CHANGE STATUS</span>
+                        </button>
+                        <mat-checkbox labelPosition="before" (change)="setAllCheckboxes($event.checked)">Check all</mat-checkbox>
+                    </div>
+
+                    <div class="rp-filter-container" *ngIf="(org_number$ | async) !== 'progress'">
+                        <mat-expansion-panel [disabled]="ctx.state == 'progress'" [expanded]="isPanelExpanded"
+                            (opened)="onOpened();" (closed)="onClosed();">
+                            <mat-expansion-panel-header>
+                                <mat-panel-title *ngIf="!isPanelExpanded">
+                                    {{ filterTitle }}
+                                    <!-- <ng-content select="[rp-content-filter]"></ng-content> -->
+                                </mat-panel-title>
+                                <mat-panel-description *ngIf="isPanelExpanded">
+                                    <button mat-stroked-button class="rp-filter-apply" color="primary"
+                                        (click)="onApplyFilter($event)">APPLY</button>
+                                    <button mat-stroked-button class="rp-filter-apply"
+                                        (click)="onResetFilter($event)">RESET</button>
+                                </mat-panel-description>
+                            </mat-expansion-panel-header>
+
+                            <div fxLayout="column" fxFlex>
+                                <h3 class="rp-filter-title" fxFlex>Search customers by:</h3>
+                                <form [formGroup]="filterStatusForm" autocomplete="off" fxLayoutAlign="end"
+                                    fxLayout="column">
+                                    <h3>Status</h3>
+                                    <div fxLayoutGap="16px" fxLayoutAlign="start start" fxFlex="grow">
+                                        <mat-radio-group formControlName="status">
+                                            <mat-radio-button color="primary"
+                                                *ngFor="let item of filterVendorOrderStatues" [value]="item[0]">{{
+                                                item[1] }}
+                                            </mat-radio-button>
+                                        </mat-radio-group>
+                                    </div>
+                                </form>
+
+                                <form [formGroup]="filterDetailsForm" autocomplete="off" fxLayout="column" fxFlex
+                                    fxLayoutAlign="end">
+
+                                    <!-- <div fxLayout="row" class="rp-filter-item">
+                                        <mat-form-field appearance="outline" fxFlex>
+                                            <mat-label>Customer id</mat-label>
+                                            <input type="text" matInput [placeholder]="id_placeholder" formControlName="id">
+                                        </mat-form-field>
+                                        <button matSuffix mat-icon-button color="accent" class="rp-filter-icon-button"
+                                            (click)="onResetFilterValue('id')">
+                                            <mat-icon>clear</mat-icon>
+                                        </button>
+                                    </div> -->
+                                    <div fxLayout="row" class="rp-filter-item">
+                                        <mat-form-field appearance="outline" fxFlex>
+                                            <input type="text" matInput [placeholder]="envelope_number_placeholder"
+                                                formControlName="id">
+                                        </mat-form-field>
+                                        <button matSuffix mat-icon-button color="accent" class="rp-filter-icon-button"
+                                            (click)="onResetFilterValue('envelope_number')">
+                                            <mat-icon>clear</mat-icon>
+                                        </button>
+                                    </div>
+                                    <div fxLayout="row" class="rp-filter-item">
+                                        <mat-form-field appearance="outline" fxFlex>
+                                            <input type="text" matInput [placeholder]="order_number_placeholder"
+                                                formControlName="purchase_number">
+                                        </mat-form-field>
+                                        <button matSuffix mat-icon-button color="accent" class="rp-filter-icon-button"
+                                            (click)="onResetFilterValue('purchase_number')">
+                                            <mat-icon>clear</mat-icon>
+                                        </button>
+                                    </div>
+                                    <div fxLayout="row" class="rp-filter-item">
+                                        <mat-form-field appearance="outline" fxFlex>
+                                            <input type="text" matInput [placeholder]="rep_name_placeholder"
+                                                formControlName="rep_name">
+                                        </mat-form-field>
+                                        <button matSuffix mat-icon-button color="accent" class="rp-filter-icon-button"
+                                            (click)="onResetFilterValue('rep_name')">
+                                            <mat-icon>clear</mat-icon>
+                                        </button>
+                                    </div>
+
+                                    <div fxLayout="row" class="rp-filter-item">
+                                        <mat-form-field appearance="outline" fxFlex>
+                                            <input type="text" matInput [placeholder]="rep_number_placeholder"
+                                                formControlName="office_number">
+                                        </mat-form-field>
+                                        <button matSuffix mat-icon-button color="accent" class="rp-filter-icon-button"
+                                            (click)="onResetFilterValue('office_number')">
+                                            <mat-icon>clear</mat-icon>
+                                        </button>
+                                    </div>
+                                    <!-- <div fxLayout="row" class="rp-filter-item">
+                                        <mat-form-field appearance="outline" fxFlex>
+                                            <input type="text" matInput [placeholder]="org_id_placeholder"
+                                                formControlName="org_id">
+                                        </mat-form-field>
+                                        <button matSuffix mat-icon-button color="accent" class="rp-filter-icon-button"
+                                            (click)="onResetFilterValue('org_id')">
+                                            <mat-icon>clear</mat-icon>
+                                        </button>
+                                    </div>
+                                   <div fxLayout="row" class="rp-filter-item">
+                                        <mat-form-field appearance="outline" fxFlex>
+                                            <input type="text" matInput [placeholder]="org_name_placeholder" formControlName="org_name">
+                                        </mat-form-field>
+                                        <button matSuffix mat-icon-button color="accent" class="rp-filter-icon-button"
+                                            (click)="onResetFilterValue('org_name')">
+                                            <mat-icon>clear</mat-icon>
+                                        </button>
+                                    </div>
+                                   <div fxLayout="row" class="rp-filter-item">
+                                        <mat-form-field appearance="outline" fxFlex>
+                                            <input type="text" matInput [placeholder]="org_number_placeholder"
+                                                formControlName="org_number">
+                                        </mat-form-field>
+                                        <button matSuffix mat-icon-button color="accent" class="rp-filter-icon-button"
+                                            (click)="onResetFilterValue('org_number')">
+                                            <mat-icon>clear</mat-icon>
+                                        </button>
+                                    </div> -->
+                                    <!-- <div fxLayout="row" class="rp-filter-item">
+                                        <mat-form-field appearance="outline" fxFlex>
+                                            <input type="text" matInput [placeholder]="status_placeholder" formControlName="status">
+                                        </mat-form-field>
+                                        <button matSuffix mat-icon-button color="accent" class="rp-filter-icon-button"
+                                            (click)="onResetFilterValue('status')">
+                                            <mat-icon>clear</mat-icon>
+                                        </button>
+                                    </div> -->
+                                    <!-- <div fxLayout="row" class="rp-filter-item">
+                                        <mat-form-field appearance="outline" fxFlex>
+                                            <input type="text" matInput [placeholder]="customer_phones_placeholder"
+                                                formControlName="customer_phones">
+                                        </mat-form-field>
+                                        <button matSuffix mat-icon-button color="accent" class="rp-filter-icon-button"
+                                            (click)="onResetFilterValue('customer_phones')">
+                                            <mat-icon>clear</mat-icon>
+                                        </button>
+                                    </div> -->
+                                    <div fxLayout="row" class="rp-filter-item">
+                                        <mat-form-field appearance="outline" fxFlex>
+                                            <input type="text" matInput [placeholder]="customer_name_placeholder"
+                                                formControlName="customer_name">
+                                        </mat-form-field>
+                                        <button matSuffix mat-icon-button color="accent" class="rp-filter-icon-button"
+                                            (click)="onResetFilterValue('customer_name')">
+                                            <mat-icon>clear</mat-icon>
+                                        </button>
+                                    </div>
+                                    <!-- <div fxLayout="row" class="rp-filter-item">
+                                        <mat-form-field appearance="outline" fxFlex>
+                                            <input type="text" matInput [placeholder]="owner_id_placeholder"
+                                                formControlName="owner_id">
+                                        </mat-form-field>
+                                        <button matSuffix mat-icon-button color="accent" class="rp-filter-icon-button"
+                                            (click)="onResetFilterValue('owner_id')">
+                                            <mat-icon>clear</mat-icon>
+                                        </button>
+                                    </div> -->
+                                </form>
+                            </div>
+
+                        </mat-expansion-panel>
+                    </div>
+
+                    <div fxLayout="column" class="list-container" infiniteScroll [infiniteScrollDistance]="2"
+                        [infiniteScrollThrottle]="50" [scrollWindow]="false" (scrolled)="onScroll()">
+                        <div fxLayout="row" fxLayoutAlign="center center" class="rp-list-item-check"
+                            [ngClass]="{'checked': checkedCheckbox(order.id), 'selected': ctx?.selectedItem?.id === order?.id}"
+                            *ngFor="let order of vendorOrders$ | async; let i = index; trackBy: trackById">
+                            <rp-vendor-order-list-item [groups]="ctx.profile?.groups" [order]="order"
+                                (click)="onSelect(order.id)" (dblclick)="onDblClickItem(order.id, i)">
+                            </rp-vendor-order-list-item>
+                            <div class="rp-list-item-check-box"
+                                [ngClass]="{'rp-list-item-check-box-hidden': selectedVendorOrders.length == 0, 'rp-list-item-check-box-display': selectedVendorOrders.length > 0}">
+                                <mat-checkbox [checked]="checkedCheckbox(order.id)"
+                                    (change)="changeCheckedCheckbox(order.id, i)">
+                                </mat-checkbox>
+                            </div>
+
+                        </div>
+
+
+                        <rp-state [state]="ctx.state" *ngIf="!media.isActive('gt-sm') && ctx.state === 'progress'">
+                            <div class="rp-state-text">Envelopes are loading</div>
+                        </rp-state>
+                        <rp-state [state]="ctx.state" *ngIf="!media.isActive('gt-sm') && ctx.state === 'empty'">
+                            <div class="rp-state-text">There's no envelopes</div>
+                            <div *ngIf="!inGroup(ctx.profile?.groups, ['OE', 'OETL', 'AE', 'CS'])">Please create new
+                                one.</div>
+                            <div *ngIf="inGroup(ctx.profile?.groups, ['OE', 'OETL', 'AE', 'CS'])">No submitted
+                                envelopes!</div>
+                            <button mat-stroked-button (click)="createVendorOrder()"
+                                *ngIf="!inGroup(ctx.profile?.groups, ['OE', 'OETL', 'AE', 'CS'])">
+                                Create
+                            </button>
+                            <button mat-stroked-button (click)="onReload()">Reload</button>
+                            <button mat-stroked-button (click)="onResetFilter($event)">Reset filter</button>
+                        </rp-state>
+                        <rp-state [state]="ctx.state" *ngIf="!media.isActive('gt-sm') && ctx.state === 'error'">
+                            <div class="rp-state-text">{{ error$ | async }}</div>
+                            <button mat-stroked-button (click)="onReload()">Reload</button>
+                        </rp-state>
+                        <div class="rp-menu-empty rp-empty-layout"
+                            *ngIf="media.isActive('gt-sm') && (ctx.state === 'progress' || ctx.state === 'empty')">
+                        </div>
+                    </div>
+                    <button mat-fab color="accent" class="rp-create-button rp-vendor-order-create-button"
+                        (click)="createVendorOrder()" *ngIf="!inGroup(ctx.profile?.groups, ['OE', 'OETL', 'AE', 'CS'])">
+                        <mat-icon>add</mat-icon>
+                    </button>
+
+
+                </div>
+                <div class="menu-container" fxLayout="column">
+                    <rp-state [state]="ctx.state" *ngIf="media.isActive('gt-sm') && ctx.state === 'progress'">
+                        <div class="rp-state-text">Envelopes are loading</div>
+                    </rp-state>
+                    <rp-state [state]="ctx.state" *ngIf="media.isActive('gt-sm') && ctx.state === 'empty'">
+                        <div class="rp-state-text">There's no envelopes</div>
+                        <div *ngIf="!inGroup(ctx.profile?.groups, ['OE', 'OETL', 'AE', 'CS'])">Please create new one.
+                        </div>
+                        <div *ngIf="inGroup(ctx.profile?.groups, ['OE', 'OETL', 'AE', 'CS'])">No submitted envelopes!
+                        </div>
+                        <button mat-stroked-button (click)="createVendorOrder()"
+                            *ngIf="!inGroup(ctx.profile?.groups, ['OE', 'OETL', 'AE', 'CS'])">
+                            Create
+                        </button>
+                        <button mat-stroked-button (click)="onReload()">Reload</button>
+                        <button mat-stroked-button (click)="onResetFilter($event)">Reset filter</button>
+                    </rp-state>
+                    <rp-state [state]="ctx.state" *ngIf="media.isActive('gt-sm') && ctx.state === 'error'">
+                        <div class="rp-state-text">{{ error$ | async }}</div>
+                        <button mat-stroked-button (click)="onReload()">Reload</button>
+                    </rp-state>
+
+                    <rp-document-layout *ngIf="ctx.state === 'data'">
+                        <rp-document-content>
+                            <rp-vendor-order-details [order]="ctx?.selectedItem"></rp-vendor-order-details>
+                        </rp-document-content>
+                    </rp-document-layout>
+                </div>
+            </rp-menu-layout>
+        </ng-container>
+    </ng-container>
+</ng-container>

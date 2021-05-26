@@ -1,0 +1,72 @@
+{
+    "session": {
+        "authorizedUrl": "envelopes",
+        "serverUrl": "https://dev-api-ops-balfour.azure-api.net/repportal/",
+        "schoolFinderUrl": "https://dev-api-ops-balfour.azure-api.net/fragment/",
+        "lsKeys": {
+            "session": "session",
+            "serverUrl": "serverUr"
+        }
+    },
+    "msal": {
+        "config": {
+            "auth": {
+                "clientId": "ad8fe8bb-6b5d-48ba-a0b1-e4c197f314b2",
+                "authority": "https://login.microsoftonline.com/47954d9a-f5f3-4213-acec-406605360231/",
+                "validateAuthority": true,
+                "redirectUri": "https://localhost:4200",
+                "postLogoutRedirectUri": "https://localhost:4200",
+                "navigateToLoginRequestUrl": true
+            },
+            "cache": {
+                "cacheLocation": "localStorage",
+                "storeAuthStateInCookie": false
+            },
+            "system": {
+                "logger": null
+            },
+            "framework": {
+                "isAngular": true
+            }
+        },
+        "configAngular": {
+            "popUp": true,
+            "consentScopes": [
+                "user.read",
+                "openid",
+                "profile"
+            ],
+            "unprotectedResources": [
+                "https://www.microsoft.com/en-us/"
+            ],
+            "protectedResourceMap": [
+                [
+                    "https://dev-api-ops-balfour.azure-api.net/repportal/",
+                    [
+                        "ad8fe8bb-6b5d-48ba-a0b1-e4c197f314b2/.default"
+                    ]
+                ]
+            ]
+        },
+        "enableLogger": true
+    },
+    "i18n": {
+        "language": "en_US"
+    },
+    "services": {
+        "customer-orders.data": {
+            "defaults": {
+                "take": 20
+            },
+            "timeout": 10000
+        },
+        "orders.data": {
+            "defaults": {
+                "take": 20
+            }
+        },
+        "products.data": {
+            "timeout": 10000
+        }
+    }
+}

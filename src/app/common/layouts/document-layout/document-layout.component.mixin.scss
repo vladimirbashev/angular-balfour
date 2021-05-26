@@ -1,0 +1,25 @@
+@mixin rp-document-layout-mixin($theme) {
+    $foreground: map-get($theme, foreground);
+    $background: map-get($theme, 'background');
+
+    .rp-document-layout {
+        color: mat-color($foreground, text) !important;
+        background: mat-color($background, card);
+
+        ::ng-deep rp-document-footer {
+            border-top: 1px solid mat-color($foreground, divider);
+        }
+    }
+
+    .lt-lg .rp-document-layout {
+        border-left: 1px solid mat-color($foreground, divider) !important;
+        border-right: 1px solid mat-color($foreground, divider) !important;
+        box-sizing: border-box;
+    }
+
+    :not(.lt-lg) .rp-document-layout, .rp-toolbar-shadow {
+        box-shadow: 0 1px 5px 0 rgba(black, 0.26);
+    }
+}
+
+@include rp-document-layout-mixin($theme);

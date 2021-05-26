@@ -1,0 +1,73 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: 100%;
+
+    mat-form-field ::ng-deep .mat-form-field-wrapper {
+        padding-bottom: 0px;
+    }
+
+    rp-state {
+        height: 100%;
+    }
+
+    .rp-document-layout {
+        width: 100%;
+        margin-left: unset;
+        margin-right: unset;
+    }
+ 
+}
+
+.rp-customers-menu {
+    flex: 1;
+}
+ 
+.rp-menu-empty {
+    display: block;
+    width: 100%;
+    background-image: url('./../../../../assets/images/menu-empty.svg');
+    background-repeat: repeat-x;
+}
+
+.rp-filter-container {
+    position:relative; 
+    height:48px; 
+    z-index:100;
+
+    .mat-expansion-panel-header-title {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        line-height: 20px;
+        max-height: 40px;
+    }
+
+    .rp-filter-title {
+        line-height: 36px;
+        margin-bottom: 8px;
+    }
+    
+    .rp-filter-apply.mat-stroked-button {
+        height: 36px;
+        margin-right: 16px;
+    }
+    
+    .rp-filter-icon-button {
+        margin-left: 8px;
+    }
+    
+    .rp-filter-item {
+        align-items: center;
+    }
+}
+
+
+.mat-expansion-panel:not([class*=mat-elevation-z]) {
+    box-shadow: none;
+    border-bottom: 1 solid #cccccc;
+    /* box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12); */
+}

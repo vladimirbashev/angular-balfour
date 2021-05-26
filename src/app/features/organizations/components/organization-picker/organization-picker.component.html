@@ -1,0 +1,8 @@
+<input type="text" [placeholder]="placeholder" matInput [formControl]="orgCtrl" [matAutocomplete]="auto" (blur)="onTouched()">
+<!-- <mat-progress-spinner diameter="15" [ngStyle]="{opacity: searching ? 1 : 0}" mode="indeterminate">
+</mat-progress-spinner> -->
+<mat-autocomplete #auto="matAutocomplete" [displayWith]="displayOrg">
+    <mat-option *ngFor="let org of searchResults$ | async" [value]="org">
+        {{ org.name }}, {{ org.number }}
+    </mat-option>
+</mat-autocomplete>

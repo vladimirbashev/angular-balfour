@@ -1,0 +1,74 @@
+<ng-container *ngIf="ctx$ | async as ctx" [ngSwitch]="ctx.stateDetails">
+    <rp-state state="progress" *ngSwitchCase="'progress'">
+        <div class="rp-state-text">Customer order is loading</div>
+    </rp-state>
+    <rp-state state="empty" *ngSwitchCase="'empty'">
+        <div class="rp-state-text">There's no customer order details</div>
+    </rp-state>
+    <rp-state state="error" *ngSwitchCase="'error'">
+        <div class="rp-state-text">{{ error$ | async }}</div>
+        <button mat-stroked-button (click)="onReload()">Reload</button>
+    </rp-state>
+    <div class="order-details-container" *ngSwitchCase="'data'">
+        <div class="rp-co-error" *ngIf="ctx.orderDetails?.order.status == 'incomplete'" 
+            fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="0.5em">
+            <mat-icon >error_outline</mat-icon>
+            <span>The order is incomplete!</span>
+        </div>
+        <mat-divider></mat-divider>
+        <div class="rp-order-header" fxLayout="row wrap" fxLayoutGap="2em">
+            <div fxLayout="row" fxLayoutGap="1em">
+                <div fxLayout="column" fxLayoutGap="1em">
+                    <div class="rp-label">Envelope number:</div>
+                    <div class="rp-label">Customer order number:</div>
+                    <div class="rp-label">Full name: </div>
+                </div>
+                <div fxLayout="column" fxLayoutGap="1em">
+                    <div class="rp-value">{{ ctx.orderDetails?.order.vendor_order_id }}</div>
+                    <div class="rp-value">{{ ctx.orderDetails?.order.id }}</div>
+                    <div class="rp-value">{{ ctx.orderDetails?.order.customer?.first_name }} {{  ctx.orderDetails?.order.customer?.last_name }}</div>
+                </div>
+            </div>
+            <div fxLayout="row" fxLayoutGap="1em">
+                <div fxLayout="column" fxLayoutGap="1em">
+                    <div class="rp-label">Email:</div>
+                    <div class="rp-label">Phone: </div>
+                </div>
+                <div fxLayout="column" fxLayoutGap="1em">
+                    <div class="rp-value">{{ (orderDetails$ | async)?.order.customer?.email }}</div>
+                    <div class="rp-value"> {{ (orderDetails$ | async)?.order.customer?.phone }}</div>
+                </div>
+            </div>
+        </div>
+        <div class="rp-button-container" fxLayoutAlign="end">
+            <!-- <button mat-stroked-button color="primary" fxFlex="15%">COPY</button> -->
+            <button mat-stroked-button fxFlex="15%" (click)="onEdit()">
+                {{ (inGroup(ctx?.profile?.groups, ['OE', 'AE', 'OETL', 'CS']) 
+                    || (ctx.orderDetails?.order.vendor_order_status !== 'in_progress' && ctx.orderDetails?.order.vendor_order_status !== 'incomplete')) 
+                    ? 'VIEW' : 'EDIT' }}
+                </button>
+        </div>
+        <mat-divider></mat-divider>
+        <div class="scrolled-block rp-customer-order-details-content">
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title class="rp-customer-order-subheader">
+                        <div>Pricing</div>
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <ng-container
+                    *ngFor="let p of ctx.pricingDetails?.prices">
+                    <div class="rp-customer-order-group" fxLayout="row" fxLayoutGap="16px">
+                        <div class="rp-customer-order-group--title" fxFlex>{{ p?.title }}</div>
+                        <div class="rp-customer-order-group--price">{{ p?.price | currency }}</div>
+                    </div>
+                </ng-container>
+            </mat-expansion-panel>
+            <mat-divider></mat-divider>
+            <div class="rp-customer-order-total" fxLayout="row">
+                <div fxFlex>Total</div>
+                <div>{{ ctx.pricingDetails?.total | currency }}</div>
+            </div>
+        </div>
+    </div>
+</ng-container>

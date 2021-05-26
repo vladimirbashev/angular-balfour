@@ -1,0 +1,11 @@
+@mixin rp-customers-screen($theme) {
+    $primary: map-get($theme, primary);
+    $accent: map-get($theme, accent);
+
+    rp-customer-list-item.selected {
+        background-color: mat-color($accent, 50);
+        color: mat-color($accent, '100-contrast');
+    }
+}
+
+@include rp-customers-screen($theme);

@@ -1,0 +1,30 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: 100%;
+
+    .menu-item {
+        display: block;
+        width: 100%;
+        padding: 16px;
+        box-sizing: border-box;
+        border-bottom: 1px solid #cccccc;
+        cursor: pointer;
+        outline: none;
+    }
+
+    .rp-document-layout {
+        width: 100%;
+        margin-left: unset;
+        margin-right: unset;
+        border-left: 1px solid #cccccc;
+        border-right: 1px solid #cccccc;
+        box-shadow: none;
+    }
+}
+
+.rp-settings-menu {
+    flex: 1;
+}
+

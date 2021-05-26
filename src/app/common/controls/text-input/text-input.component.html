@@ -1,0 +1,6 @@
+<mat-form-field appearance="outline">
+    <mat-label>{{ question?.display_name['en_US'] == null 
+        ||  question?.display_name['en_US'] == '' ? question?.name : question?.display_name['en_US'] }}</mat-label>
+    <input #ti matInput [type]="type" [required]="question?.required" [formControl]="ctrl">
+    <mat-hint *ngIf="question?.extra_note">{{ question?.extra_note }}</mat-hint>
+</mat-form-field>

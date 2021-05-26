@@ -1,0 +1,16 @@
+<div fxLayout="row" fxLayoutAlign="space-between center">
+    <div class="rp-menu-list-item-id">{{ order?.id }} * {{ order?.purchase_number }}</div>
+    <rp-vendor-order-status-chip [status]="order?.status" [groups]="groups"></rp-vendor-order-status-chip>
+</div>
+<div class="rp-menu-list-item-subtitle">
+    {{ order?.org_number }} * {{ order?.org_name }}
+</div>
+<div fxLayout="row">
+    <div>
+        <span>{{ order?.rep_name }}</span> * {{ order?.date_mailed | date:'shortDate' }}
+    </div>
+    <div fxFlex></div>
+    <div class="rp-menu-list-item-price">
+        {{ order?.total_price | currency }}
+    </div>
+</div>

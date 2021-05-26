@@ -1,0 +1,41 @@
+:host {
+    display: block;
+}
+
+.rp-sidenav-info {
+    height: 140px;
+    display: flex;
+    align-items: center;
+    padding-left: 24px;
+
+    span {
+        font-size: larger;
+    }
+}
+
+.rp-sidenav-menu {
+
+    mat-list-item {
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    mat-icon {
+        // opacity: 0.56;
+        transition: all .35s ease;
+        margin-right: 4px;
+        font-size: 24px;
+    }
+
+    h3 {
+        margin: 0 0 0 16px;
+        font-weight: 500;
+        text-transform: none;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-size: 14px;
+    }
+}

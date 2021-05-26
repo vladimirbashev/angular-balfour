@@ -1,0 +1,54 @@
+:host {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    >mat-toolbar {
+        border-bottom: 1px solid #cccccc;
+    }
+}
+
+.rp-sidenav-container {
+    flex: 1;
+    display: flex;
+
+    .rp-sidenav {
+        display: flex;
+        transition: width 0.3s ease;
+        width: 300px;
+    }
+
+    .rp-sidenav-content {
+        transition: margin-left 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 100%;
+    }
+
+    &.rp-sidenav-opened:not(.rp-sidenav-mode-over) .rp-sidenav-content {
+        margin-left: 300px !important;
+    }
+
+    &.rp-sidenav-expandable:not(.rp-sidenav-expanded) {
+        .rp-sidenav {
+            width: 64px;
+        }
+
+        &.rp-sidenav-opened:not(.rp-sidenav-mode-over) .rp-sidenav-content {
+            margin-left: 64px !important;
+        }
+    }
+
+    rp-applications-sidenav {
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+    }
+}
+
+.app-bar-spacer {
+    flex: 1 1 auto;
+}

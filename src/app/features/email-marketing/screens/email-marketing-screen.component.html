@@ -1,0 +1,78 @@
+<ng-container>
+  <rp-document-layout>
+    <rp-document-content>
+      <form>
+        <h2>Email Marketing</h2>
+        <div fxLayout="column" fxLayoutGap="16px">
+          <div>
+            <button mat-stroked-button (click)="fileInput.click()">Upload a CSV File</button>
+            <input type="file" #fileInput hidden (change)="fileChange($event)" placeholder="Upload file"
+              accept=".csv" />
+
+            <span
+              [ngStyle]="{'color':uploadState === 'Success' ? 'green' : uploadState === 'Failed' ? 'red' : 'black' }"
+              style="padding-left:25px;">{{ FileUploadStatus }}
+            </span>
+          </div>
+
+          <div>
+            <span style="font-weight:bold;">Required Columns: </span> <span>{{ requiredColumns }}</span>
+          </div>
+
+          <div>
+            <span style="font-weight:bold;">Optional Columns: </span> <span>{{ optionalColumns }}</span>
+          </div>
+
+          <div fxLayout="row" fxLayoutGap="16px" fxLayoutAlign="stretch center">
+            <mat-form-field fxFlex appearance="outline">
+              <mat-label>Start Date</mat-label>
+              <input matInput [matDatepicker]="startDate" [(ngModel)]="StartDate" [ngModelOptions]="{standalone: true}">
+              <mat-datepicker-toggle matSuffix [for]="startDate"></mat-datepicker-toggle>
+              <mat-datepicker #startDate></mat-datepicker>
+            </mat-form-field>
+
+            <mat-form-field fxFlex appearance="outline">
+              <mat-label>End Date</mat-label>
+              <input matInput [matDatepicker]="endDate" [(ngModel)]="EndDate" [ngModelOptions]="{standalone: true}">
+              <mat-datepicker-toggle matSuffix [for]="endDate"></mat-datepicker-toggle>
+              <mat-datepicker #endDate></mat-datepicker>
+            </mat-form-field>
+
+            <button class="bm16" mat-stroked-button (click)="getQueueStatus()">Go</button>
+          </div>
+
+          <div>
+            <h3 style="font-weight:bold;">Previous Uploads</h3>
+          </div>
+
+          <div>
+            <table *ngIf="SilverPopUploads?.length > 0">
+              <thead>
+                <tr>
+                  <th>File</th>
+                  <th>Row Count</th>
+                  <th>Uploaded</th>
+                  <th>Import Job ID</th>
+                  <th>Import Completed</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let upload of SilverPopUploads">
+                  <td>{{ upload.FileName }}</td>
+                  <td>{{ upload.RecordCount }}</td>
+                  <td>{{ upload.SentToSilverPopDate | date:'MM/dd/yyyy hh:mm a' }}</td>
+                  <td>{{ upload.SilverPopJobId }}</td>
+                  <td>{{ upload.SilverPopImportCompletedDate | date:'MM/dd/yyyy hh:mm a' }}</td>
+                </tr>
+              </tbody>
+            </table>
+            <p *ngIf="SilverPopUploads?.length <= 0">
+              No results found for the selected date period.
+            </p>
+          </div>
+
+        </div>
+      </form>
+    </rp-document-content>
+  </rp-document-layout>
+</ng-container>

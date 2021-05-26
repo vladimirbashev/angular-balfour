@@ -1,0 +1,25 @@
+@mixin rp-orders-screen($theme) {
+    $primary: map-get($theme, primary);
+    $accent: map-get($theme, accent);
+
+    .rp-orders-header {
+        background-color: rgba(mat-color($primary, default), 0.05);
+        color: mat-color($primary, '100-contrast');
+
+        span {
+            color: mat-color($primary, default);
+        }
+    }
+
+    rp-vendor-order-list-item.selected {
+        background-color: mat-color($accent, 50);
+        color: mat-color($accent, '100-contrast');
+    }
+
+    .rp-list-item-check.selected {
+        background-color: mat-color($accent, 50) !important;
+        color: mat-color($accent, '100-contrast');
+    }
+}  
+
+@include rp-orders-screen($theme);

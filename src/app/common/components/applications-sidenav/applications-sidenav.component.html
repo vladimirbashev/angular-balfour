@@ -1,0 +1,37 @@
+<ng-container *ngIf="{sidenav: sidenav.mediaState$ | async, sections: sections$ | async} as ctx">
+    <div class="rp-sidenav-info" *ngIf="ctx.sidenav.fixedInViewport">
+        <span>Rep Portal</span>
+    </div>
+    <div class="rp-sidenav-menu w-stretch">
+        <div fxFlex="grow" fxLayout="column" class="w-stretch">
+            <div *ngFor="let subSections of ctx.sections; let sectionIndex = index" class="w-stretch" fxLayout="column">
+                <mat-divider *ngIf="sectionIndex > 0"></mat-divider>
+                <mat-nav-list dense class="w-stretch">
+                    <ng-container *ngFor="let item of subSections; let itemIndex = index">
+                        <ng-container *ngIf="item.callback">
+                            <mat-list-item (click)="item.callback($event, itemIndex, item)" class="w-stretch">
+                                <div fxLayout="row" [fxLayoutAlign]="ctx.sidenav.expandable && !sidenav.expanded ? 'center center' : 'start center'" class="w-stretch">
+                                    <mat-icon *ngIf="item && !item.fontSet">{{ item?.icon || 'menu' }}</mat-icon>
+                                    <mat-icon *ngIf="item && item.fontSet" [fontSet]="item?.fontSet"
+                                        [fontIcon]="item?.icon"></mat-icon>
+                                    <h3 [ngClass]="{'hidden': ctx.sidenav.expandable ? !sidenav.expanded : false}" mat-line>{{ item.title }}</h3>
+                                </div>
+                            </mat-list-item>
+                        </ng-container>
+                        <ng-container *ngIf="item.route">
+                            <mat-list-item [routerLink]="item.route" routerLinkActive="selected" class="w-stretch" (click)="closeSidenav()">
+                                <div fxLayout="row" [fxLayoutAlign]="ctx.sidenav.expandable && !sidenav.expanded ? 'center center' : 'start center'" class="w-stretch"
+                                    style="overflow: hidden">
+                                    <mat-icon *ngIf="item && !item.fontSet">{{ item?.icon || 'menu' }}</mat-icon>
+                                    <mat-icon *ngIf="item && item.fontSet" [fontSet]="item?.fontSet"
+                                        [fontIcon]="item?.icon"></mat-icon>
+                                    <h3 [ngClass]="{'hidden': ctx.sidenav.expandable ? !sidenav.expanded : false}" mat-line>{{ item.title  }}</h3>
+                                </div>
+                            </mat-list-item>
+                        </ng-container>
+                    </ng-container>
+                </mat-nav-list>
+            </div>
+        </div>
+    </div>
+</ng-container>

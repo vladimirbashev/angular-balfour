@@ -1,0 +1,22 @@
+ <div class="rp-menu-list-item-id" fxLayout="row">
+    <div fxFlex>
+        {{ order?.id }}
+    </div> 
+    <div *ngIf="order?.status == 'incomplete'" class="rp-co-incomplete">
+        Incomplete
+    </div>
+</div>
+<!-- <div class="rp-menu-list-item-subtitle">
+    {{ order?.customer_name }} * {{ order?.customer_phone }}
+</div> -->
+<div class="rp-menu-list-item-subtitle">
+    {{ order?.customer?.last_name }} {{ order?.customer?.first_name }} * {{ order?.customer?.phone }}
+</div>
+<div class="rp-menu-list-item-title" fxLayout="row">
+    <div fxFlex>
+        {{ order?.order_date | date:'shortDate' }}
+    </div>
+    <div class="rp-menu-list-item-price">
+        {{ order?.total_price | currency }}
+    </div>    
+</div>

@@ -1,0 +1,13 @@
+<mat-form-field floatLabel="never" appearance="fill" fxFlex appearance="outline">
+    <mat-label>{{ question?.display_name['en_US'] == null 
+        ||  question?.display_name['en_US'] == '' ? question?.name : question?.display_name['en_US'] }}
+    </mat-label>
+    <mat-select [required]="question?.required" [formControl]="ctrl">
+      <mat-option *ngFor="let option of options" [ngClass]="'rp-option-' + option?.id" [value]="option"
+      [selected]="ctrl?.value?.id === option?.id || isDefault(option?.id)">
+      {{ option?.display_name['en_US'] == null 
+      ||  option?.display_name['en_US'] == '' ? option?.name : option?.display_name['en_US'] }} - {{ option?.id }} - {{ ctrl?.value?.id }}
+        <span>{{ option?.extra_message['en_US'] }}</span>
+      </mat-option>
+    </mat-select>
+</mat-form-field>

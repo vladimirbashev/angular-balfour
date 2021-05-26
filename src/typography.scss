@@ -1,0 +1,2 @@
+$balfour-typography: mat-typography-config($font-family: 'LatoWeb');
+@include angular-material-typography($balfour-typography);

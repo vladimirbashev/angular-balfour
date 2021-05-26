@@ -1,0 +1,8 @@
+<ng-container *ngIf="{auth: isAuthenticated$ | async} as ctx">
+    <router-outlet *ngIf="ctx.auth"></router-outlet>
+    <div *ngIf="!ctx.auth" class="rp-unauthorized">
+        <h1>Rep Portal</h1>
+        <button *ngIf="!isLoadingInProgress" mat-raised-button [disabled]="isLoginInProgress" (click)="openLogin()">Open
+            login</button>
+    </div>
+</ng-container>

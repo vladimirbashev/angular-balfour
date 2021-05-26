@@ -1,0 +1,11 @@
+@mixin rp-vendor-order-details($theme) {
+    $accent: map-get($theme, accent);
+
+    .mat-button-toggle.mat-button-toggle-checked {
+        color: white;
+        background-color: mat-color($accent);
+    }
+
+}
+
+@include rp-vendor-order-details($theme);

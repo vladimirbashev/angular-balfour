@@ -1,0 +1,53 @@
+@mixin rp-vendor-order-details($theme) {
+    $primary: map-get($theme, primary);
+
+    .rp-change-status-link {
+        height: 24px !important;
+        width: 24px !important;
+        line-height: 20px !important;
+        span {
+            line-height: 20px !important;
+        }
+    }
+
+    .rp-vendor-order-details-info {
+        .rp-label span {
+            color: mat-color($primary, default);
+        }
+    }
+
+    .rp-vendor-order-details-co {
+        .rp-customer-orders-incomplete {
+            background-color: rgba($balfour-error-color, 0.11); 
+            color: $balfour-error-color;
+            padding: 16px;
+            padding-left: 24px;
+        }
+
+        .rp-customer-order-details {
+
+            &--number {
+                color: mat-color($primary);
+            }
+
+            &--subtitle {
+                color: $balfour-grey-color;
+            }
+
+            &--date, &--price {
+                color: $balfour-light-black-color;
+            }
+            &--incomplete {
+                color: $balfour-error-color;
+            }
+        }
+    }
+
+    .rp-customer-order-btns {
+        background-color: #fff;
+        color: mat-color($primary, default);
+    }
+
+}
+
+@include rp-vendor-order-details($theme);

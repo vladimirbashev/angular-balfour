@@ -1,0 +1,10 @@
+@import './styles.scss';
+@import './sidenav.component.scss-theme.scss';
+@import './toolbar.component.scss-theme.scss';
+@import './button.component.scss-theme.scss';
+
+@mixin custom-components-theme($theme) {
+    @include sidenav-component-theme($theme);
+    @include mat-toolbar-custom-theme($theme);
+    @include rp-button-color($theme)
+}

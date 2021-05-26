@@ -1,0 +1,40 @@
+<ng-container [ngSwitch]="state$ | async">
+    <rp-state [state]="state$ | async" *ngSwitchCase="'progress'">
+        <div class="rp-state-text">User settings are loading</div>
+    </rp-state>
+    <rp-state [state]="state$ | async" *ngSwitchCase="'error'">
+        <div class="rp-state-text">{{ error$ | async }}</div>
+        <button mat-stroked-button (click)="onReload()">Reload</button>
+    </rp-state>
+    <rp-menu-layout class="rp-settings-menu" *ngSwitchDefault>
+        <div class="menu">
+            <div class="menu-item" routerLink="/user_settings/account" routerLinkActive="active" 
+                [ngStyle]="{'background-color': getAccountStateColor()}">
+                Account
+            </div>
+
+            <div class="menu-item" routerLink="/user_settings/shipping_address" routerLinkActive="active"
+            [ngStyle]="{'background-color': getAddressStateColor()}">
+                Shipping address
+            </div>
+        </div>
+        <div class="menu-container">
+
+            <rp-document-layout>
+                <rp-document-content>
+                    <router-outlet></router-outlet>
+                </rp-document-content>
+                <rp-document-footer class="mat-elevation-z6">
+                    <div class="rp-document-footer-content" fxFlex="grow" fxLayout="row" fxLayoutAlign="center"
+                        fxLayoutGap="16px">
+                        <button mat-stroked-button fxFlex="20%" class="footer-btns footer-btn-apply"
+                        [disabled]="!hasChanges || !valid" (click)="save()">
+                            <!-- <mat-icon>save</mat-icon> -->
+                            <span>SAVE</span>
+                        </button>
+                    </div>
+                </rp-document-footer>
+            </rp-document-layout>
+        </div>
+    </rp-menu-layout>
+</ng-container>

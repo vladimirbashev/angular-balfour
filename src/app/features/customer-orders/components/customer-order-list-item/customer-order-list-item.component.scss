@@ -1,0 +1,13 @@
+:host {
+    display: block;
+    width: 100%;
+    padding: 8px 16px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #cccccc; // $balfour-border-color;
+
+
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    cursor: pointer;
+}

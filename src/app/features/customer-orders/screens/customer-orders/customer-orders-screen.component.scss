@@ -1,0 +1,73 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: 100%;
+
+    mat-form-field ::ng-deep .mat-form-field-wrapper {
+        padding-bottom: 0px;
+    }
+}
+
+.rp-menu-container {
+    flex: 1;
+    
+    .rp-create-button {
+        position: absolute;
+        right: 16px;
+        bottom: 16px;
+    }
+}
+
+
+ 
+.rp-menu-empty {
+    display: block;
+    width: 100%;
+    background-image: url('./../../../../../assets/images/menu-empty.svg');
+    background-repeat: repeat-x;
+}
+
+.rp-filter-container {
+    position:relative; 
+    height:48px; 
+    z-index:100;
+
+    .mat-expansion-panel-header-title {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        line-height: 20px;
+        max-height: 40px;
+    }
+
+    .rp-filter-title {
+        line-height: 36px;
+        margin-bottom: 8px;
+    }
+    
+    .rp-filter-apply.mat-stroked-button {
+        height: 36px;
+        margin-right: 16px;
+    }
+    
+    .rp-filter-icon-button {
+        margin-left: 8px;
+    }
+    
+    .rp-filter-item {
+        align-items: center;
+    }
+    
+    .mat-radio-button {
+        margin-right: 16px;
+        margin-bottom: 16px;
+    }
+}
+
+.mat-expansion-panel:not([class*=mat-elevation-z]) {
+    box-shadow: none;
+    border-bottom: 1 solid #cccccc;
+}

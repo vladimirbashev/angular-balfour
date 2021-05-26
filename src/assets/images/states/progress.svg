@@ -1,0 +1,760 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="273px" height="273px" viewBox="0 0 273 273" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>Loading state</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M0,136.5 C0,211.886924 61.1130762,273 136.5,273 C211.886924,273 273,211.886924 273,136.5 C273,61.1130762 211.886924,0 136.5,0 C61.1130762,0 0,61.1130762 0,136.5" id="path-1"></path>
+        <path d="M0,136.5 C0,211.886924 61.1130762,273 136.5,273 C211.886924,273 273,211.886924 273,136.5 C273,61.1130762 211.886924,0 136.5,0 C61.1130762,0 0,61.1130762 0,136.5" id="path-3"></path>
+        <path d="M0,136.5 C0,211.886924 61.1130762,273 136.5,273 C211.886924,273 273,211.886924 273,136.5 C273,61.1130762 211.886924,0 136.5,0 C61.1130762,0 0,61.1130762 0,136.5" id="path-5"></path>
+        <path d="M32.6618244,147 L27.7224742,147 C12.4748345,147 0,134.261 0,118.690065 L0,29.6224354 C0,14.0571455 12.4748345,1.3125 27.7224742,1.3125 L32.6618244,1.3125 C47.9001656,1.3125 60.375,14.0571455 60.375,29.6224354 L60.375,118.690065 C60.375,134.261 47.9001656,147 32.6618244,147 Z" id="path-7"></path>
+        <path d="M32.6618244,147 L27.7224742,147 C12.4748345,147 0,134.261 0,118.690065 L0,29.6224354 C0,14.0571455 12.4748345,1.3125 27.7224742,1.3125 L32.6618244,1.3125 C47.9001656,1.3125 60.375,14.0571455 60.375,29.6224354 L60.375,118.690065 C60.375,134.261 47.9001656,147 32.6618244,147 Z" id="path-9"></path>
+        <path d="M32.6618244,147 L27.7224742,147 C12.4748345,147 0,134.261 0,118.690065 L0,29.6224354 C0,14.0571455 12.4748345,1.3125 27.7224742,1.3125 L32.6618244,1.3125 C47.9001656,1.3125 60.375,14.0571455 60.375,29.6224354 L60.375,118.690065 C60.375,134.261 47.9001656,147 32.6618244,147 Z" id="path-11"></path>
+        <path d="M32.6618244,147 L27.7224742,147 C12.4748345,147 0,134.261 0,118.690065 L0,29.6224354 C0,14.0571455 12.4748345,1.3125 27.7224742,1.3125 L32.6618244,1.3125 C47.9001656,1.3125 60.375,14.0571455 60.375,29.6224354 L60.375,118.690065 C60.375,134.261 47.9001656,147 32.6618244,147 Z" id="path-13"></path>
+        <path d="M0,136.5 C0,211.886924 61.1130762,273 136.5,273 C211.886924,273 273,211.886924 273,136.5 C273,61.1130762 211.886924,0 136.5,0 C61.1130762,0 0,61.1130762 0,136.5" id="path-15"></path>
+        <path d="M0,136.5 C0,211.886924 61.1130762,273 136.5,273 C211.886924,273 273,211.886924 273,136.5 C273,61.1130762 211.886924,0 136.5,0 C61.1130762,0 0,61.1130762 0,136.5" id="path-17"></path>
+        <path d="M0,136.5 C0,211.886924 61.1130762,273 136.5,273 C211.886924,273 273,211.886924 273,136.5 C273,61.1130762 211.886924,0 136.5,0 C61.1130762,0 0,61.1130762 0,136.5" id="path-19"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Illustrations" transform="translate(-522.000000, -782.000000)">
+            <g id="Loading-state" transform="translate(522.000000, 782.000000)">
+                <g id="Group-4">
+                    <g id="Mask" fill="#7F945C" fill-rule="nonzero">
+                        <path d="M0,136.5 C0,211.886924 61.1130762,273 136.5,273 C211.886924,273 273,211.886924 273,136.5 C273,61.1130762 211.886924,0 136.5,0 C61.1130762,0 0,61.1130762 0,136.5" id="path-1"></path>
+                    </g>
+                    <g id="Box-Clipped">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <g id="path-1"></g>
+                        <g id="Box" mask="url(#mask-2)">
+                            <g transform="translate(181.125000, 144.375000)" id="Group">
+                                <g>
+                                    <polyline id="Fill-1" fill="#8F6B3A" fill-rule="nonzero" points="108.9375 36.4238372 54.2689893 56.4375 0 40.4315729 54.6685107 22.3125"></polyline>
+                                    <polyline id="Fill-2" fill="#D9B12A" fill-rule="nonzero" points="62.790313 41.1618224 55.125 48.5625 64.5260499 48.0919223 72.1875 40.6875"></polyline>
+                                    <polyline id="Fill-3" fill="#FBD93E" fill-rule="nonzero" points="32.6900136 44.625 40.6875 50.0976838 36.8698617 59.0625 28.875 53.5857382"></polyline>
+                                    <polyline id="Fill-4" fill="#FBD93E" fill-rule="nonzero" points="41.8775136 48.5625 49.875 54.0351838 46.0573617 63 38.0625 57.5232382"></polyline>
+                                    <polyline id="Fill-5" fill="#F6CF42" fill-rule="nonzero" points="39.9125948 34.125 45.9375 41.3242152 40.1473806 48.5625 34.125 41.3606801"></polyline>
+                                    <polyline id="Fill-6" fill="#F6CF42" fill-rule="nonzero" points="47.2069781 45.9375 56.4375 48.6928201 55.1693457 57.75 45.9375 54.9908759"></polyline>
+                                    <polyline id="Fill-7" fill="#FBD93E" fill-rule="nonzero" points="31.5201144 38.0625 38.0625 44.8099362 32.7898537 52.5 26.25 45.7486417"></polyline>
+                                    <polyline id="Fill-8" fill="#FBD93E" fill-rule="nonzero" points="76.1451144 47.25 82.6875 53.9974362 77.4148537 61.6875 70.875 54.9361417"></polyline>
+                                    <polyline id="Fill-9" fill="#FBD93E" fill-rule="nonzero" points="55.125 36.75 64.2453917 38.2210266 64.3125 47.25 55.1908421 45.7727137"></polyline>
+                                    <polyline id="Fill-10" fill="#FBD93E" fill-rule="nonzero" points="64.3125 40.284649 73.6690445 36.75 78.75 45.0305277 69.3907068 48.5625"></polyline>
+                                    <polyline id="Fill-11" fill="#FBD93E" fill-rule="nonzero" points="76.125 54.722149 85.4815445 51.1875 90.5625 59.4680277 81.2032068 63"></polyline>
+                                    <polyline id="Fill-12" fill="#F6CF42" fill-rule="nonzero" points="59.6556243 43.3125 64.3125 51.7004283 57.154305 57.75 52.5 49.3594265"></polyline>
+                                    <polyline id="Fill-13" fill="#F6CF42" fill-rule="nonzero" points="81.2817478 38.0625 82.6875 47.0924278 73.5879425 49.875 72.1875 40.8425732"></polyline>
+                                    <polyline id="Fill-14" fill="#F6CF42" fill-rule="nonzero" points="73.4067478 49.875 74.8125 58.9049278 65.7129425 61.6875 64.3125 52.6550732"></polyline>
+                                    <polyline id="Fill-15" fill="#FBD93E" fill-rule="nonzero" points="60.3319781 42 69.5625 44.7553201 68.2943457 53.8125 59.0625 51.0533759"></polyline>
+                                    <polyline id="Fill-16" fill="#FBD93E" fill-rule="nonzero" points="52.4569781 53.8125 61.6875 56.5678201 60.4193457 65.625 51.1875 62.8658759"></polyline>
+                                    <polyline id="Fill-17" fill="#F6CF42" fill-rule="nonzero" points="45.8944781 34.125 55.125 36.8803201 53.8568457 45.9375 44.625 43.1783759"></polyline>
+                                    <polyline id="Fill-18" fill="#F6CF42" fill-rule="nonzero" points="80.0625 49.6255105 71.2672876 53.8125 65.625 46.1843816 74.4215529 42"></polyline>
+                                    <polyline id="Fill-19" fill="#FBD93E" fill-rule="nonzero" points="60.3319781 31.5 69.5625 34.2553201 68.2930219 43.3125 59.0625 40.5533759"></polyline>
+                                    <polyline id="Fill-20" fill="#FBD93E" fill-rule="nonzero" points="57.7069781 51.1875 66.9375 53.9428201 65.6693457 63 56.4375 60.2408759"></polyline>
+                                    <polyline id="Fill-21" fill="#D9B12A" fill-rule="nonzero" points="43.2697982 40.6875 52.5 43.4428201 51.2328499 52.5 42 49.7408759"></polyline>
+                                    <polyline id="Fill-22" fill="#F6CF42" fill-rule="nonzero" points="36.7069781 42 45.9375 44.7553201 44.6680219 53.8125 35.4375 51.0533759"></polyline>
+                                    <polyline id="Fill-23" fill="#FBD93E" fill-rule="nonzero" points="60.6415806 1.3125 49.875 4.86363636 58.7932348 9.1875 69.5625 5.63352273"></polyline>
+                                    <polyline id="Fill-24" fill="#FBD93E" fill-rule="nonzero" points="69.1214155 9.1875 60.375 16.3629935 70.0062257 17.0625 78.75 9.8842307"></polyline>
+                                    <polyline id="Fill-25" fill="#F6CF42" fill-rule="nonzero" points="55.3915806 43.3125 44.625 46.8636364 53.5432348 51.1875 64.3125 47.6335227"></polyline>
+                                    <polyline id="Fill-26" fill="#D9B12A" fill-rule="nonzero" points="55.7286755 29.5196153 44.625 27.5625 50.5811337 34.7953715 61.6875 36.75"></polyline>
+                                    <polyline id="Fill-27" fill="#F6CF42" fill-rule="nonzero" points="35.4375 9.59106479 44.339685 6.5625 48.5625 15.3491785 39.6577572 18.375"></polyline>
+                                    <polyline id="Fill-28" fill="#FBD93E" fill-rule="nonzero" points="42 15.8124238 47.5259653 7.875 56.4375 11.7500762 50.9088219 19.6875"></polyline>
+                                    <polyline id="Fill-29" fill="#F6CF42" fill-rule="nonzero" points="52.5 16.1535648 61.402185 13.125 65.625 21.9116785 56.7202572 24.9375"></polyline>
+                                    <polyline id="Fill-30" fill="#F6CF42" fill-rule="nonzero" points="46.1774254 19.6875 52.5 26.6251694 47.0062841 34.125 40.6875 27.180809"></polyline>
+                                    <polyline id="Fill-31" fill="#FBD93E" fill-rule="nonzero" points="52.5 25.3410648 61.402185 22.3125 65.625 31.0991785 56.7202572 34.125"></polyline>
+                                    <polyline id="Fill-32" fill="#FBD93E" fill-rule="nonzero" points="32.8125 22.7160648 41.714685 19.6875 45.9375 28.4741785 37.0327572 31.5"></polyline>
+                                    <polyline id="Fill-33" fill="#F6CF42" fill-rule="nonzero" points="65.307551 13.125 68.25 22.0972181 59.3771939 26.25 56.4375 17.2764974"></polyline>
+                                    <polyline id="Fill-34" fill="#FBD93E" fill-rule="nonzero" points="57.7647977 19.6875 65.625 25.2812705 61.674008 34.125 53.8125 28.5285246"></polyline>
+                                    <polyline id="Fill-35" fill="#F6CF42" fill-rule="nonzero" points="57.432551 30.1875 60.375 39.1597181 51.5021939 43.3125 48.5625 34.3389974"></polyline>
+                                    <polyline id="Fill-36" fill="#F6CF42" fill-rule="nonzero" points="53.8125 23.9377606 46.8088654 30.1875 39.375 24.6222138 46.3799384 18.375"></polyline>
+                                    <polyline id="Fill-37" fill="#F6CF42" fill-rule="nonzero" points="49.875 31.8127606 42.8713654 38.0625 35.4375 32.4972138 42.4424384 26.25"></polyline>
+                                    <polyline id="Fill-38" fill="#FBD93E" fill-rule="nonzero" points="48.245051 31.5 51.1875 40.4722181 42.3146939 44.625 39.375 35.6514974"></polyline>
+                                    <polyline id="Fill-39" fill="#FBD93E" fill-rule="nonzero" points="52.182551 10.5 55.125 19.4722181 46.2521939 23.625 43.3125 14.6514974"></polyline>
+                                    <polyline id="Fill-40" fill="#F6CF42" fill-rule="nonzero" points="41.1436558 40.6875 47.25 47.8124662 41.5451066 55.125 35.4375 47.9948236"></polyline>
+                                    <polyline id="Fill-41" fill="#D9B12A" fill-rule="nonzero" points="66.620051 5.25 69.5625 14.2196491 60.6896939 18.375 57.75 9.40149736"></polyline>
+                                    <polyline id="Fill-42" fill="#F6CF42" fill-rule="nonzero" points="46.932551 6.5625 49.875 15.5347181 41.0021939 19.6875 38.0625 10.7139974"></polyline>
+                                    <polyline id="Fill-43" fill="#F6CF42" fill-rule="nonzero" points="48.245051 13.125 51.1875 22.0972181 42.3146939 26.25 39.375 17.2764974"></polyline>
+                                    <polyline id="Fill-44" fill="#D9B12A" fill-rule="nonzero" points="90.245051 32.8125 93.1875 41.7847181 84.3146939 45.9375 81.375 36.9639974"></polyline>
+                                    <polyline id="Fill-45" fill="#D9B12A" fill-rule="nonzero" points="75.4161755 36.0821153 64.3125 34.125 70.2686337 41.3578715 81.375 43.3125"></polyline>
+                                    <polyline id="Fill-46" fill="#FBD93E" fill-rule="nonzero" points="42 22.548012 51.921902 22.3125 53.8125 31.2695528 43.8865205 31.5"></polyline>
+                                    <polyline id="Fill-47" fill="#F6CF42" fill-rule="nonzero" points="55.125 14.8410648 64.027185 11.8125 68.25 20.5991785 59.3452572 23.625"></polyline>
+                                    <polyline id="Fill-48" fill="#FBD93E" fill-rule="nonzero" points="61.6875 21.0624238 67.2107525 13.125 76.125 17.0000762 70.5963219 24.9375"></polyline>
+                                    <polyline id="Fill-49" fill="#F6CF42" fill-rule="nonzero" points="72.1875 22.7160648 81.089685 19.6875 85.3125 28.4741785 76.4077572 31.5"></polyline>
+                                    <polyline id="Fill-50" fill="#F6CF42" fill-rule="nonzero" points="65.8649254 24.9375 72.1875 31.8751694 66.6937841 39.375 60.375 32.430809"></polyline>
+                                    <polyline id="Fill-51" fill="#FBD93E" fill-rule="nonzero" points="72.1875 31.9035648 81.089685 28.875 85.3125 37.6616785 76.4077572 40.6875"></polyline>
+                                    <polyline id="Fill-52" fill="#FBD93E" fill-rule="nonzero" points="52.5 29.2785648 61.402185 26.25 65.625 35.0366785 56.7202572 38.0625"></polyline>
+                                    <polyline id="Fill-53" fill="#D9B12A" fill-rule="nonzero" points="47.25 13.5285648 56.1496273 10.5 60.375 19.2866785 51.4702572 22.3125"></polyline>
+                                    <polyline id="Fill-54" fill="#FBD93E" fill-rule="nonzero" points="77.2969988 6.5625 77.4375 16.570027 68.385392 18.375 68.25 8.36473199"></polyline>
+                                    <polyline id="Fill-55" fill="#F6CF42" fill-rule="nonzero" points="84.995051 19.6875 87.9375 28.6597181 79.0646939 32.8125 76.125 23.8389974"></polyline>
+                                    <polyline id="Fill-56" fill="#FBD93E" fill-rule="nonzero" points="61.6875 34.2834919 59.8234585 43.3125 49.875 43.1540081 51.741803 34.125"></polyline>
+                                    <polyline id="Fill-57" fill="#FBD93E" fill-rule="nonzero" points="77.4522977 26.25 85.3125 31.8437705 81.361508 40.6875 73.5 35.0910246"></polyline>
+                                    <polyline id="Fill-58" fill="#F6CF42" fill-rule="nonzero" points="78.432551 36.75 81.375 45.7222181 72.5021939 49.875 69.5625 40.9014974"></polyline>
+                                    <polyline id="Fill-59" fill="#F6CF42" fill-rule="nonzero" points="73.5 30.5002606 66.4963654 36.75 59.0625 31.1847138 66.0674384 24.9375"></polyline>
+                                    <polyline id="Fill-60" fill="#F6CF42" fill-rule="nonzero" points="70.875 37.0633553 63.8713654 43.3125 56.4375 37.7478817 63.4424384 31.5"></polyline>
+                                    <polyline id="Fill-61" fill="#FBD93E" fill-rule="nonzero" points="67.932551 36.75 70.875 45.7222181 62.0021939 49.875 59.0625 40.9014974"></polyline>
+                                    <polyline id="Fill-62" fill="#FBD93E" fill-rule="nonzero" points="71.870051 17.0625 74.8125 26.0347181 65.9396939 30.1875 63 21.2139974"></polyline>
+                                    <polyline id="Fill-63" fill="#D9B12A" fill-rule="nonzero" points="56.120051 21 59.0625 29.9696491 50.1896939 34.125 47.25 25.1514974"></polyline>
+                                    <polyline id="Fill-64" fill="#F6CF42" fill-rule="nonzero" points="60.8311558 47.25 66.9375 54.3749662 61.2326066 61.6875 55.125 54.5573236"></polyline>
+                                    <polyline id="Fill-65" fill="#F6CF42" fill-rule="nonzero" points="53.495051 27.5625 56.4375 36.5321491 47.5646939 40.6875 44.625 31.7139974"></polyline>
+                                    <polyline id="Fill-66" fill="#F6CF42" fill-rule="nonzero" points="66.620051 13.125 69.5625 22.0972181 60.6896939 26.25 57.75 17.2764974"></polyline>
+                                    <polyline id="Fill-67" fill="#FBD93E" fill-rule="nonzero" points="48.2180946 26.3032609 39.375 19.6875 41.0265345 28.8255435 49.875 35.4375"></polyline>
+                                    <polyline id="Fill-68" fill="#FBD93E" fill-rule="nonzero" points="52.1567256 15.8032609 43.3125 9.1875 44.9642457 18.3255435 53.8125 24.9375"></polyline>
+                                    <polyline id="Fill-69" fill="#D9B12A" fill-rule="nonzero" points="60.9786755 7.20711531 49.875 5.25 55.8311337 12.4828715 66.9375 14.4375"></polyline>
+                                    <polyline id="Fill-70" fill="#D9B12A" fill-rule="nonzero" points="54.3733905 22.1759001 64.3125 27.5625 61.1293244 18.5089844 51.1875 13.125"></polyline>
+                                    <polyline id="Fill-71" fill="#FBD93E" fill-rule="nonzero" points="81.4496304 45.9375 72.1875 43.2064551 73.4293499 34.125 82.6875 36.8598575"></polyline>
+                                    <polyline id="Fill-72" fill="#F6CF42" fill-rule="nonzero" points="65.625 47.25 56.4887989 47.0953112 55.125 38.0625 64.2637035 38.2222606"></polyline>
+                                    <polyline id="Fill-73" fill="#FBD93E" fill-rule="nonzero" points="61.6875 39 54.1390255 44.625 47.25 38.4349719 54.801081 32.8125"></polyline>
+                                    <polyline id="Fill-74" fill="#F6CF42" fill-rule="nonzero" points="51.1875 35.4375 42.0512989 35.2828112 40.6875 26.25 49.8262035 26.4097606"></polyline>
+                                    <polyline id="Fill-75" fill="#F6CF42" fill-rule="nonzero" points="59.1285698 35.4375 55.125 26.4860612 62.9365555 21 66.9375 29.9541367"></polyline>
+                                    <polyline id="Fill-76" fill="#FBD93E" fill-rule="nonzero" points="53.8125 26.25 44.6762989 26.0953112 43.3125 17.0625 52.4512035 17.2222606"></polyline>
+                                    <polyline id="Fill-77" fill="#F6CF42" fill-rule="nonzero" points="82.6875 52.5 73.5512989 52.3453539 72.1875 43.3125 81.3262035 43.4747517"></polyline>
+                                    <polyline id="Fill-78" fill="#FBD93E" fill-rule="nonzero" points="72.1875 35.4375 63.0512989 35.2828539 61.6875 26.25 70.8262035 26.4122517"></polyline>
+                                    <polyline id="Fill-79" fill="#D9B12A" fill-rule="nonzero" points="72.1875 51.1875 63.0538012 51.0302753 61.6875 42 70.8262035 42.1597606"></polyline>
+                                    <polyline id="Fill-80" fill="#FBD93E" fill-rule="nonzero" points="42 48.5452021 44.8038434 39.375 53.8125 40.702162 51.0061318 49.875"></polyline>
+                                    <polyline id="Fill-81" fill="#F6CF42" fill-rule="nonzero" points="39.375 34.125 39.6218209 24.9089365 48.5625 23.625 48.3106675 32.8435884"></polyline>
+                                    <polyline id="Fill-82" fill="#FBD93E" fill-rule="nonzero" points="66.9375 26.9459865 71.4557141 18.375 80.0625 21.6192024 75.5417512 30.1875"></polyline>
+                                    <polyline id="Fill-83" fill="#FBD93E" fill-rule="nonzero" points="47.5527225 30.1875 42 22.5789349 48.2635721 15.75 53.8125 23.36378"></polyline>
+                                    <polyline id="Fill-84" fill="#F6CF42" fill-rule="nonzero" points="51.1875 19.6875 51.4355738 10.4714365 60.375 9.1875 60.1231675 18.4060884"></polyline>
+                                    <polyline id="Fill-85" fill="#F6CF42" fill-rule="nonzero" points="53.8125 27.5515271 62.831879 23.625 68.25 31.5162398 59.2279153 35.4375"></polyline>
+                                    <polyline id="Fill-86" fill="#F6CF42" fill-rule="nonzero" points="59.0625 20.9890271 68.081879 17.0625 73.5 24.9537398 64.4779153 28.875"></polyline>
+                                    <polyline id="Fill-87" fill="#F6CF42" fill-rule="nonzero" points="82.1822555 53.8125 78.75 45.2252187 87.1329344 40.6875 90.5625 49.278546"></polyline>
+                                    <polyline id="Fill-88" fill="#FBD93E" fill-rule="nonzero" points="61.6875 22.3125 61.9343209 13.0964365 70.875 11.8125 70.6231675 21.0310884"></polyline>
+                                    <polyline id="Fill-89" fill="#FBD93E" fill-rule="nonzero" points="64.3125 52.654137 66.9750122 43.3125 76.125 44.4668594 73.4573725 53.8125"></polyline>
+                                    <polyline id="Fill-90" fill="#F6CF42" fill-rule="nonzero" points="35.4375 49.875 35.6843209 40.6589365 44.625 39.375 44.3731675 48.5935884"></polyline>
+                                    <polyline id="Fill-91" fill="#FBD93E" fill-rule="nonzero" points="51.1875 40.6875 51.4355738 31.4714365 60.375 30.1875 60.1231675 39.4060884"></polyline>
+                                    <polyline id="Fill-92" fill="#D9B12A" fill-rule="nonzero" points="66.9375 42 67.1868267 32.7864615 76.125 31.5 75.8731675 40.7185884"></polyline>
+                                    <polyline id="Fill-93" fill="#F6CF42" fill-rule="nonzero" points="70.7067421 17.0625 66.9375 7.90976739 74.9834076 2.625 78.75 11.7831766"></polyline>
+                                    <polyline id="Fill-94" fill="#F6CF42" fill-rule="nonzero" points="47.0817421 14.4375 43.3125 5.28476739 51.3584076 0 55.125 9.15817661"></polyline>
+                                    <polyline id="Fill-95" fill="#D9B12A" fill-rule="nonzero" points="36.75 40.6875 36.9993267 31.4739615 45.9375 30.1875 45.6856675 39.4060884"></polyline>
+                                    <polyline id="Fill-96" fill="#F6CF42" fill-rule="nonzero" points="51.0773293 61.6875 47.25 52.5848009 55.2378148 47.25 59.0625 56.3581303"></polyline>
+                                    <polyline id="Fill-97" fill="#F6CF42" fill-rule="nonzero" points="72.1875 35.4375 72.4355738 26.2239615 81.375 24.9375 81.1231675 34.1560884"></polyline>
+                                    <polyline id="Fill-98" fill="#F6CF42" fill-rule="nonzero" points="55.125 45.9375 55.3730738 36.7214365 64.3125 35.4375 64.0606675 44.6560884"></polyline>
+                                    <polyline id="Fill-99" fill="#FBD93E" fill-rule="nonzero" points="77.4375 39.490955 83.7581874 48.5625 85.3125 39.259045 78.9890543 30.1875"></polyline>
+                                    <polyline id="Fill-100" fill="#FBD93E" fill-rule="nonzero" points="69.5625 47.365955 75.8831874 56.4375 77.4375 47.134045 71.1140543 38.0625"></polyline>
+                                    <polyline id="Fill-101" fill="#D9B12A" fill-rule="nonzero" points="58.3108905 53.6759001 68.25 59.0625 65.0668244 50.0089844 55.125 44.625"></polyline>
+                                    <polyline id="Fill-102" fill="#D9B12A" fill-rule="nonzero" points="62.790313 41.1618224 55.125 48.5625 64.5260499 48.0919223 72.1875 40.6875"></polyline>
+                                    <polyline id="Fill-103" fill="#FBD93E" fill-rule="nonzero" points="32.6900136 44.625 40.6875 50.0976838 36.8698617 59.0625 28.875 53.5857382"></polyline>
+                                    <polyline id="Fill-104" fill="#FBD93E" fill-rule="nonzero" points="41.8775136 48.5625 49.875 54.0351838 46.0573617 63 38.0625 57.5232382"></polyline>
+                                    <polyline id="Fill-105" fill="#F6CF42" fill-rule="nonzero" points="39.9125948 34.125 45.9375 41.3242152 40.1473806 48.5625 34.125 41.3606801"></polyline>
+                                    <polyline id="Fill-106" fill="#F6CF42" fill-rule="nonzero" points="47.2069781 45.9375 56.4375 48.6928201 55.1693457 57.75 45.9375 54.9908759"></polyline>
+                                    <polyline id="Fill-107" fill="#FBD93E" fill-rule="nonzero" points="31.5201144 38.0625 38.0625 44.8099362 32.7898537 52.5 26.25 45.7486417"></polyline>
+                                    <polyline id="Fill-108" fill="#FBD93E" fill-rule="nonzero" points="76.1451144 47.25 82.6875 53.9974362 77.4148537 61.6875 70.875 54.9361417"></polyline>
+                                    <polyline id="Fill-109" fill="#FBD93E" fill-rule="nonzero" points="55.125 36.75 64.2453917 38.2210266 64.3125 47.25 55.1908421 45.7727137"></polyline>
+                                    <polyline id="Fill-110" fill="#FBD93E" fill-rule="nonzero" points="64.3125 40.284649 73.6690445 36.75 78.75 45.0305277 69.3907068 48.5625"></polyline>
+                                    <polyline id="Fill-111" fill="#F6CF42" fill-rule="nonzero" points="59.6556243 43.3125 64.3125 51.7004283 57.154305 57.75 52.5 49.3594265"></polyline>
+                                    <polyline id="Fill-112" fill="#F6CF42" fill-rule="nonzero" points="81.2817478 38.0625 82.6875 47.0924278 73.5879425 49.875 72.1875 40.8425732"></polyline>
+                                    <polyline id="Fill-113" fill="#FBD93E" fill-rule="nonzero" points="60.3319781 42 69.5625 44.7553201 68.2943457 53.8125 59.0625 51.0533759"></polyline>
+                                    <polyline id="Fill-114" fill="#F6CF42" fill-rule="nonzero" points="45.8944781 34.125 55.125 36.8803201 53.8568457 45.9375 44.625 43.1783759"></polyline>
+                                    <polyline id="Fill-115" fill="#F6CF42" fill-rule="nonzero" points="80.0625 49.6255105 71.2672876 53.8125 65.625 46.1843816 74.4215529 42"></polyline>
+                                    <polyline id="Fill-116" fill="#FBD93E" fill-rule="nonzero" points="60.3319781 31.5 69.5625 34.2553201 68.2930219 43.3125 59.0625 40.5533759"></polyline>
+                                    <polyline id="Fill-117" fill="#D9B12A" fill-rule="nonzero" points="43.2697982 40.6875 52.5 43.4428201 51.2328499 52.5 42 49.7408759"></polyline>
+                                    <polyline id="Fill-118" fill="#F6CF42" fill-rule="nonzero" points="36.7069781 42 45.9375 44.7553201 44.6680219 53.8125 35.4375 51.0533759"></polyline>
+                                    <polyline id="Fill-119" fill="#FBD93E" fill-rule="nonzero" points="60.6415806 1.3125 49.875 4.86363636 58.7932348 9.1875 69.5625 5.63352273"></polyline>
+                                    <polyline id="Fill-120" fill="#FBD93E" fill-rule="nonzero" points="69.1214155 9.1875 60.375 16.3629935 70.0062257 17.0625 78.75 9.8842307"></polyline>
+                                    <polyline id="Fill-121" fill="#F6CF42" fill-rule="nonzero" points="55.3915806 43.3125 44.625 46.8636364 53.5432348 51.1875 64.3125 47.6335227"></polyline>
+                                    <polyline id="Fill-122" fill="#D9B12A" fill-rule="nonzero" points="55.7286755 29.5196153 44.625 27.5625 50.5811337 34.7953715 61.6875 36.75"></polyline>
+                                    <polyline id="Fill-123" fill="#F6CF42" fill-rule="nonzero" points="35.4375 9.59106479 44.339685 6.5625 48.5625 15.3491785 39.6577572 18.375"></polyline>
+                                    <polyline id="Fill-124" fill="#FBD93E" fill-rule="nonzero" points="42 15.8124238 47.5259653 7.875 56.4375 11.7500762 50.9088219 19.6875"></polyline>
+                                    <polyline id="Fill-125" fill="#F6CF42" fill-rule="nonzero" points="52.5 16.1535648 61.402185 13.125 65.625 21.9116785 56.7202572 24.9375"></polyline>
+                                    <polyline id="Fill-126" fill="#F6CF42" fill-rule="nonzero" points="46.1774254 19.6875 52.5 26.6251694 47.0062841 34.125 40.6875 27.180809"></polyline>
+                                    <polyline id="Fill-127" fill="#FBD93E" fill-rule="nonzero" points="52.5 25.3410648 61.402185 22.3125 65.625 31.0991785 56.7202572 34.125"></polyline>
+                                    <polyline id="Fill-128" fill="#FBD93E" fill-rule="nonzero" points="32.8125 22.7160648 41.714685 19.6875 45.9375 28.4741785 37.0327572 31.5"></polyline>
+                                    <polyline id="Fill-129" fill="#F6CF42" fill-rule="nonzero" points="65.307551 13.125 68.25 22.0972181 59.3771939 26.25 56.4375 17.2764974"></polyline>
+                                    <polyline id="Fill-130" fill="#FBD93E" fill-rule="nonzero" points="57.7647977 19.6875 65.625 25.2812705 61.674008 34.125 53.8125 28.5285246"></polyline>
+                                    <polyline id="Fill-131" fill="#F6CF42" fill-rule="nonzero" points="57.432551 30.1875 60.375 39.1597181 51.5021939 43.3125 48.5625 34.3389974"></polyline>
+                                    <polyline id="Fill-132" fill="#F6CF42" fill-rule="nonzero" points="53.8125 23.9377606 46.8088654 30.1875 39.375 24.6222138 46.3799384 18.375"></polyline>
+                                    <polyline id="Fill-133" fill="#F6CF42" fill-rule="nonzero" points="49.875 31.8127606 42.8713654 38.0625 35.4375 32.4972138 42.4424384 26.25"></polyline>
+                                    <polyline id="Fill-134" fill="#FBD93E" fill-rule="nonzero" points="48.245051 31.5 51.1875 40.4722181 42.3146939 44.625 39.375 35.6514974"></polyline>
+                                    <polyline id="Fill-135" fill="#FBD93E" fill-rule="nonzero" points="52.182551 10.5 55.125 19.4722181 46.2521939 23.625 43.3125 14.6514974"></polyline>
+                                    <polyline id="Fill-136" fill="#F6CF42" fill-rule="nonzero" points="41.1436558 40.6875 47.25 47.8124662 41.5451066 55.125 35.4375 47.9948236"></polyline>
+                                    <polyline id="Fill-137" fill="#D9B12A" fill-rule="nonzero" points="66.620051 5.25 69.5625 14.2196491 60.6896939 18.375 57.75 9.40149736"></polyline>
+                                    <polyline id="Fill-138" fill="#F6CF42" fill-rule="nonzero" points="46.932551 6.5625 49.875 15.5347181 41.0021939 19.6875 38.0625 10.7139974"></polyline>
+                                    <polyline id="Fill-139" fill="#F6CF42" fill-rule="nonzero" points="48.245051 13.125 51.1875 22.0972181 42.3146939 26.25 39.375 17.2764974"></polyline>
+                                    <polyline id="Fill-140" fill="#D9B12A" fill-rule="nonzero" points="90.245051 32.8125 93.1875 41.7847181 84.3146939 45.9375 81.375 36.9639974"></polyline>
+                                    <polyline id="Fill-141" fill="#D9B12A" fill-rule="nonzero" points="75.4161755 36.0821153 64.3125 34.125 70.2686337 41.3578715 81.375 43.3125"></polyline>
+                                    <polyline id="Fill-142" fill="#FBD93E" fill-rule="nonzero" points="42 22.548012 51.921902 22.3125 53.8125 31.2695528 43.8865205 31.5"></polyline>
+                                    <polyline id="Fill-143" fill="#F6CF42" fill-rule="nonzero" points="55.125 14.8410648 64.027185 11.8125 68.25 20.5991785 59.3452572 23.625"></polyline>
+                                    <polyline id="Fill-144" fill="#FBD93E" fill-rule="nonzero" points="61.6875 21.0624238 67.2107525 13.125 76.125 17.0000762 70.5963219 24.9375"></polyline>
+                                    <polyline id="Fill-145" fill="#F6CF42" fill-rule="nonzero" points="72.1875 22.7160648 81.089685 19.6875 85.3125 28.4741785 76.4077572 31.5"></polyline>
+                                    <polyline id="Fill-146" fill="#F6CF42" fill-rule="nonzero" points="65.8649254 24.9375 72.1875 31.8751694 66.6937841 39.375 60.375 32.430809"></polyline>
+                                    <polyline id="Fill-147" fill="#FBD93E" fill-rule="nonzero" points="72.1875 31.9035648 81.089685 28.875 85.3125 37.6616785 76.4077572 40.6875"></polyline>
+                                    <polyline id="Fill-148" fill="#FBD93E" fill-rule="nonzero" points="52.5 29.2785648 61.402185 26.25 65.625 35.0366785 56.7202572 38.0625"></polyline>
+                                    <polyline id="Fill-149" fill="#D9B12A" fill-rule="nonzero" points="47.25 13.5285648 56.1496273 10.5 60.375 19.2866785 51.4702572 22.3125"></polyline>
+                                    <polyline id="Fill-150" fill="#FBD93E" fill-rule="nonzero" points="77.2969988 6.5625 77.4375 16.570027 68.385392 18.375 68.25 8.36473199"></polyline>
+                                    <polyline id="Fill-151" fill="#F6CF42" fill-rule="nonzero" points="84.995051 19.6875 87.9375 28.6597181 79.0646939 32.8125 76.125 23.8389974"></polyline>
+                                    <polyline id="Fill-152" fill="#FBD93E" fill-rule="nonzero" points="61.6875 34.2834919 59.8234585 43.3125 49.875 43.1540081 51.741803 34.125"></polyline>
+                                    <polyline id="Fill-153" fill="#FBD93E" fill-rule="nonzero" points="77.4522977 26.25 85.3125 31.8437705 81.361508 40.6875 73.5 35.0910246"></polyline>
+                                    <polyline id="Fill-154" fill="#F6CF42" fill-rule="nonzero" points="78.432551 36.75 81.375 45.7222181 72.5021939 49.875 69.5625 40.9014974"></polyline>
+                                    <polyline id="Fill-155" fill="#F6CF42" fill-rule="nonzero" points="73.5 30.5002606 66.4963654 36.75 59.0625 31.1847138 66.0674384 24.9375"></polyline>
+                                    <polyline id="Fill-156" fill="#F6CF42" fill-rule="nonzero" points="70.875 37.0633553 63.8713654 43.3125 56.4375 37.7478817 63.4424384 31.5"></polyline>
+                                    <polyline id="Fill-157" fill="#FBD93E" fill-rule="nonzero" points="67.932551 36.75 70.875 45.7222181 62.0021939 49.875 59.0625 40.9014974"></polyline>
+                                    <polyline id="Fill-158" fill="#FBD93E" fill-rule="nonzero" points="71.870051 17.0625 74.8125 26.0347181 65.9396939 30.1875 63 21.2139974"></polyline>
+                                    <polyline id="Fill-159" fill="#D9B12A" fill-rule="nonzero" points="56.120051 21 59.0625 29.9696491 50.1896939 34.125 47.25 25.1514974"></polyline>
+                                    <polyline id="Fill-160" fill="#F6CF42" fill-rule="nonzero" points="60.8311558 47.25 66.9375 54.3749662 61.2326066 61.6875 55.125 54.5573236"></polyline>
+                                    <polyline id="Fill-161" fill="#F6CF42" fill-rule="nonzero" points="53.495051 27.5625 56.4375 36.5321491 47.5646939 40.6875 44.625 31.7139974"></polyline>
+                                    <polyline id="Fill-162" fill="#F6CF42" fill-rule="nonzero" points="66.620051 13.125 69.5625 22.0972181 60.6896939 26.25 57.75 17.2764974"></polyline>
+                                    <polyline id="Fill-163" fill="#FBD93E" fill-rule="nonzero" points="48.2180946 26.3032609 39.375 19.6875 41.0265345 28.8255435 49.875 35.4375"></polyline>
+                                    <polyline id="Fill-164" fill="#FBD93E" fill-rule="nonzero" points="52.1567256 15.8032609 43.3125 9.1875 44.9642457 18.3255435 53.8125 24.9375"></polyline>
+                                    <polyline id="Fill-165" fill="#D9B12A" fill-rule="nonzero" points="60.9786755 7.20711531 49.875 5.25 55.8311337 12.4828715 66.9375 14.4375"></polyline>
+                                    <polyline id="Fill-166" fill="#D9B12A" fill-rule="nonzero" points="54.3733905 22.1759001 64.3125 27.5625 61.1293244 18.5089844 51.1875 13.125"></polyline>
+                                    <polyline id="Fill-167" fill="#FBD93E" fill-rule="nonzero" points="81.4496304 45.9375 72.1875 43.2064551 73.4293499 34.125 82.6875 36.8598575"></polyline>
+                                    <polyline id="Fill-168" fill="#F6CF42" fill-rule="nonzero" points="65.625 47.25 56.4887989 47.0953112 55.125 38.0625 64.2637035 38.2222606"></polyline>
+                                    <polyline id="Fill-169" fill="#FBD93E" fill-rule="nonzero" points="61.6875 39 54.1390255 44.625 47.25 38.4349719 54.801081 32.8125"></polyline>
+                                    <polyline id="Fill-170" fill="#F6CF42" fill-rule="nonzero" points="51.1875 35.4375 42.0512989 35.2828112 40.6875 26.25 49.8262035 26.4097606"></polyline>
+                                    <polyline id="Fill-171" fill="#F6CF42" fill-rule="nonzero" points="59.1285698 35.4375 55.125 26.4860612 62.9365555 21 66.9375 29.9541367"></polyline>
+                                    <polyline id="Fill-172" fill="#FBD93E" fill-rule="nonzero" points="53.8125 26.25 44.6762989 26.0953112 43.3125 17.0625 52.4512035 17.2222606"></polyline>
+                                    <polyline id="Fill-173" fill="#F6CF42" fill-rule="nonzero" points="82.6875 52.5 73.5512989 52.3453539 72.1875 43.3125 81.3262035 43.4747517"></polyline>
+                                    <polyline id="Fill-174" fill="#FBD93E" fill-rule="nonzero" points="72.1875 35.4375 63.0512989 35.2828539 61.6875 26.25 70.8262035 26.4122517"></polyline>
+                                    <polyline id="Fill-175" fill="#D9B12A" fill-rule="nonzero" points="72.1875 51.1875 63.0538012 51.0302753 61.6875 42 70.8262035 42.1597606"></polyline>
+                                    <polyline id="Fill-176" fill="#FBD93E" fill-rule="nonzero" points="42 48.5452021 44.8038434 39.375 53.8125 40.702162 51.0061318 49.875"></polyline>
+                                    <polyline id="Fill-177" fill="#F6CF42" fill-rule="nonzero" points="39.375 34.125 39.6218209 24.9089365 48.5625 23.625 48.3106675 32.8435884"></polyline>
+                                    <polyline id="Fill-178" fill="#FBD93E" fill-rule="nonzero" points="66.9375 26.9459865 71.4557141 18.375 80.0625 21.6192024 75.5417512 30.1875"></polyline>
+                                    <polyline id="Fill-179" fill="#FBD93E" fill-rule="nonzero" points="47.5527225 30.1875 42 22.5789349 48.2635721 15.75 53.8125 23.36378"></polyline>
+                                    <polyline id="Fill-180" fill="#F6CF42" fill-rule="nonzero" points="51.1875 19.6875 51.4355738 10.4714365 60.375 9.1875 60.1231675 18.4060884"></polyline>
+                                    <polyline id="Fill-181" fill="#F6CF42" fill-rule="nonzero" points="53.8125 27.5515271 62.831879 23.625 68.25 31.5162398 59.2279153 35.4375"></polyline>
+                                    <polyline id="Fill-182" fill="#F6CF42" fill-rule="nonzero" points="59.0625 20.9890271 68.081879 17.0625 73.5 24.9537398 64.4779153 28.875"></polyline>
+                                    <polyline id="Fill-183" fill="#F6CF42" fill-rule="nonzero" points="82.1822555 53.8125 78.75 45.2252187 87.1329344 40.6875 90.5625 49.278546"></polyline>
+                                    <polyline id="Fill-184" fill="#FBD93E" fill-rule="nonzero" points="61.6875 22.3125 61.9343209 13.0964365 70.875 11.8125 70.6231675 21.0310884"></polyline>
+                                    <polyline id="Fill-185" fill="#FBD93E" fill-rule="nonzero" points="64.3125 52.654137 66.9750122 43.3125 76.125 44.4668594 73.4573725 53.8125"></polyline>
+                                    <polyline id="Fill-186" fill="#F6CF42" fill-rule="nonzero" points="35.4375 49.875 35.6843209 40.6589365 44.625 39.375 44.3731675 48.5935884"></polyline>
+                                    <polyline id="Fill-187" fill="#FBD93E" fill-rule="nonzero" points="51.1875 40.6875 51.4355738 31.4714365 60.375 30.1875 60.1231675 39.4060884"></polyline>
+                                    <polyline id="Fill-188" fill="#D9B12A" fill-rule="nonzero" points="66.9375 42 67.1868267 32.7864615 76.125 31.5 75.8731675 40.7185884"></polyline>
+                                    <polyline id="Fill-189" fill="#F6CF42" fill-rule="nonzero" points="70.7067421 17.0625 66.9375 7.90976739 74.9834076 2.625 78.75 11.7831766"></polyline>
+                                    <polyline id="Fill-190" fill="#F6CF42" fill-rule="nonzero" points="47.0817421 14.4375 43.3125 5.28476739 51.3584076 0 55.125 9.15817661"></polyline>
+                                    <polyline id="Fill-191" fill="#D9B12A" fill-rule="nonzero" points="36.75 40.6875 36.9993267 31.4739615 45.9375 30.1875 45.6856675 39.4060884"></polyline>
+                                    <polyline id="Fill-192" fill="#F6CF42" fill-rule="nonzero" points="51.0773293 61.6875 47.25 52.5848009 55.2378148 47.25 59.0625 56.3581303"></polyline>
+                                    <polyline id="Fill-193" fill="#F6CF42" fill-rule="nonzero" points="72.1875 35.4375 72.4355738 26.2239615 81.375 24.9375 81.1231675 34.1560884"></polyline>
+                                    <polyline id="Fill-194" fill="#F6CF42" fill-rule="nonzero" points="55.125 45.9375 55.3730738 36.7214365 64.3125 35.4375 64.0606675 44.6560884"></polyline>
+                                    <polyline id="Fill-195" fill="#FBD93E" fill-rule="nonzero" points="77.4375 39.490955 83.7581874 48.5625 85.3125 39.259045 78.9890543 30.1875"></polyline>
+                                    <polyline id="Fill-196" fill="#FBD93E" fill-rule="nonzero" points="69.5625 47.365955 75.8831874 56.4375 77.4375 47.134045 71.1140543 38.0625"></polyline>
+                                    <polyline id="Fill-197" fill="#D9B12A" fill-rule="nonzero" points="58.3108905 53.6759001 68.25 59.0625 65.0668244 50.0089844 55.125 44.625"></polyline>
+                                    <polyline id="Fill-198" fill="#D9B12A" fill-rule="nonzero" points="48.772187 45.0993224 56.4375 52.5 47.0364501 52.0294223 39.375 44.625"></polyline>
+                                    <polyline id="Fill-199" fill="#FBD93E" fill-rule="nonzero" points="80.1849864 48.5625 72.1875 54.0351838 76.0051383 63 84 57.5232382"></polyline>
+                                    <polyline id="Fill-200" fill="#FBD93E" fill-rule="nonzero" points="70.9974864 52.5 63 57.9726838 66.8176383 66.9375 74.8125 61.4607382"></polyline>
+                                    <polyline id="Fill-201" fill="#F6CF42" fill-rule="nonzero" points="72.9624052 38.0625 66.9375 45.2617152 72.7276194 52.5 78.75 45.2981801"></polyline>
+                                    <polyline id="Fill-202" fill="#F6CF42" fill-rule="nonzero" points="65.6680219 49.875 56.4375 52.6303201 57.7069781 61.6875 66.9375 58.9283759"></polyline>
+                                    <polyline id="Fill-203" fill="#FBD93E" fill-rule="nonzero" points="81.3548856 42 74.8125 48.7474362 80.0851463 56.4375 86.625 49.6861417"></polyline>
+                                    <polyline id="Fill-204" fill="#FBD93E" fill-rule="nonzero" points="36.7298856 51.1875 30.1875 57.9349362 35.4601463 65.625 42 58.8736417"></polyline>
+                                    <polyline id="Fill-205" fill="#FBD93E" fill-rule="nonzero" points="57.75 40.6875 48.6296083 42.1585266 48.5625 51.1875 57.6841579 49.7102137"></polyline>
+                                    <polyline id="Fill-206" fill="#FBD93E" fill-rule="nonzero" points="48.5625 42.909649 39.2059555 39.375 34.125 47.6555277 43.4842932 51.1875"></polyline>
+                                    <polyline id="Fill-207" fill="#F6CF42" fill-rule="nonzero" points="53.2193757 47.25 48.5625 55.6379283 55.720695 61.6875 60.375 53.2969265"></polyline>
+                                    <polyline id="Fill-208" fill="#F6CF42" fill-rule="nonzero" points="31.5932522 40.6875 30.1875 49.7174278 39.2870575 52.5 40.6875 43.4675732"></polyline>
+                                    <polyline id="Fill-209" fill="#FBD93E" fill-rule="nonzero" points="51.2305219 45.9375 42 48.6928201 43.2694781 57.75 52.5 54.9908759"></polyline>
+                                    <polyline id="Fill-210" fill="#F6CF42" fill-rule="nonzero" points="65.6680219 36.75 56.4375 39.5053201 57.7069781 48.5625 66.9375 45.8033759"></polyline>
+                                    <polyline id="Fill-211" fill="#F6CF42" fill-rule="nonzero" points="32.8125 53.5630105 41.6077124 57.75 47.25 50.1218816 38.4534471 45.9375"></polyline>
+                                    <polyline id="Fill-212" fill="#FBD93E" fill-rule="nonzero" points="51.2305219 35.4375 42 38.1928201 43.2681543 47.25 52.5 44.4908759"></polyline>
+                                    <polyline id="Fill-213" fill="#D9B12A" fill-rule="nonzero" points="68.2927018 43.3125 59.0625 46.0678201 60.328326 55.125 69.5625 52.3658759"></polyline>
+                                    <polyline id="Fill-214" fill="#F6CF42" fill-rule="nonzero" points="76.1680219 45.9375 66.9375 48.6928201 68.2056543 57.75 77.4375 54.9908759"></polyline>
+                                    <polyline id="Fill-215" fill="#FBD93E" fill-rule="nonzero" points="52.2334194 5.25 63 8.80113636 54.0817652 13.125 43.3125 9.57102273"></polyline>
+                                    <polyline id="Fill-216" fill="#FBD93E" fill-rule="nonzero" points="43.7542766 13.125 52.5 20.3004935 42.8694027 21 34.125 13.8217307"></polyline>
+                                    <polyline id="Fill-217" fill="#F6CF42" fill-rule="nonzero" points="57.4834194 47.25 68.25 50.8011364 59.3317652 55.125 48.5625 51.5710227"></polyline>
+                                    <polyline id="Fill-218" fill="#D9B12A" fill-rule="nonzero" points="57.1463245 33.4571153 68.25 31.5 62.2938663 38.7328715 51.1875 40.6875"></polyline>
+                                    <polyline id="Fill-219" fill="#F6CF42" fill-rule="nonzero" points="77.4375 12.2160648 68.535315 9.1875 64.3125 17.9741785 73.2172428 21"></polyline>
+                                    <polyline id="Fill-220" fill="#FBD93E" fill-rule="nonzero" points="70.875 18.4374238 65.3490347 10.5 56.4375 14.3750762 61.9661781 22.3125"></polyline>
+                                    <polyline id="Fill-221" fill="#F6CF42" fill-rule="nonzero" points="60.375 20.0910648 51.472815 17.0625 47.25 25.8491785 56.1547428 28.875"></polyline>
+                                    <polyline id="Fill-222" fill="#F6CF42" fill-rule="nonzero" points="65.3850746 22.3125 59.0625 29.2501694 64.5562159 36.75 70.875 29.805809"></polyline>
+                                    <polyline id="Fill-223" fill="#FBD93E" fill-rule="nonzero" points="59.0625 29.2785648 50.160315 26.25 45.9375 35.0366785 54.8422428 38.0625"></polyline>
+                                    <polyline id="Fill-224" fill="#FBD93E" fill-rule="nonzero" points="80.0625 26.6535648 71.160315 23.625 66.9375 32.4116785 75.8422428 35.4375"></polyline>
+                                    <polyline id="Fill-225" fill="#F6CF42" fill-rule="nonzero" points="47.567449 17.0625 44.625 26.0347181 53.4978061 30.1875 56.4375 21.2139974"></polyline>
+                                    <polyline id="Fill-226" fill="#FBD93E" fill-rule="nonzero" points="53.7977023 23.625 45.9375 29.2187705 49.888492 38.0625 57.75 32.4660246"></polyline>
+                                    <polyline id="Fill-227" fill="#F6CF42" fill-rule="nonzero" points="55.442449 34.125 52.5 43.0972181 61.3728061 47.25 64.3125 38.2764974"></polyline>
+                                    <polyline id="Fill-228" fill="#F6CF42" fill-rule="nonzero" points="57.75 27.8758553 64.7536346 34.125 72.1875 28.5603817 65.1825616 22.3125"></polyline>
+                                    <polyline id="Fill-229" fill="#F6CF42" fill-rule="nonzero" points="61.6875 34.4377606 68.6911346 40.6875 76.125 35.1222138 69.1200616 28.875"></polyline>
+                                    <polyline id="Fill-230" fill="#FBD93E" fill-rule="nonzero" points="64.629949 34.125 61.6875 43.0972181 70.5603061 47.25 73.5 38.2764974"></polyline>
+                                    <polyline id="Fill-231" fill="#FBD93E" fill-rule="nonzero" points="60.692449 14.4375 57.75 23.4097181 66.6228061 27.5625 69.5625 18.5889974"></polyline>
+                                    <polyline id="Fill-232" fill="#F6CF42" fill-rule="nonzero" points="70.4188442 44.625 64.3125 51.7499662 70.0173934 59.0625 76.125 51.9323236"></polyline>
+                                    <polyline id="Fill-233" fill="#D9B12A" fill-rule="nonzero" points="46.254949 9.1875 43.3125 18.1571491 52.1853061 22.3125 55.125 13.3389974"></polyline>
+                                    <polyline id="Fill-234" fill="#F6CF42" fill-rule="nonzero" points="65.942449 10.5 63 19.4722181 71.8728061 23.625 74.8125 14.6514974"></polyline>
+                                    <polyline id="Fill-235" fill="#F6CF42" fill-rule="nonzero" points="64.629949 17.0625 61.6875 26.0347181 70.5603061 30.1875 73.5 21.2139974"></polyline>
+                                    <polyline id="Fill-236" fill="#D9B12A" fill-rule="nonzero" points="23.942449 36.75 21 45.7222181 29.8728061 49.875 32.8125 40.9014974"></polyline>
+                                    <polyline id="Fill-237" fill="#D9B12A" fill-rule="nonzero" points="37.4588245 40.0196153 48.5625 38.0625 42.6063663 45.2953715 31.5 47.25"></polyline>
+                                    <polyline id="Fill-238" fill="#FBD93E" fill-rule="nonzero" points="70.875 25.173012 60.953098 24.9375 59.0625 33.8945528 68.9884795 34.125"></polyline>
+                                    <polyline id="Fill-239" fill="#F6CF42" fill-rule="nonzero" points="57.75 18.7785648 48.847815 15.75 44.625 24.5366785 53.5297428 27.5625"></polyline>
+                                    <polyline id="Fill-240" fill="#FBD93E" fill-rule="nonzero" points="51.1875 24.9999238 45.6642475 17.0625 36.75 20.9375762 42.2786781 28.875"></polyline>
+                                    <polyline id="Fill-241" fill="#F6CF42" fill-rule="nonzero" points="39.375 25.3410648 30.472815 22.3125 26.25 31.0991785 35.1547428 34.125"></polyline>
+                                    <polyline id="Fill-242" fill="#F6CF42" fill-rule="nonzero" points="45.6975746 28.875 39.375 35.8126694 44.8687159 43.3125 51.1875 36.368309"></polyline>
+                                    <polyline id="Fill-243" fill="#FBD93E" fill-rule="nonzero" points="39.375 35.8410648 30.472815 32.8125 26.25 41.5991785 35.1547428 44.625"></polyline>
+                                    <polyline id="Fill-244" fill="#FBD93E" fill-rule="nonzero" points="60.375 31.9035648 51.472815 28.875 47.25 37.6616785 56.1547428 40.6875"></polyline>
+                                    <polyline id="Fill-245" fill="#D9B12A" fill-rule="nonzero" points="64.3125 17.4660648 55.4128727 14.4375 51.1875 23.2241785 60.0922428 26.25"></polyline>
+                                    <polyline id="Fill-246" fill="#FBD93E" fill-rule="nonzero" points="34.2655012 10.5 34.125 20.507527 43.177108 22.3125 43.3125 12.302232"></polyline>
+                                    <polyline id="Fill-247" fill="#F6CF42" fill-rule="nonzero" points="27.879949 23.625 24.9375 32.5972181 33.8103061 36.75 36.75 27.7764974"></polyline>
+                                    <polyline id="Fill-248" fill="#FBD93E" fill-rule="nonzero" points="51.1875 38.2209919 53.0515415 47.25 63 47.0915081 61.133197 38.0625"></polyline>
+                                    <polyline id="Fill-249" fill="#FBD93E" fill-rule="nonzero" points="34.1102023 30.1875 26.25 35.7812705 30.200992 44.625 38.0625 39.0285246"></polyline>
+                                    <polyline id="Fill-250" fill="#F6CF42" fill-rule="nonzero" points="34.442449 40.6875 31.5 49.6597181 40.3728061 53.8125 43.3125 44.8389974"></polyline>
+                                    <polyline id="Fill-251" fill="#F6CF42" fill-rule="nonzero" points="38.0625 34.4377606 45.0661346 40.6875 52.5 35.1222138 45.4950616 28.875"></polyline>
+                                    <polyline id="Fill-252" fill="#F6CF42" fill-rule="nonzero" points="42 41.0002606 49.0036346 47.25 56.4375 41.6847138 49.4325616 35.4375"></polyline>
+                                    <polyline id="Fill-253" fill="#FBD93E" fill-rule="nonzero" points="44.942449 40.6875 42 49.6597181 50.8728061 53.8125 53.8125 44.8389974"></polyline>
+                                    <polyline id="Fill-254" fill="#FBD93E" fill-rule="nonzero" points="41.004949 21 38.0625 29.9722181 46.9353061 34.125 49.875 25.1514974"></polyline>
+                                    <polyline id="Fill-255" fill="#D9B12A" fill-rule="nonzero" points="56.754949 23.625 53.8125 32.5946491 62.6853061 36.75 65.625 27.7764974"></polyline>
+                                    <polyline id="Fill-256" fill="#F6CF42" fill-rule="nonzero" points="50.7313442 49.875 44.625 56.9999662 50.3298934 64.3125 56.4375 57.1823236"></polyline>
+                                    <polyline id="Fill-257" fill="#F6CF42" fill-rule="nonzero" points="59.379949 31.5 56.4375 40.4696491 65.3103061 44.625 68.25 35.6514974"></polyline>
+                                    <polyline id="Fill-258" fill="#F6CF42" fill-rule="nonzero" points="46.254949 17.0625 43.3125 26.0347181 52.1853061 30.1875 55.125 21.2139974"></polyline>
+                                    <polyline id="Fill-259" fill="#FBD93E" fill-rule="nonzero" points="64.6557744 28.9282609 73.5 22.3125 71.8482543 31.4505435 63 38.0625"></polyline>
+                                    <polyline id="Fill-260" fill="#FBD93E" fill-rule="nonzero" points="59.4057744 19.7407609 68.25 13.125 66.5982543 22.2630435 57.75 28.875"></polyline>
+                                    <polyline id="Fill-261" fill="#D9B12A" fill-rule="nonzero" points="50.5838245 11.1446153 61.6875 9.1875 55.7313663 16.4203715 44.625 18.375"></polyline>
+                                    <polyline id="Fill-262" fill="#D9B12A" fill-rule="nonzero" points="58.5016095 26.1134001 48.5625 31.5 51.7456756 22.4464844 61.6875 17.0625"></polyline>
+                                    <polyline id="Fill-263" fill="#FBD93E" fill-rule="nonzero" points="31.4253696 48.5625 40.6875 45.8314551 39.4469769 36.75 30.1875 39.4848575"></polyline>
+                                    <polyline id="Fill-264" fill="#F6CF42" fill-rule="nonzero" points="45.9375 51.1875 55.0737011 51.0328112 56.4375 42 47.2987965 42.1597606"></polyline>
+                                    <polyline id="Fill-265" fill="#FBD93E" fill-rule="nonzero" points="51.1875 42.9375 58.7359745 48.5625 65.625 42.3724719 58.073919 36.75"></polyline>
+                                    <polyline id="Fill-266" fill="#F6CF42" fill-rule="nonzero" points="60.375 39.375 69.5112011 39.2203112 70.875 30.1875 61.7362965 30.3472606"></polyline>
+                                    <polyline id="Fill-267" fill="#F6CF42" fill-rule="nonzero" points="53.7464302 38.0625 57.75 29.1110612 49.9384445 23.625 45.9375 32.5791367"></polyline>
+                                    <polyline id="Fill-268" fill="#FBD93E" fill-rule="nonzero" points="57.75 30.1875 66.8862011 30.0328112 68.25 21 59.1112965 21.1597606"></polyline>
+                                    <polyline id="Fill-269" fill="#F6CF42" fill-rule="nonzero" points="30.1875 56.4375 39.3237011 56.2828539 40.6875 47.25 31.5487965 47.4122517"></polyline>
+                                    <polyline id="Fill-270" fill="#FBD93E" fill-rule="nonzero" points="39.375 39.375 48.5112011 39.2203539 49.875 30.1875 40.7362965 30.3497517"></polyline>
+                                    <polyline id="Fill-271" fill="#D9B12A" fill-rule="nonzero" points="39.375 55.125 48.5086988 54.9677753 49.875 45.9375 40.7362965 46.0972606"></polyline>
+                                    <polyline id="Fill-272" fill="#FBD93E" fill-rule="nonzero" points="69.5625 52.4827021 66.7586566 43.3125 57.75 44.639662 60.5563682 53.8125"></polyline>
+                                    <polyline id="Fill-273" fill="#F6CF42" fill-rule="nonzero" points="72.1875 38.0625 71.9406791 28.8464365 63 27.5625 63.2518325 36.7810884"></polyline>
+                                    <polyline id="Fill-274" fill="#FBD93E" fill-rule="nonzero" points="44.625 30.8834865 40.1067859 22.3125 31.5 25.5567024 36.0207488 34.125"></polyline>
+                                    <polyline id="Fill-275" fill="#FBD93E" fill-rule="nonzero" points="64.0097775 34.125 69.5625 26.5164349 63.2989279 19.6875 57.75 27.30128"></polyline>
+                                    <polyline id="Fill-276" fill="#F6CF42" fill-rule="nonzero" points="60.375 23.625 60.1281791 14.4089365 51.1875 13.125 51.4393325 22.3435884"></polyline>
+                                    <polyline id="Fill-277" fill="#F6CF42" fill-rule="nonzero" points="59.0625 30.1765271 50.043121 26.25 44.625 34.1412398 53.6470847 38.0625"></polyline>
+                                    <polyline id="Fill-278" fill="#F6CF42" fill-rule="nonzero" points="53.8125 24.9265271 44.793121 21 39.375 28.8912398 48.3970847 32.8125"></polyline>
+                                    <polyline id="Fill-279" fill="#F6CF42" fill-rule="nonzero" points="30.6927445 57.75 34.125 49.1627187 25.7420656 44.625 22.3125 53.216046"></polyline>
+                                    <polyline id="Fill-280" fill="#FBD93E" fill-rule="nonzero" points="49.875 26.25 49.6281791 17.0339365 40.6875 15.75 40.9393325 24.9685884"></polyline>
+                                    <polyline id="Fill-281" fill="#FBD93E" fill-rule="nonzero" points="47.25 55.279137 44.5874878 45.9375 35.4375 47.0918594 38.1051275 56.4375"></polyline>
+                                    <polyline id="Fill-282" fill="#F6CF42" fill-rule="nonzero" points="77.4375 53.8125 77.1894262 44.5964365 68.25 43.3125 68.5018325 52.5310884"></polyline>
+                                    <polyline id="Fill-283" fill="#FBD93E" fill-rule="nonzero" points="60.375 44.625 60.1281791 35.4089365 51.1875 34.125 51.4393325 43.3435884"></polyline>
+                                    <polyline id="Fill-284" fill="#D9B12A" fill-rule="nonzero" points="44.625 45.9375 44.3781791 36.7239615 35.4375 35.4375 35.6893325 44.6560884"></polyline>
+                                    <polyline id="Fill-285" fill="#F6CF42" fill-rule="nonzero" points="42.1682579 21 45.9375 11.8472674 37.8915924 6.5625 34.125 15.7206766"></polyline>
+                                    <polyline id="Fill-286" fill="#F6CF42" fill-rule="nonzero" points="65.7932579 18.375 69.5625 9.22226739 61.5165924 3.9375 57.75 13.0956766"></polyline>
+                                    <polyline id="Fill-287" fill="#D9B12A" fill-rule="nonzero" points="76.125 44.625 75.8756733 35.4114615 66.9375 34.125 67.1893325 43.3435884"></polyline>
+                                    <polyline id="Fill-288" fill="#F6CF42" fill-rule="nonzero" points="60.4851707 65.625 64.3125 56.5223009 56.3246852 51.1875 52.5 60.2956303"></polyline>
+                                    <polyline id="Fill-289" fill="#F6CF42" fill-rule="nonzero" points="39.375 39.375 39.1281791 30.1614615 30.1875 28.875 30.4393325 38.0935884"></polyline>
+                                    <polyline id="Fill-290" fill="#F6CF42" fill-rule="nonzero" points="56.4375 49.875 56.1906791 40.6589365 47.25 39.375 47.5018325 48.5935884"></polyline>
+                                    <polyline id="Fill-291" fill="#FBD93E" fill-rule="nonzero" points="35.4375 43.428455 29.1168126 52.5 27.5625 43.196545 33.8859457 34.125"></polyline>
+                                    <polyline id="Fill-292" fill="#FBD93E" fill-rule="nonzero" points="43.3125 51.303455 36.9918126 60.375 35.4375 51.071545 41.7609457 42"></polyline>
+                                    <polyline id="Fill-293" fill="#D9B12A" fill-rule="nonzero" points="54.5641095 56.3009001 44.625 61.6875 47.8081756 52.6339844 57.75 47.25"></polyline>
+                                    <polyline id="Fill-294" fill="#C0A676" fill-rule="nonzero" points="55.125 106.3125 1.3125 90.3205427 1.3125 40.6875 55.125 56.6794573"></polyline>
+                                    <polyline id="Fill-295" fill="#9C794B" fill-rule="nonzero" points="53.8125 106.3125 107.625 88.7376564 107.625 36.75 53.8125 56.3610814"></polyline>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                    <g id="Box-Clipped">
+                        <mask id="mask-4" fill="white">
+                            <use xlink:href="#path-3"></use>
+                        </mask>
+                        <g id="path-1"></g>
+                        <g id="Box" mask="url(#mask-4)">
+                            <g transform="translate(94.500000, 177.187500)" id="Group">
+                                <g>
+                                    <polyline id="Fill-1" fill="#8F6B3A" fill-rule="nonzero" points="108.9375 36.4238372 54.2689893 56.4375 0 40.4315729 54.6685107 22.3125"></polyline>
+                                    <polyline id="Fill-2" fill="#D9B12A" fill-rule="nonzero" points="62.790313 41.1618224 55.125 48.5625 64.5260499 48.0919223 72.1875 40.6875"></polyline>
+                                    <polyline id="Fill-3" fill="#FBD93E" fill-rule="nonzero" points="32.6900136 44.625 40.6875 50.0976838 36.8698617 59.0625 28.875 53.5857382"></polyline>
+                                    <polyline id="Fill-4" fill="#FBD93E" fill-rule="nonzero" points="41.8775136 48.5625 49.875 54.0351838 46.0573617 63 38.0625 57.5232382"></polyline>
+                                    <polyline id="Fill-5" fill="#F6CF42" fill-rule="nonzero" points="39.9125948 34.125 45.9375 41.3242152 40.1473806 48.5625 34.125 41.3606801"></polyline>
+                                    <polyline id="Fill-6" fill="#F6CF42" fill-rule="nonzero" points="47.2069781 45.9375 56.4375 48.6928201 55.1693457 57.75 45.9375 54.9908759"></polyline>
+                                    <polyline id="Fill-7" fill="#FBD93E" fill-rule="nonzero" points="31.5201144 38.0625 38.0625 44.8099362 32.7898537 52.5 26.25 45.7486417"></polyline>
+                                    <polyline id="Fill-8" fill="#FBD93E" fill-rule="nonzero" points="76.1451144 47.25 82.6875 53.9974362 77.4148537 61.6875 70.875 54.9361417"></polyline>
+                                    <polyline id="Fill-9" fill="#FBD93E" fill-rule="nonzero" points="55.125 36.75 64.2453917 38.2210266 64.3125 47.25 55.1908421 45.7727137"></polyline>
+                                    <polyline id="Fill-10" fill="#FBD93E" fill-rule="nonzero" points="64.3125 40.284649 73.6690445 36.75 78.75 45.0305277 69.3907068 48.5625"></polyline>
+                                    <polyline id="Fill-11" fill="#FBD93E" fill-rule="nonzero" points="76.125 54.722149 85.4815445 51.1875 90.5625 59.4680277 81.2032068 63"></polyline>
+                                    <polyline id="Fill-12" fill="#F6CF42" fill-rule="nonzero" points="59.6556243 43.3125 64.3125 51.7004283 57.154305 57.75 52.5 49.3594265"></polyline>
+                                    <polyline id="Fill-13" fill="#F6CF42" fill-rule="nonzero" points="81.2817478 38.0625 82.6875 47.0924278 73.5879425 49.875 72.1875 40.8425732"></polyline>
+                                    <polyline id="Fill-14" fill="#F6CF42" fill-rule="nonzero" points="73.4067478 49.875 74.8125 58.9049278 65.7129425 61.6875 64.3125 52.6550732"></polyline>
+                                    <polyline id="Fill-15" fill="#FBD93E" fill-rule="nonzero" points="60.3319781 42 69.5625 44.7553201 68.2943457 53.8125 59.0625 51.0533759"></polyline>
+                                    <polyline id="Fill-16" fill="#FBD93E" fill-rule="nonzero" points="52.4569781 53.8125 61.6875 56.5678201 60.4193457 65.625 51.1875 62.8658759"></polyline>
+                                    <polyline id="Fill-17" fill="#F6CF42" fill-rule="nonzero" points="45.8944781 34.125 55.125 36.8803201 53.8568457 45.9375 44.625 43.1783759"></polyline>
+                                    <polyline id="Fill-18" fill="#F6CF42" fill-rule="nonzero" points="80.0625 49.6255105 71.2672876 53.8125 65.625 46.1843816 74.4215529 42"></polyline>
+                                    <polyline id="Fill-19" fill="#FBD93E" fill-rule="nonzero" points="60.3319781 31.5 69.5625 34.2553201 68.2930219 43.3125 59.0625 40.5533759"></polyline>
+                                    <polyline id="Fill-20" fill="#FBD93E" fill-rule="nonzero" points="57.7069781 51.1875 66.9375 53.9428201 65.6693457 63 56.4375 60.2408759"></polyline>
+                                    <polyline id="Fill-21" fill="#D9B12A" fill-rule="nonzero" points="43.2697982 40.6875 52.5 43.4428201 51.2328499 52.5 42 49.7408759"></polyline>
+                                    <polyline id="Fill-22" fill="#F6CF42" fill-rule="nonzero" points="36.7069781 42 45.9375 44.7553201 44.6680219 53.8125 35.4375 51.0533759"></polyline>
+                                    <polyline id="Fill-23" fill="#FBD93E" fill-rule="nonzero" points="60.6415806 1.3125 49.875 4.86363636 58.7932348 9.1875 69.5625 5.63352273"></polyline>
+                                    <polyline id="Fill-24" fill="#FBD93E" fill-rule="nonzero" points="69.1214155 9.1875 60.375 16.3629935 70.0062257 17.0625 78.75 9.8842307"></polyline>
+                                    <polyline id="Fill-25" fill="#F6CF42" fill-rule="nonzero" points="55.3915806 43.3125 44.625 46.8636364 53.5432348 51.1875 64.3125 47.6335227"></polyline>
+                                    <polyline id="Fill-26" fill="#D9B12A" fill-rule="nonzero" points="55.7286755 29.5196153 44.625 27.5625 50.5811337 34.7953715 61.6875 36.75"></polyline>
+                                    <polyline id="Fill-27" fill="#F6CF42" fill-rule="nonzero" points="35.4375 9.59106479 44.339685 6.5625 48.5625 15.3491785 39.6577572 18.375"></polyline>
+                                    <polyline id="Fill-28" fill="#FBD93E" fill-rule="nonzero" points="42 15.8124238 47.5259653 7.875 56.4375 11.7500762 50.9088219 19.6875"></polyline>
+                                    <polyline id="Fill-29" fill="#F6CF42" fill-rule="nonzero" points="52.5 16.1535648 61.402185 13.125 65.625 21.9116785 56.7202572 24.9375"></polyline>
+                                    <polyline id="Fill-30" fill="#F6CF42" fill-rule="nonzero" points="46.1774254 19.6875 52.5 26.6251694 47.0062841 34.125 40.6875 27.180809"></polyline>
+                                    <polyline id="Fill-31" fill="#FBD93E" fill-rule="nonzero" points="52.5 25.3410648 61.402185 22.3125 65.625 31.0991785 56.7202572 34.125"></polyline>
+                                    <polyline id="Fill-32" fill="#FBD93E" fill-rule="nonzero" points="32.8125 22.7160648 41.714685 19.6875 45.9375 28.4741785 37.0327572 31.5"></polyline>
+                                    <polyline id="Fill-33" fill="#F6CF42" fill-rule="nonzero" points="65.307551 13.125 68.25 22.0972181 59.3771939 26.25 56.4375 17.2764974"></polyline>
+                                    <polyline id="Fill-34" fill="#FBD93E" fill-rule="nonzero" points="57.7647977 19.6875 65.625 25.2812705 61.674008 34.125 53.8125 28.5285246"></polyline>
+                                    <polyline id="Fill-35" fill="#F6CF42" fill-rule="nonzero" points="57.432551 30.1875 60.375 39.1597181 51.5021939 43.3125 48.5625 34.3389974"></polyline>
+                                    <polyline id="Fill-36" fill="#F6CF42" fill-rule="nonzero" points="53.8125 23.9377606 46.8088654 30.1875 39.375 24.6222138 46.3799384 18.375"></polyline>
+                                    <polyline id="Fill-37" fill="#F6CF42" fill-rule="nonzero" points="49.875 31.8127606 42.8713654 38.0625 35.4375 32.4972138 42.4424384 26.25"></polyline>
+                                    <polyline id="Fill-38" fill="#FBD93E" fill-rule="nonzero" points="48.245051 31.5 51.1875 40.4722181 42.3146939 44.625 39.375 35.6514974"></polyline>
+                                    <polyline id="Fill-39" fill="#FBD93E" fill-rule="nonzero" points="52.182551 10.5 55.125 19.4722181 46.2521939 23.625 43.3125 14.6514974"></polyline>
+                                    <polyline id="Fill-40" fill="#F6CF42" fill-rule="nonzero" points="41.1436558 40.6875 47.25 47.8124662 41.5451066 55.125 35.4375 47.9948236"></polyline>
+                                    <polyline id="Fill-41" fill="#D9B12A" fill-rule="nonzero" points="66.620051 5.25 69.5625 14.2196491 60.6896939 18.375 57.75 9.40149736"></polyline>
+                                    <polyline id="Fill-42" fill="#F6CF42" fill-rule="nonzero" points="46.932551 6.5625 49.875 15.5347181 41.0021939 19.6875 38.0625 10.7139974"></polyline>
+                                    <polyline id="Fill-43" fill="#F6CF42" fill-rule="nonzero" points="48.245051 13.125 51.1875 22.0972181 42.3146939 26.25 39.375 17.2764974"></polyline>
+                                    <polyline id="Fill-44" fill="#D9B12A" fill-rule="nonzero" points="90.245051 32.8125 93.1875 41.7847181 84.3146939 45.9375 81.375 36.9639974"></polyline>
+                                    <polyline id="Fill-45" fill="#D9B12A" fill-rule="nonzero" points="75.4161755 36.0821153 64.3125 34.125 70.2686337 41.3578715 81.375 43.3125"></polyline>
+                                    <polyline id="Fill-46" fill="#FBD93E" fill-rule="nonzero" points="42 22.548012 51.921902 22.3125 53.8125 31.2695528 43.8865205 31.5"></polyline>
+                                    <polyline id="Fill-47" fill="#F6CF42" fill-rule="nonzero" points="55.125 14.8410648 64.027185 11.8125 68.25 20.5991785 59.3452572 23.625"></polyline>
+                                    <polyline id="Fill-48" fill="#FBD93E" fill-rule="nonzero" points="61.6875 21.0624238 67.2107525 13.125 76.125 17.0000762 70.5963219 24.9375"></polyline>
+                                    <polyline id="Fill-49" fill="#F6CF42" fill-rule="nonzero" points="72.1875 22.7160648 81.089685 19.6875 85.3125 28.4741785 76.4077572 31.5"></polyline>
+                                    <polyline id="Fill-50" fill="#F6CF42" fill-rule="nonzero" points="65.8649254 24.9375 72.1875 31.8751694 66.6937841 39.375 60.375 32.430809"></polyline>
+                                    <polyline id="Fill-51" fill="#FBD93E" fill-rule="nonzero" points="72.1875 31.9035648 81.089685 28.875 85.3125 37.6616785 76.4077572 40.6875"></polyline>
+                                    <polyline id="Fill-52" fill="#FBD93E" fill-rule="nonzero" points="52.5 29.2785648 61.402185 26.25 65.625 35.0366785 56.7202572 38.0625"></polyline>
+                                    <polyline id="Fill-53" fill="#D9B12A" fill-rule="nonzero" points="47.25 13.5285648 56.1496273 10.5 60.375 19.2866785 51.4702572 22.3125"></polyline>
+                                    <polyline id="Fill-54" fill="#FBD93E" fill-rule="nonzero" points="77.2969988 6.5625 77.4375 16.570027 68.385392 18.375 68.25 8.36473199"></polyline>
+                                    <polyline id="Fill-55" fill="#F6CF42" fill-rule="nonzero" points="84.995051 19.6875 87.9375 28.6597181 79.0646939 32.8125 76.125 23.8389974"></polyline>
+                                    <polyline id="Fill-56" fill="#FBD93E" fill-rule="nonzero" points="61.6875 34.2834919 59.8234585 43.3125 49.875 43.1540081 51.741803 34.125"></polyline>
+                                    <polyline id="Fill-57" fill="#FBD93E" fill-rule="nonzero" points="77.4522977 26.25 85.3125 31.8437705 81.361508 40.6875 73.5 35.0910246"></polyline>
+                                    <polyline id="Fill-58" fill="#F6CF42" fill-rule="nonzero" points="78.432551 36.75 81.375 45.7222181 72.5021939 49.875 69.5625 40.9014974"></polyline>
+                                    <polyline id="Fill-59" fill="#F6CF42" fill-rule="nonzero" points="73.5 30.5002606 66.4963654 36.75 59.0625 31.1847138 66.0674384 24.9375"></polyline>
+                                    <polyline id="Fill-60" fill="#F6CF42" fill-rule="nonzero" points="70.875 37.0633553 63.8713654 43.3125 56.4375 37.7478817 63.4424384 31.5"></polyline>
+                                    <polyline id="Fill-61" fill="#FBD93E" fill-rule="nonzero" points="67.932551 36.75 70.875 45.7222181 62.0021939 49.875 59.0625 40.9014974"></polyline>
+                                    <polyline id="Fill-62" fill="#FBD93E" fill-rule="nonzero" points="71.870051 17.0625 74.8125 26.0347181 65.9396939 30.1875 63 21.2139974"></polyline>
+                                    <polyline id="Fill-63" fill="#D9B12A" fill-rule="nonzero" points="56.120051 21 59.0625 29.9696491 50.1896939 34.125 47.25 25.1514974"></polyline>
+                                    <polyline id="Fill-64" fill="#F6CF42" fill-rule="nonzero" points="60.8311558 47.25 66.9375 54.3749662 61.2326066 61.6875 55.125 54.5573236"></polyline>
+                                    <polyline id="Fill-65" fill="#F6CF42" fill-rule="nonzero" points="53.495051 27.5625 56.4375 36.5321491 47.5646939 40.6875 44.625 31.7139974"></polyline>
+                                    <polyline id="Fill-66" fill="#F6CF42" fill-rule="nonzero" points="66.620051 13.125 69.5625 22.0972181 60.6896939 26.25 57.75 17.2764974"></polyline>
+                                    <polyline id="Fill-67" fill="#FBD93E" fill-rule="nonzero" points="48.2180946 26.3032609 39.375 19.6875 41.0265345 28.8255435 49.875 35.4375"></polyline>
+                                    <polyline id="Fill-68" fill="#FBD93E" fill-rule="nonzero" points="52.1567256 15.8032609 43.3125 9.1875 44.9642457 18.3255435 53.8125 24.9375"></polyline>
+                                    <polyline id="Fill-69" fill="#D9B12A" fill-rule="nonzero" points="60.9786755 7.20711531 49.875 5.25 55.8311337 12.4828715 66.9375 14.4375"></polyline>
+                                    <polyline id="Fill-70" fill="#D9B12A" fill-rule="nonzero" points="54.3733905 22.1759001 64.3125 27.5625 61.1293244 18.5089844 51.1875 13.125"></polyline>
+                                    <polyline id="Fill-71" fill="#FBD93E" fill-rule="nonzero" points="81.4496304 45.9375 72.1875 43.2064551 73.4293499 34.125 82.6875 36.8598575"></polyline>
+                                    <polyline id="Fill-72" fill="#F6CF42" fill-rule="nonzero" points="65.625 47.25 56.4887989 47.0953112 55.125 38.0625 64.2637035 38.2222606"></polyline>
+                                    <polyline id="Fill-73" fill="#FBD93E" fill-rule="nonzero" points="61.6875 39 54.1390255 44.625 47.25 38.4349719 54.801081 32.8125"></polyline>
+                                    <polyline id="Fill-74" fill="#F6CF42" fill-rule="nonzero" points="51.1875 35.4375 42.0512989 35.2828112 40.6875 26.25 49.8262035 26.4097606"></polyline>
+                                    <polyline id="Fill-75" fill="#F6CF42" fill-rule="nonzero" points="59.1285698 35.4375 55.125 26.4860612 62.9365555 21 66.9375 29.9541367"></polyline>
+                                    <polyline id="Fill-76" fill="#FBD93E" fill-rule="nonzero" points="53.8125 26.25 44.6762989 26.0953112 43.3125 17.0625 52.4512035 17.2222606"></polyline>
+                                    <polyline id="Fill-77" fill="#F6CF42" fill-rule="nonzero" points="82.6875 52.5 73.5512989 52.3453539 72.1875 43.3125 81.3262035 43.4747517"></polyline>
+                                    <polyline id="Fill-78" fill="#FBD93E" fill-rule="nonzero" points="72.1875 35.4375 63.0512989 35.2828539 61.6875 26.25 70.8262035 26.4122517"></polyline>
+                                    <polyline id="Fill-79" fill="#D9B12A" fill-rule="nonzero" points="72.1875 51.1875 63.0538012 51.0302753 61.6875 42 70.8262035 42.1597606"></polyline>
+                                    <polyline id="Fill-80" fill="#FBD93E" fill-rule="nonzero" points="42 48.5452021 44.8038434 39.375 53.8125 40.702162 51.0061318 49.875"></polyline>
+                                    <polyline id="Fill-81" fill="#F6CF42" fill-rule="nonzero" points="39.375 34.125 39.6218209 24.9089365 48.5625 23.625 48.3106675 32.8435884"></polyline>
+                                    <polyline id="Fill-82" fill="#FBD93E" fill-rule="nonzero" points="66.9375 26.9459865 71.4557141 18.375 80.0625 21.6192024 75.5417512 30.1875"></polyline>
+                                    <polyline id="Fill-83" fill="#FBD93E" fill-rule="nonzero" points="47.5527225 30.1875 42 22.5789349 48.2635721 15.75 53.8125 23.36378"></polyline>
+                                    <polyline id="Fill-84" fill="#F6CF42" fill-rule="nonzero" points="51.1875 19.6875 51.4355738 10.4714365 60.375 9.1875 60.1231675 18.4060884"></polyline>
+                                    <polyline id="Fill-85" fill="#F6CF42" fill-rule="nonzero" points="53.8125 27.5515271 62.831879 23.625 68.25 31.5162398 59.2279153 35.4375"></polyline>
+                                    <polyline id="Fill-86" fill="#F6CF42" fill-rule="nonzero" points="59.0625 20.9890271 68.081879 17.0625 73.5 24.9537398 64.4779153 28.875"></polyline>
+                                    <polyline id="Fill-87" fill="#F6CF42" fill-rule="nonzero" points="82.1822555 53.8125 78.75 45.2252187 87.1329344 40.6875 90.5625 49.278546"></polyline>
+                                    <polyline id="Fill-88" fill="#FBD93E" fill-rule="nonzero" points="61.6875 22.3125 61.9343209 13.0964365 70.875 11.8125 70.6231675 21.0310884"></polyline>
+                                    <polyline id="Fill-89" fill="#FBD93E" fill-rule="nonzero" points="64.3125 52.654137 66.9750122 43.3125 76.125 44.4668594 73.4573725 53.8125"></polyline>
+                                    <polyline id="Fill-90" fill="#F6CF42" fill-rule="nonzero" points="35.4375 49.875 35.6843209 40.6589365 44.625 39.375 44.3731675 48.5935884"></polyline>
+                                    <polyline id="Fill-91" fill="#FBD93E" fill-rule="nonzero" points="51.1875 40.6875 51.4355738 31.4714365 60.375 30.1875 60.1231675 39.4060884"></polyline>
+                                    <polyline id="Fill-92" fill="#D9B12A" fill-rule="nonzero" points="66.9375 42 67.1868267 32.7864615 76.125 31.5 75.8731675 40.7185884"></polyline>
+                                    <polyline id="Fill-93" fill="#F6CF42" fill-rule="nonzero" points="70.7067421 17.0625 66.9375 7.90976739 74.9834076 2.625 78.75 11.7831766"></polyline>
+                                    <polyline id="Fill-94" fill="#F6CF42" fill-rule="nonzero" points="47.0817421 14.4375 43.3125 5.28476739 51.3584076 0 55.125 9.15817661"></polyline>
+                                    <polyline id="Fill-95" fill="#D9B12A" fill-rule="nonzero" points="36.75 40.6875 36.9993267 31.4739615 45.9375 30.1875 45.6856675 39.4060884"></polyline>
+                                    <polyline id="Fill-96" fill="#F6CF42" fill-rule="nonzero" points="51.0773293 61.6875 47.25 52.5848009 55.2378148 47.25 59.0625 56.3581303"></polyline>
+                                    <polyline id="Fill-97" fill="#F6CF42" fill-rule="nonzero" points="72.1875 35.4375 72.4355738 26.2239615 81.375 24.9375 81.1231675 34.1560884"></polyline>
+                                    <polyline id="Fill-98" fill="#F6CF42" fill-rule="nonzero" points="55.125 45.9375 55.3730738 36.7214365 64.3125 35.4375 64.0606675 44.6560884"></polyline>
+                                    <polyline id="Fill-99" fill="#FBD93E" fill-rule="nonzero" points="77.4375 39.490955 83.7581874 48.5625 85.3125 39.259045 78.9890543 30.1875"></polyline>
+                                    <polyline id="Fill-100" fill="#FBD93E" fill-rule="nonzero" points="69.5625 47.365955 75.8831874 56.4375 77.4375 47.134045 71.1140543 38.0625"></polyline>
+                                    <polyline id="Fill-101" fill="#D9B12A" fill-rule="nonzero" points="58.3108905 53.6759001 68.25 59.0625 65.0668244 50.0089844 55.125 44.625"></polyline>
+                                    <polyline id="Fill-102" fill="#D9B12A" fill-rule="nonzero" points="62.790313 41.1618224 55.125 48.5625 64.5260499 48.0919223 72.1875 40.6875"></polyline>
+                                    <polyline id="Fill-103" fill="#FBD93E" fill-rule="nonzero" points="32.6900136 44.625 40.6875 50.0976838 36.8698617 59.0625 28.875 53.5857382"></polyline>
+                                    <polyline id="Fill-104" fill="#FBD93E" fill-rule="nonzero" points="41.8775136 48.5625 49.875 54.0351838 46.0573617 63 38.0625 57.5232382"></polyline>
+                                    <polyline id="Fill-105" fill="#F6CF42" fill-rule="nonzero" points="39.9125948 34.125 45.9375 41.3242152 40.1473806 48.5625 34.125 41.3606801"></polyline>
+                                    <polyline id="Fill-106" fill="#F6CF42" fill-rule="nonzero" points="47.2069781 45.9375 56.4375 48.6928201 55.1693457 57.75 45.9375 54.9908759"></polyline>
+                                    <polyline id="Fill-107" fill="#FBD93E" fill-rule="nonzero" points="31.5201144 38.0625 38.0625 44.8099362 32.7898537 52.5 26.25 45.7486417"></polyline>
+                                    <polyline id="Fill-108" fill="#FBD93E" fill-rule="nonzero" points="76.1451144 47.25 82.6875 53.9974362 77.4148537 61.6875 70.875 54.9361417"></polyline>
+                                    <polyline id="Fill-109" fill="#FBD93E" fill-rule="nonzero" points="55.125 36.75 64.2453917 38.2210266 64.3125 47.25 55.1908421 45.7727137"></polyline>
+                                    <polyline id="Fill-110" fill="#FBD93E" fill-rule="nonzero" points="64.3125 40.284649 73.6690445 36.75 78.75 45.0305277 69.3907068 48.5625"></polyline>
+                                    <polyline id="Fill-111" fill="#F6CF42" fill-rule="nonzero" points="59.6556243 43.3125 64.3125 51.7004283 57.154305 57.75 52.5 49.3594265"></polyline>
+                                    <polyline id="Fill-112" fill="#F6CF42" fill-rule="nonzero" points="81.2817478 38.0625 82.6875 47.0924278 73.5879425 49.875 72.1875 40.8425732"></polyline>
+                                    <polyline id="Fill-113" fill="#FBD93E" fill-rule="nonzero" points="60.3319781 42 69.5625 44.7553201 68.2943457 53.8125 59.0625 51.0533759"></polyline>
+                                    <polyline id="Fill-114" fill="#F6CF42" fill-rule="nonzero" points="45.8944781 34.125 55.125 36.8803201 53.8568457 45.9375 44.625 43.1783759"></polyline>
+                                    <polyline id="Fill-115" fill="#F6CF42" fill-rule="nonzero" points="80.0625 49.6255105 71.2672876 53.8125 65.625 46.1843816 74.4215529 42"></polyline>
+                                    <polyline id="Fill-116" fill="#FBD93E" fill-rule="nonzero" points="60.3319781 31.5 69.5625 34.2553201 68.2930219 43.3125 59.0625 40.5533759"></polyline>
+                                    <polyline id="Fill-117" fill="#D9B12A" fill-rule="nonzero" points="43.2697982 40.6875 52.5 43.4428201 51.2328499 52.5 42 49.7408759"></polyline>
+                                    <polyline id="Fill-118" fill="#F6CF42" fill-rule="nonzero" points="36.7069781 42 45.9375 44.7553201 44.6680219 53.8125 35.4375 51.0533759"></polyline>
+                                    <polyline id="Fill-119" fill="#FBD93E" fill-rule="nonzero" points="60.6415806 1.3125 49.875 4.86363636 58.7932348 9.1875 69.5625 5.63352273"></polyline>
+                                    <polyline id="Fill-120" fill="#FBD93E" fill-rule="nonzero" points="69.1214155 9.1875 60.375 16.3629935 70.0062257 17.0625 78.75 9.8842307"></polyline>
+                                    <polyline id="Fill-121" fill="#F6CF42" fill-rule="nonzero" points="55.3915806 43.3125 44.625 46.8636364 53.5432348 51.1875 64.3125 47.6335227"></polyline>
+                                    <polyline id="Fill-122" fill="#D9B12A" fill-rule="nonzero" points="55.7286755 29.5196153 44.625 27.5625 50.5811337 34.7953715 61.6875 36.75"></polyline>
+                                    <polyline id="Fill-123" fill="#F6CF42" fill-rule="nonzero" points="35.4375 9.59106479 44.339685 6.5625 48.5625 15.3491785 39.6577572 18.375"></polyline>
+                                    <polyline id="Fill-124" fill="#FBD93E" fill-rule="nonzero" points="42 15.8124238 47.5259653 7.875 56.4375 11.7500762 50.9088219 19.6875"></polyline>
+                                    <polyline id="Fill-125" fill="#F6CF42" fill-rule="nonzero" points="52.5 16.1535648 61.402185 13.125 65.625 21.9116785 56.7202572 24.9375"></polyline>
+                                    <polyline id="Fill-126" fill="#F6CF42" fill-rule="nonzero" points="46.1774254 19.6875 52.5 26.6251694 47.0062841 34.125 40.6875 27.180809"></polyline>
+                                    <polyline id="Fill-127" fill="#FBD93E" fill-rule="nonzero" points="52.5 25.3410648 61.402185 22.3125 65.625 31.0991785 56.7202572 34.125"></polyline>
+                                    <polyline id="Fill-128" fill="#FBD93E" fill-rule="nonzero" points="32.8125 22.7160648 41.714685 19.6875 45.9375 28.4741785 37.0327572 31.5"></polyline>
+                                    <polyline id="Fill-129" fill="#F6CF42" fill-rule="nonzero" points="65.307551 13.125 68.25 22.0972181 59.3771939 26.25 56.4375 17.2764974"></polyline>
+                                    <polyline id="Fill-130" fill="#FBD93E" fill-rule="nonzero" points="57.7647977 19.6875 65.625 25.2812705 61.674008 34.125 53.8125 28.5285246"></polyline>
+                                    <polyline id="Fill-131" fill="#F6CF42" fill-rule="nonzero" points="57.432551 30.1875 60.375 39.1597181 51.5021939 43.3125 48.5625 34.3389974"></polyline>
+                                    <polyline id="Fill-132" fill="#F6CF42" fill-rule="nonzero" points="53.8125 23.9377606 46.8088654 30.1875 39.375 24.6222138 46.3799384 18.375"></polyline>
+                                    <polyline id="Fill-133" fill="#F6CF42" fill-rule="nonzero" points="49.875 31.8127606 42.8713654 38.0625 35.4375 32.4972138 42.4424384 26.25"></polyline>
+                                    <polyline id="Fill-134" fill="#FBD93E" fill-rule="nonzero" points="48.245051 31.5 51.1875 40.4722181 42.3146939 44.625 39.375 35.6514974"></polyline>
+                                    <polyline id="Fill-135" fill="#FBD93E" fill-rule="nonzero" points="52.182551 10.5 55.125 19.4722181 46.2521939 23.625 43.3125 14.6514974"></polyline>
+                                    <polyline id="Fill-136" fill="#F6CF42" fill-rule="nonzero" points="41.1436558 40.6875 47.25 47.8124662 41.5451066 55.125 35.4375 47.9948236"></polyline>
+                                    <polyline id="Fill-137" fill="#D9B12A" fill-rule="nonzero" points="66.620051 5.25 69.5625 14.2196491 60.6896939 18.375 57.75 9.40149736"></polyline>
+                                    <polyline id="Fill-138" fill="#F6CF42" fill-rule="nonzero" points="46.932551 6.5625 49.875 15.5347181 41.0021939 19.6875 38.0625 10.7139974"></polyline>
+                                    <polyline id="Fill-139" fill="#F6CF42" fill-rule="nonzero" points="48.245051 13.125 51.1875 22.0972181 42.3146939 26.25 39.375 17.2764974"></polyline>
+                                    <polyline id="Fill-140" fill="#D9B12A" fill-rule="nonzero" points="90.245051 32.8125 93.1875 41.7847181 84.3146939 45.9375 81.375 36.9639974"></polyline>
+                                    <polyline id="Fill-141" fill="#D9B12A" fill-rule="nonzero" points="75.4161755 36.0821153 64.3125 34.125 70.2686337 41.3578715 81.375 43.3125"></polyline>
+                                    <polyline id="Fill-142" fill="#FBD93E" fill-rule="nonzero" points="42 22.548012 51.921902 22.3125 53.8125 31.2695528 43.8865205 31.5"></polyline>
+                                    <polyline id="Fill-143" fill="#F6CF42" fill-rule="nonzero" points="55.125 14.8410648 64.027185 11.8125 68.25 20.5991785 59.3452572 23.625"></polyline>
+                                    <polyline id="Fill-144" fill="#FBD93E" fill-rule="nonzero" points="61.6875 21.0624238 67.2107525 13.125 76.125 17.0000762 70.5963219 24.9375"></polyline>
+                                    <polyline id="Fill-145" fill="#F6CF42" fill-rule="nonzero" points="72.1875 22.7160648 81.089685 19.6875 85.3125 28.4741785 76.4077572 31.5"></polyline>
+                                    <polyline id="Fill-146" fill="#F6CF42" fill-rule="nonzero" points="65.8649254 24.9375 72.1875 31.8751694 66.6937841 39.375 60.375 32.430809"></polyline>
+                                    <polyline id="Fill-147" fill="#FBD93E" fill-rule="nonzero" points="72.1875 31.9035648 81.089685 28.875 85.3125 37.6616785 76.4077572 40.6875"></polyline>
+                                    <polyline id="Fill-148" fill="#FBD93E" fill-rule="nonzero" points="52.5 29.2785648 61.402185 26.25 65.625 35.0366785 56.7202572 38.0625"></polyline>
+                                    <polyline id="Fill-149" fill="#D9B12A" fill-rule="nonzero" points="47.25 13.5285648 56.1496273 10.5 60.375 19.2866785 51.4702572 22.3125"></polyline>
+                                    <polyline id="Fill-150" fill="#FBD93E" fill-rule="nonzero" points="77.2969988 6.5625 77.4375 16.570027 68.385392 18.375 68.25 8.36473199"></polyline>
+                                    <polyline id="Fill-151" fill="#F6CF42" fill-rule="nonzero" points="84.995051 19.6875 87.9375 28.6597181 79.0646939 32.8125 76.125 23.8389974"></polyline>
+                                    <polyline id="Fill-152" fill="#FBD93E" fill-rule="nonzero" points="61.6875 34.2834919 59.8234585 43.3125 49.875 43.1540081 51.741803 34.125"></polyline>
+                                    <polyline id="Fill-153" fill="#FBD93E" fill-rule="nonzero" points="77.4522977 26.25 85.3125 31.8437705 81.361508 40.6875 73.5 35.0910246"></polyline>
+                                    <polyline id="Fill-154" fill="#F6CF42" fill-rule="nonzero" points="78.432551 36.75 81.375 45.7222181 72.5021939 49.875 69.5625 40.9014974"></polyline>
+                                    <polyline id="Fill-155" fill="#F6CF42" fill-rule="nonzero" points="73.5 30.5002606 66.4963654 36.75 59.0625 31.1847138 66.0674384 24.9375"></polyline>
+                                    <polyline id="Fill-156" fill="#F6CF42" fill-rule="nonzero" points="70.875 37.0633553 63.8713654 43.3125 56.4375 37.7478817 63.4424384 31.5"></polyline>
+                                    <polyline id="Fill-157" fill="#FBD93E" fill-rule="nonzero" points="67.932551 36.75 70.875 45.7222181 62.0021939 49.875 59.0625 40.9014974"></polyline>
+                                    <polyline id="Fill-158" fill="#FBD93E" fill-rule="nonzero" points="71.870051 17.0625 74.8125 26.0347181 65.9396939 30.1875 63 21.2139974"></polyline>
+                                    <polyline id="Fill-159" fill="#D9B12A" fill-rule="nonzero" points="56.120051 21 59.0625 29.9696491 50.1896939 34.125 47.25 25.1514974"></polyline>
+                                    <polyline id="Fill-160" fill="#F6CF42" fill-rule="nonzero" points="60.8311558 47.25 66.9375 54.3749662 61.2326066 61.6875 55.125 54.5573236"></polyline>
+                                    <polyline id="Fill-161" fill="#F6CF42" fill-rule="nonzero" points="53.495051 27.5625 56.4375 36.5321491 47.5646939 40.6875 44.625 31.7139974"></polyline>
+                                    <polyline id="Fill-162" fill="#F6CF42" fill-rule="nonzero" points="66.620051 13.125 69.5625 22.0972181 60.6896939 26.25 57.75 17.2764974"></polyline>
+                                    <polyline id="Fill-163" fill="#FBD93E" fill-rule="nonzero" points="48.2180946 26.3032609 39.375 19.6875 41.0265345 28.8255435 49.875 35.4375"></polyline>
+                                    <polyline id="Fill-164" fill="#FBD93E" fill-rule="nonzero" points="52.1567256 15.8032609 43.3125 9.1875 44.9642457 18.3255435 53.8125 24.9375"></polyline>
+                                    <polyline id="Fill-165" fill="#D9B12A" fill-rule="nonzero" points="60.9786755 7.20711531 49.875 5.25 55.8311337 12.4828715 66.9375 14.4375"></polyline>
+                                    <polyline id="Fill-166" fill="#D9B12A" fill-rule="nonzero" points="54.3733905 22.1759001 64.3125 27.5625 61.1293244 18.5089844 51.1875 13.125"></polyline>
+                                    <polyline id="Fill-167" fill="#FBD93E" fill-rule="nonzero" points="81.4496304 45.9375 72.1875 43.2064551 73.4293499 34.125 82.6875 36.8598575"></polyline>
+                                    <polyline id="Fill-168" fill="#F6CF42" fill-rule="nonzero" points="65.625 47.25 56.4887989 47.0953112 55.125 38.0625 64.2637035 38.2222606"></polyline>
+                                    <polyline id="Fill-169" fill="#FBD93E" fill-rule="nonzero" points="61.6875 39 54.1390255 44.625 47.25 38.4349719 54.801081 32.8125"></polyline>
+                                    <polyline id="Fill-170" fill="#F6CF42" fill-rule="nonzero" points="51.1875 35.4375 42.0512989 35.2828112 40.6875 26.25 49.8262035 26.4097606"></polyline>
+                                    <polyline id="Fill-171" fill="#F6CF42" fill-rule="nonzero" points="59.1285698 35.4375 55.125 26.4860612 62.9365555 21 66.9375 29.9541367"></polyline>
+                                    <polyline id="Fill-172" fill="#FBD93E" fill-rule="nonzero" points="53.8125 26.25 44.6762989 26.0953112 43.3125 17.0625 52.4512035 17.2222606"></polyline>
+                                    <polyline id="Fill-173" fill="#F6CF42" fill-rule="nonzero" points="82.6875 52.5 73.5512989 52.3453539 72.1875 43.3125 81.3262035 43.4747517"></polyline>
+                                    <polyline id="Fill-174" fill="#FBD93E" fill-rule="nonzero" points="72.1875 35.4375 63.0512989 35.2828539 61.6875 26.25 70.8262035 26.4122517"></polyline>
+                                    <polyline id="Fill-175" fill="#D9B12A" fill-rule="nonzero" points="72.1875 51.1875 63.0538012 51.0302753 61.6875 42 70.8262035 42.1597606"></polyline>
+                                    <polyline id="Fill-176" fill="#FBD93E" fill-rule="nonzero" points="42 48.5452021 44.8038434 39.375 53.8125 40.702162 51.0061318 49.875"></polyline>
+                                    <polyline id="Fill-177" fill="#F6CF42" fill-rule="nonzero" points="39.375 34.125 39.6218209 24.9089365 48.5625 23.625 48.3106675 32.8435884"></polyline>
+                                    <polyline id="Fill-178" fill="#FBD93E" fill-rule="nonzero" points="66.9375 26.9459865 71.4557141 18.375 80.0625 21.6192024 75.5417512 30.1875"></polyline>
+                                    <polyline id="Fill-179" fill="#FBD93E" fill-rule="nonzero" points="47.5527225 30.1875 42 22.5789349 48.2635721 15.75 53.8125 23.36378"></polyline>
+                                    <polyline id="Fill-180" fill="#F6CF42" fill-rule="nonzero" points="51.1875 19.6875 51.4355738 10.4714365 60.375 9.1875 60.1231675 18.4060884"></polyline>
+                                    <polyline id="Fill-181" fill="#F6CF42" fill-rule="nonzero" points="53.8125 27.5515271 62.831879 23.625 68.25 31.5162398 59.2279153 35.4375"></polyline>
+                                    <polyline id="Fill-182" fill="#F6CF42" fill-rule="nonzero" points="59.0625 20.9890271 68.081879 17.0625 73.5 24.9537398 64.4779153 28.875"></polyline>
+                                    <polyline id="Fill-183" fill="#F6CF42" fill-rule="nonzero" points="82.1822555 53.8125 78.75 45.2252187 87.1329344 40.6875 90.5625 49.278546"></polyline>
+                                    <polyline id="Fill-184" fill="#FBD93E" fill-rule="nonzero" points="61.6875 22.3125 61.9343209 13.0964365 70.875 11.8125 70.6231675 21.0310884"></polyline>
+                                    <polyline id="Fill-185" fill="#FBD93E" fill-rule="nonzero" points="64.3125 52.654137 66.9750122 43.3125 76.125 44.4668594 73.4573725 53.8125"></polyline>
+                                    <polyline id="Fill-186" fill="#F6CF42" fill-rule="nonzero" points="35.4375 49.875 35.6843209 40.6589365 44.625 39.375 44.3731675 48.5935884"></polyline>
+                                    <polyline id="Fill-187" fill="#FBD93E" fill-rule="nonzero" points="51.1875 40.6875 51.4355738 31.4714365 60.375 30.1875 60.1231675 39.4060884"></polyline>
+                                    <polyline id="Fill-188" fill="#D9B12A" fill-rule="nonzero" points="66.9375 42 67.1868267 32.7864615 76.125 31.5 75.8731675 40.7185884"></polyline>
+                                    <polyline id="Fill-189" fill="#F6CF42" fill-rule="nonzero" points="70.7067421 17.0625 66.9375 7.90976739 74.9834076 2.625 78.75 11.7831766"></polyline>
+                                    <polyline id="Fill-190" fill="#F6CF42" fill-rule="nonzero" points="47.0817421 14.4375 43.3125 5.28476739 51.3584076 0 55.125 9.15817661"></polyline>
+                                    <polyline id="Fill-191" fill="#D9B12A" fill-rule="nonzero" points="36.75 40.6875 36.9993267 31.4739615 45.9375 30.1875 45.6856675 39.4060884"></polyline>
+                                    <polyline id="Fill-192" fill="#F6CF42" fill-rule="nonzero" points="51.0773293 61.6875 47.25 52.5848009 55.2378148 47.25 59.0625 56.3581303"></polyline>
+                                    <polyline id="Fill-193" fill="#F6CF42" fill-rule="nonzero" points="72.1875 35.4375 72.4355738 26.2239615 81.375 24.9375 81.1231675 34.1560884"></polyline>
+                                    <polyline id="Fill-194" fill="#F6CF42" fill-rule="nonzero" points="55.125 45.9375 55.3730738 36.7214365 64.3125 35.4375 64.0606675 44.6560884"></polyline>
+                                    <polyline id="Fill-195" fill="#FBD93E" fill-rule="nonzero" points="77.4375 39.490955 83.7581874 48.5625 85.3125 39.259045 78.9890543 30.1875"></polyline>
+                                    <polyline id="Fill-196" fill="#FBD93E" fill-rule="nonzero" points="69.5625 47.365955 75.8831874 56.4375 77.4375 47.134045 71.1140543 38.0625"></polyline>
+                                    <polyline id="Fill-197" fill="#D9B12A" fill-rule="nonzero" points="58.3108905 53.6759001 68.25 59.0625 65.0668244 50.0089844 55.125 44.625"></polyline>
+                                    <polyline id="Fill-198" fill="#D9B12A" fill-rule="nonzero" points="48.772187 45.0993224 56.4375 52.5 47.0364501 52.0294223 39.375 44.625"></polyline>
+                                    <polyline id="Fill-199" fill="#FBD93E" fill-rule="nonzero" points="80.1849864 48.5625 72.1875 54.0351838 76.0051383 63 84 57.5232382"></polyline>
+                                    <polyline id="Fill-200" fill="#FBD93E" fill-rule="nonzero" points="70.9974864 52.5 63 57.9726838 66.8176383 66.9375 74.8125 61.4607382"></polyline>
+                                    <polyline id="Fill-201" fill="#F6CF42" fill-rule="nonzero" points="72.9624052 38.0625 66.9375 45.2617152 72.7276194 52.5 78.75 45.2981801"></polyline>
+                                    <polyline id="Fill-202" fill="#F6CF42" fill-rule="nonzero" points="65.6680219 49.875 56.4375 52.6303201 57.7069781 61.6875 66.9375 58.9283759"></polyline>
+                                    <polyline id="Fill-203" fill="#FBD93E" fill-rule="nonzero" points="81.3548856 42 74.8125 48.7474362 80.0851463 56.4375 86.625 49.6861417"></polyline>
+                                    <polyline id="Fill-204" fill="#FBD93E" fill-rule="nonzero" points="36.7298856 51.1875 30.1875 57.9349362 35.4601463 65.625 42 58.8736417"></polyline>
+                                    <polyline id="Fill-205" fill="#FBD93E" fill-rule="nonzero" points="57.75 40.6875 48.6296083 42.1585266 48.5625 51.1875 57.6841579 49.7102137"></polyline>
+                                    <polyline id="Fill-206" fill="#FBD93E" fill-rule="nonzero" points="48.5625 42.909649 39.2059555 39.375 34.125 47.6555277 43.4842932 51.1875"></polyline>
+                                    <polyline id="Fill-207" fill="#F6CF42" fill-rule="nonzero" points="53.2193757 47.25 48.5625 55.6379283 55.720695 61.6875 60.375 53.2969265"></polyline>
+                                    <polyline id="Fill-208" fill="#F6CF42" fill-rule="nonzero" points="31.5932522 40.6875 30.1875 49.7174278 39.2870575 52.5 40.6875 43.4675732"></polyline>
+                                    <polyline id="Fill-209" fill="#FBD93E" fill-rule="nonzero" points="51.2305219 45.9375 42 48.6928201 43.2694781 57.75 52.5 54.9908759"></polyline>
+                                    <polyline id="Fill-210" fill="#F6CF42" fill-rule="nonzero" points="65.6680219 36.75 56.4375 39.5053201 57.7069781 48.5625 66.9375 45.8033759"></polyline>
+                                    <polyline id="Fill-211" fill="#F6CF42" fill-rule="nonzero" points="32.8125 53.5630105 41.6077124 57.75 47.25 50.1218816 38.4534471 45.9375"></polyline>
+                                    <polyline id="Fill-212" fill="#FBD93E" fill-rule="nonzero" points="51.2305219 35.4375 42 38.1928201 43.2681543 47.25 52.5 44.4908759"></polyline>
+                                    <polyline id="Fill-213" fill="#D9B12A" fill-rule="nonzero" points="68.2927018 43.3125 59.0625 46.0678201 60.328326 55.125 69.5625 52.3658759"></polyline>
+                                    <polyline id="Fill-214" fill="#F6CF42" fill-rule="nonzero" points="76.1680219 45.9375 66.9375 48.6928201 68.2056543 57.75 77.4375 54.9908759"></polyline>
+                                    <polyline id="Fill-215" fill="#FBD93E" fill-rule="nonzero" points="52.2334194 5.25 63 8.80113636 54.0817652 13.125 43.3125 9.57102273"></polyline>
+                                    <polyline id="Fill-216" fill="#FBD93E" fill-rule="nonzero" points="43.7542766 13.125 52.5 20.3004935 42.8694027 21 34.125 13.8217307"></polyline>
+                                    <polyline id="Fill-217" fill="#F6CF42" fill-rule="nonzero" points="57.4834194 47.25 68.25 50.8011364 59.3317652 55.125 48.5625 51.5710227"></polyline>
+                                    <polyline id="Fill-218" fill="#D9B12A" fill-rule="nonzero" points="57.1463245 33.4571153 68.25 31.5 62.2938663 38.7328715 51.1875 40.6875"></polyline>
+                                    <polyline id="Fill-219" fill="#F6CF42" fill-rule="nonzero" points="77.4375 12.2160648 68.535315 9.1875 64.3125 17.9741785 73.2172428 21"></polyline>
+                                    <polyline id="Fill-220" fill="#FBD93E" fill-rule="nonzero" points="70.875 18.4374238 65.3490347 10.5 56.4375 14.3750762 61.9661781 22.3125"></polyline>
+                                    <polyline id="Fill-221" fill="#F6CF42" fill-rule="nonzero" points="60.375 20.0910648 51.472815 17.0625 47.25 25.8491785 56.1547428 28.875"></polyline>
+                                    <polyline id="Fill-222" fill="#F6CF42" fill-rule="nonzero" points="65.3850746 22.3125 59.0625 29.2501694 64.5562159 36.75 70.875 29.805809"></polyline>
+                                    <polyline id="Fill-223" fill="#FBD93E" fill-rule="nonzero" points="59.0625 29.2785648 50.160315 26.25 45.9375 35.0366785 54.8422428 38.0625"></polyline>
+                                    <polyline id="Fill-224" fill="#FBD93E" fill-rule="nonzero" points="80.0625 26.6535648 71.160315 23.625 66.9375 32.4116785 75.8422428 35.4375"></polyline>
+                                    <polyline id="Fill-225" fill="#F6CF42" fill-rule="nonzero" points="47.567449 17.0625 44.625 26.0347181 53.4978061 30.1875 56.4375 21.2139974"></polyline>
+                                    <polyline id="Fill-226" fill="#FBD93E" fill-rule="nonzero" points="53.7977023 23.625 45.9375 29.2187705 49.888492 38.0625 57.75 32.4660246"></polyline>
+                                    <polyline id="Fill-227" fill="#F6CF42" fill-rule="nonzero" points="55.442449 34.125 52.5 43.0972181 61.3728061 47.25 64.3125 38.2764974"></polyline>
+                                    <polyline id="Fill-228" fill="#F6CF42" fill-rule="nonzero" points="57.75 27.8758553 64.7536346 34.125 72.1875 28.5603817 65.1825616 22.3125"></polyline>
+                                    <polyline id="Fill-229" fill="#F6CF42" fill-rule="nonzero" points="61.6875 34.4377606 68.6911346 40.6875 76.125 35.1222138 69.1200616 28.875"></polyline>
+                                    <polyline id="Fill-230" fill="#FBD93E" fill-rule="nonzero" points="64.629949 34.125 61.6875 43.0972181 70.5603061 47.25 73.5 38.2764974"></polyline>
+                                    <polyline id="Fill-231" fill="#FBD93E" fill-rule="nonzero" points="60.692449 14.4375 57.75 23.4097181 66.6228061 27.5625 69.5625 18.5889974"></polyline>
+                                    <polyline id="Fill-232" fill="#F6CF42" fill-rule="nonzero" points="70.4188442 44.625 64.3125 51.7499662 70.0173934 59.0625 76.125 51.9323236"></polyline>
+                                    <polyline id="Fill-233" fill="#D9B12A" fill-rule="nonzero" points="46.254949 9.1875 43.3125 18.1571491 52.1853061 22.3125 55.125 13.3389974"></polyline>
+                                    <polyline id="Fill-234" fill="#F6CF42" fill-rule="nonzero" points="65.942449 10.5 63 19.4722181 71.8728061 23.625 74.8125 14.6514974"></polyline>
+                                    <polyline id="Fill-235" fill="#F6CF42" fill-rule="nonzero" points="64.629949 17.0625 61.6875 26.0347181 70.5603061 30.1875 73.5 21.2139974"></polyline>
+                                    <polyline id="Fill-236" fill="#D9B12A" fill-rule="nonzero" points="23.942449 36.75 21 45.7222181 29.8728061 49.875 32.8125 40.9014974"></polyline>
+                                    <polyline id="Fill-237" fill="#D9B12A" fill-rule="nonzero" points="37.4588245 40.0196153 48.5625 38.0625 42.6063663 45.2953715 31.5 47.25"></polyline>
+                                    <polyline id="Fill-238" fill="#FBD93E" fill-rule="nonzero" points="70.875 25.173012 60.953098 24.9375 59.0625 33.8945528 68.9884795 34.125"></polyline>
+                                    <polyline id="Fill-239" fill="#F6CF42" fill-rule="nonzero" points="57.75 18.7785648 48.847815 15.75 44.625 24.5366785 53.5297428 27.5625"></polyline>
+                                    <polyline id="Fill-240" fill="#FBD93E" fill-rule="nonzero" points="51.1875 24.9999238 45.6642475 17.0625 36.75 20.9375762 42.2786781 28.875"></polyline>
+                                    <polyline id="Fill-241" fill="#F6CF42" fill-rule="nonzero" points="39.375 25.3410648 30.472815 22.3125 26.25 31.0991785 35.1547428 34.125"></polyline>
+                                    <polyline id="Fill-242" fill="#F6CF42" fill-rule="nonzero" points="45.6975746 28.875 39.375 35.8126694 44.8687159 43.3125 51.1875 36.368309"></polyline>
+                                    <polyline id="Fill-243" fill="#FBD93E" fill-rule="nonzero" points="39.375 35.8410648 30.472815 32.8125 26.25 41.5991785 35.1547428 44.625"></polyline>
+                                    <polyline id="Fill-244" fill="#FBD93E" fill-rule="nonzero" points="60.375 31.9035648 51.472815 28.875 47.25 37.6616785 56.1547428 40.6875"></polyline>
+                                    <polyline id="Fill-245" fill="#D9B12A" fill-rule="nonzero" points="64.3125 17.4660648 55.4128727 14.4375 51.1875 23.2241785 60.0922428 26.25"></polyline>
+                                    <polyline id="Fill-246" fill="#FBD93E" fill-rule="nonzero" points="34.2655012 10.5 34.125 20.507527 43.177108 22.3125 43.3125 12.302232"></polyline>
+                                    <polyline id="Fill-247" fill="#F6CF42" fill-rule="nonzero" points="27.879949 23.625 24.9375 32.5972181 33.8103061 36.75 36.75 27.7764974"></polyline>
+                                    <polyline id="Fill-248" fill="#FBD93E" fill-rule="nonzero" points="51.1875 38.2209919 53.0515415 47.25 63 47.0915081 61.133197 38.0625"></polyline>
+                                    <polyline id="Fill-249" fill="#FBD93E" fill-rule="nonzero" points="34.1102023 30.1875 26.25 35.7812705 30.200992 44.625 38.0625 39.0285246"></polyline>
+                                    <polyline id="Fill-250" fill="#F6CF42" fill-rule="nonzero" points="34.442449 40.6875 31.5 49.6597181 40.3728061 53.8125 43.3125 44.8389974"></polyline>
+                                    <polyline id="Fill-251" fill="#F6CF42" fill-rule="nonzero" points="38.0625 34.4377606 45.0661346 40.6875 52.5 35.1222138 45.4950616 28.875"></polyline>
+                                    <polyline id="Fill-252" fill="#F6CF42" fill-rule="nonzero" points="42 41.0002606 49.0036346 47.25 56.4375 41.6847138 49.4325616 35.4375"></polyline>
+                                    <polyline id="Fill-253" fill="#FBD93E" fill-rule="nonzero" points="44.942449 40.6875 42 49.6597181 50.8728061 53.8125 53.8125 44.8389974"></polyline>
+                                    <polyline id="Fill-254" fill="#FBD93E" fill-rule="nonzero" points="41.004949 21 38.0625 29.9722181 46.9353061 34.125 49.875 25.1514974"></polyline>
+                                    <polyline id="Fill-255" fill="#D9B12A" fill-rule="nonzero" points="56.754949 23.625 53.8125 32.5946491 62.6853061 36.75 65.625 27.7764974"></polyline>
+                                    <polyline id="Fill-256" fill="#F6CF42" fill-rule="nonzero" points="50.7313442 49.875 44.625 56.9999662 50.3298934 64.3125 56.4375 57.1823236"></polyline>
+                                    <polyline id="Fill-257" fill="#F6CF42" fill-rule="nonzero" points="59.379949 31.5 56.4375 40.4696491 65.3103061 44.625 68.25 35.6514974"></polyline>
+                                    <polyline id="Fill-258" fill="#F6CF42" fill-rule="nonzero" points="46.254949 17.0625 43.3125 26.0347181 52.1853061 30.1875 55.125 21.2139974"></polyline>
+                                    <polyline id="Fill-259" fill="#FBD93E" fill-rule="nonzero" points="64.6557744 28.9282609 73.5 22.3125 71.8482543 31.4505435 63 38.0625"></polyline>
+                                    <polyline id="Fill-260" fill="#FBD93E" fill-rule="nonzero" points="59.4057744 19.7407609 68.25 13.125 66.5982543 22.2630435 57.75 28.875"></polyline>
+                                    <polyline id="Fill-261" fill="#D9B12A" fill-rule="nonzero" points="50.5838245 11.1446153 61.6875 9.1875 55.7313663 16.4203715 44.625 18.375"></polyline>
+                                    <polyline id="Fill-262" fill="#D9B12A" fill-rule="nonzero" points="58.5016095 26.1134001 48.5625 31.5 51.7456756 22.4464844 61.6875 17.0625"></polyline>
+                                    <polyline id="Fill-263" fill="#FBD93E" fill-rule="nonzero" points="31.4253696 48.5625 40.6875 45.8314551 39.4469769 36.75 30.1875 39.4848575"></polyline>
+                                    <polyline id="Fill-264" fill="#F6CF42" fill-rule="nonzero" points="45.9375 51.1875 55.0737011 51.0328112 56.4375 42 47.2987965 42.1597606"></polyline>
+                                    <polyline id="Fill-265" fill="#FBD93E" fill-rule="nonzero" points="51.1875 42.9375 58.7359745 48.5625 65.625 42.3724719 58.073919 36.75"></polyline>
+                                    <polyline id="Fill-266" fill="#F6CF42" fill-rule="nonzero" points="60.375 39.375 69.5112011 39.2203112 70.875 30.1875 61.7362965 30.3472606"></polyline>
+                                    <polyline id="Fill-267" fill="#F6CF42" fill-rule="nonzero" points="53.7464302 38.0625 57.75 29.1110612 49.9384445 23.625 45.9375 32.5791367"></polyline>
+                                    <polyline id="Fill-268" fill="#FBD93E" fill-rule="nonzero" points="57.75 30.1875 66.8862011 30.0328112 68.25 21 59.1112965 21.1597606"></polyline>
+                                    <polyline id="Fill-269" fill="#F6CF42" fill-rule="nonzero" points="30.1875 56.4375 39.3237011 56.2828539 40.6875 47.25 31.5487965 47.4122517"></polyline>
+                                    <polyline id="Fill-270" fill="#FBD93E" fill-rule="nonzero" points="39.375 39.375 48.5112011 39.2203539 49.875 30.1875 40.7362965 30.3497517"></polyline>
+                                    <polyline id="Fill-271" fill="#D9B12A" fill-rule="nonzero" points="39.375 55.125 48.5086988 54.9677753 49.875 45.9375 40.7362965 46.0972606"></polyline>
+                                    <polyline id="Fill-272" fill="#FBD93E" fill-rule="nonzero" points="69.5625 52.4827021 66.7586566 43.3125 57.75 44.639662 60.5563682 53.8125"></polyline>
+                                    <polyline id="Fill-273" fill="#F6CF42" fill-rule="nonzero" points="72.1875 38.0625 71.9406791 28.8464365 63 27.5625 63.2518325 36.7810884"></polyline>
+                                    <polyline id="Fill-274" fill="#FBD93E" fill-rule="nonzero" points="44.625 30.8834865 40.1067859 22.3125 31.5 25.5567024 36.0207488 34.125"></polyline>
+                                    <polyline id="Fill-275" fill="#FBD93E" fill-rule="nonzero" points="64.0097775 34.125 69.5625 26.5164349 63.2989279 19.6875 57.75 27.30128"></polyline>
+                                    <polyline id="Fill-276" fill="#F6CF42" fill-rule="nonzero" points="60.375 23.625 60.1281791 14.4089365 51.1875 13.125 51.4393325 22.3435884"></polyline>
+                                    <polyline id="Fill-277" fill="#F6CF42" fill-rule="nonzero" points="59.0625 30.1765271 50.043121 26.25 44.625 34.1412398 53.6470847 38.0625"></polyline>
+                                    <polyline id="Fill-278" fill="#F6CF42" fill-rule="nonzero" points="53.8125 24.9265271 44.793121 21 39.375 28.8912398 48.3970847 32.8125"></polyline>
+                                    <polyline id="Fill-279" fill="#F6CF42" fill-rule="nonzero" points="30.6927445 57.75 34.125 49.1627187 25.7420656 44.625 22.3125 53.216046"></polyline>
+                                    <polyline id="Fill-280" fill="#FBD93E" fill-rule="nonzero" points="49.875 26.25 49.6281791 17.0339365 40.6875 15.75 40.9393325 24.9685884"></polyline>
+                                    <polyline id="Fill-281" fill="#FBD93E" fill-rule="nonzero" points="47.25 55.279137 44.5874878 45.9375 35.4375 47.0918594 38.1051275 56.4375"></polyline>
+                                    <polyline id="Fill-282" fill="#F6CF42" fill-rule="nonzero" points="77.4375 53.8125 77.1894262 44.5964365 68.25 43.3125 68.5018325 52.5310884"></polyline>
+                                    <polyline id="Fill-283" fill="#FBD93E" fill-rule="nonzero" points="60.375 44.625 60.1281791 35.4089365 51.1875 34.125 51.4393325 43.3435884"></polyline>
+                                    <polyline id="Fill-284" fill="#D9B12A" fill-rule="nonzero" points="44.625 45.9375 44.3781791 36.7239615 35.4375 35.4375 35.6893325 44.6560884"></polyline>
+                                    <polyline id="Fill-285" fill="#F6CF42" fill-rule="nonzero" points="42.1682579 21 45.9375 11.8472674 37.8915924 6.5625 34.125 15.7206766"></polyline>
+                                    <polyline id="Fill-286" fill="#F6CF42" fill-rule="nonzero" points="65.7932579 18.375 69.5625 9.22226739 61.5165924 3.9375 57.75 13.0956766"></polyline>
+                                    <polyline id="Fill-287" fill="#D9B12A" fill-rule="nonzero" points="76.125 44.625 75.8756733 35.4114615 66.9375 34.125 67.1893325 43.3435884"></polyline>
+                                    <polyline id="Fill-288" fill="#F6CF42" fill-rule="nonzero" points="60.4851707 65.625 64.3125 56.5223009 56.3246852 51.1875 52.5 60.2956303"></polyline>
+                                    <polyline id="Fill-289" fill="#F6CF42" fill-rule="nonzero" points="39.375 39.375 39.1281791 30.1614615 30.1875 28.875 30.4393325 38.0935884"></polyline>
+                                    <polyline id="Fill-290" fill="#F6CF42" fill-rule="nonzero" points="56.4375 49.875 56.1906791 40.6589365 47.25 39.375 47.5018325 48.5935884"></polyline>
+                                    <polyline id="Fill-291" fill="#FBD93E" fill-rule="nonzero" points="35.4375 43.428455 29.1168126 52.5 27.5625 43.196545 33.8859457 34.125"></polyline>
+                                    <polyline id="Fill-292" fill="#FBD93E" fill-rule="nonzero" points="43.3125 51.303455 36.9918126 60.375 35.4375 51.071545 41.7609457 42"></polyline>
+                                    <polyline id="Fill-293" fill="#D9B12A" fill-rule="nonzero" points="54.5641095 56.3009001 44.625 61.6875 47.8081756 52.6339844 57.75 47.25"></polyline>
+                                    <polyline id="Fill-294" fill="#C0A676" fill-rule="nonzero" points="55.125 106.3125 1.3125 90.3205427 1.3125 40.6875 55.125 56.6794573"></polyline>
+                                    <polyline id="Fill-295" fill="#9C794B" fill-rule="nonzero" points="53.8125 106.3125 107.625 88.7376564 107.625 36.75 53.8125 56.3610814"></polyline>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                    <g id="Group-Clipped">
+                        <mask id="mask-6" fill="white">
+                            <use xlink:href="#path-5"></use>
+                        </mask>
+                        <g id="path-1"></g>
+                        <g id="Group" mask="url(#mask-6)">
+                            <g transform="translate(21.000000, 133.875000)">
+                                <g>
+                                    <g id="Hand" transform="translate(47.250000, 9.187500)" fill="#384668" fill-rule="nonzero">
+                                        <g id="Mask" transform="translate(38.718750, 30.843750) rotate(-9.000000) translate(-38.718750, -30.843750) translate(3.937500, 5.250000)">
+                                            <path d="M68.25,51.1875 C62.3672909,51.0874118 56.4566485,50.3206979 50.5962859,48.8684741 C29.773097,43.7148734 12.1603514,30.5693202 0.992701333,11.8528171 C-0.958890682,8.58767391 0.0578738633,4.31975978 3.24597075,2.32554857 C6.42848102,0.33700273 10.5979606,1.36432366 12.5495526,4.63324373 C21.8214768,20.1903573 36.4621414,31.1188614 53.7713474,35.3999946 C56.9631686,36.1931468 60.173612,36.7389111 63.3840554,37.0448412" id="path-3"></path>
+                                        </g>
+                                    </g>
+                                    <g id="Mask" transform="translate(41.343750, 77.437500) rotate(8.000000) translate(-41.343750, -77.437500) translate(10.500000, 3.937500)" fill="#384668">
+                                        <path d="M32.6618244,147 L27.7224742,147 C12.4748345,147 0,134.261 0,118.690065 L0,29.6224354 C0,14.0571455 12.4748345,1.3125 27.7224742,1.3125 L32.6618244,1.3125 C47.9001656,1.3125 60.375,14.0571455 60.375,29.6224354 L60.375,118.690065 C60.375,134.261 47.9001656,147 32.6618244,147 Z" id="path-5"></path>
+                                    </g>
+                                    <g id="Oval-4-Clipped" transform="translate(10.500000, 3.937500)">
+                                        <mask id="mask-8" fill="white">
+                                            <use xlink:href="#path-7"></use>
+                                        </mask>
+                                        <g id="path-5"></g>
+                                        <circle id="Oval-4" fill="#000000" mask="url(#mask-8)" cx="53.8125" cy="28.875" r="2.625"></circle>
+                                    </g>
+                                    <g id="Oval-4-Clipped" transform="translate(10.500000, 3.937500)">
+                                        <mask id="mask-10" fill="white">
+                                            <use xlink:href="#path-9"></use>
+                                        </mask>
+                                        <g id="path-5"></g>
+                                        <circle id="Oval-4" fill="#000000" mask="url(#mask-10)" cx="52.5" cy="47.25" r="2.625"></circle>
+                                    </g>
+                                    <g id="Oval-4-Clipped" transform="translate(10.500000, 3.937500)">
+                                        <mask id="mask-12" fill="white">
+                                            <use xlink:href="#path-11"></use>
+                                        </mask>
+                                        <g id="path-5"></g>
+                                        <circle id="Oval-4" fill="#000000" mask="url(#mask-12)" cx="47.25" cy="91.875" r="2.625"></circle>
+                                    </g>
+                                    <g id="Oval-4-Clipped" transform="translate(10.500000, 3.937500)">
+                                        <mask id="mask-14" fill="white">
+                                            <use xlink:href="#path-13"></use>
+                                        </mask>
+                                        <g id="path-5"></g>
+                                        <circle id="Oval-4" fill="#000000" mask="url(#mask-14)" cx="44.625" cy="110.25" r="2.625"></circle>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                    <g id="Hand-Clipped">
+                        <mask id="mask-16" fill="white">
+                            <use xlink:href="#path-15"></use>
+                        </mask>
+                        <g id="path-1"></g>
+                        <g id="Hand" mask="url(#mask-16)">
+                            <g transform="translate(43.312500, 120.750000)" id="Group">
+                                <g transform="translate(77.437500, 83.343750) rotate(-37.000000) translate(-77.437500, -83.343750) translate(34.125000, 13.125000)">
+                                    <path d="M56.286586,98.9345178 L66.7075372,98.4506462 C67.4495446,98.3499146 68.1374472,98.8391824 68.235995,99.5371086 C68.3422721,100.240431 67.832142,100.882595 67.0978641,100.981528 L62.046804,102.094972 L58.6613957,105 L55.1387935,100.37534 C55.0325164,99.6774133 55.5523079,99.0352493 56.286586,98.9345178" id="Fill-628" fill="#DEBAA4" fill-rule="nonzero"></path>
+                                    <polyline id="Fill-630" fill="#F8D54C" fill-rule="nonzero" points="86.625 123.816024 73.0803001 97.7127166 71.9468124 97.125 44.625 112.433977 59.2993775 139.125"></polyline>
+                                    <path d="M23.6718501,69.5625 C28.8636793,78.495841 36.0115445,86.0543913 44.625,91.781131 L42.0501591,106.3125 C31.5841212,100.425337 22.6354001,92.4284205 15.75,82.8067516" id="Fill-632" fill="#DEBAA4" fill-rule="nonzero"></path>
+                                    <path d="M62.2871761,109.906891 L71.7301899,115.345993 C72.3014754,115.671733 73.0239836,115.465305 73.3432314,114.872534 C73.669947,114.287338 73.4683168,113.54306 72.9026321,113.221107 L63.4540174,107.778218 C62.8883328,107.452478 62.1658246,107.662694 61.839109,108.251677 C61.5198612,108.840661 61.7214914,109.581151 62.2871761,109.906891" id="Fill-634" fill="#DEBAA4" fill-rule="nonzero"></path>
+                                    <path d="M59.639187,114.003999 L67.8620062,119.272387 C68.4095957,119.620911 69.1062013,119.400044 69.4168012,118.775943 C69.7220151,118.139684 69.5335006,117.349426 68.9841157,116.998875 L60.7577059,111.726434 C60.2172979,111.37791 59.5224876,111.60283 59.2082969,112.23301 C58.9012877,112.863191 59.0951883,113.655475 59.639187,114.003999" id="Fill-636" fill="#DEBAA4" fill-rule="nonzero"></path>
+                                    <path d="M58.3691332,116.608067 L65.1111364,120.587758 C65.7001686,120.933294 66.4437009,120.708294 66.7778076,120.089543 C67.1119143,119.460748 66.903339,118.675256 66.3239632,118.32972 L59.5761661,114.350029 C58.9871341,114.004493 58.2474642,114.227484 57.909495,114.852262 C57.5753882,115.477039 57.7839636,116.262531 58.3691332,116.608067" id="Fill-638" fill="#DEBAA4" fill-rule="nonzero"></path>
+                                    <path d="M65.625,104.867332 L64.4855943,106.909683 L64.4800363,106.902284 C64.0668859,106.667339 63.5407214,106.820886 63.3035769,107.242676 C63.0682849,107.664466 63.2109422,108.199103 63.6296507,108.432198 L63.6389141,108.437747 L62.6532819,110.197056 L62.6458711,110.193356 C62.230868,109.960262 61.7047036,110.108258 61.4638536,110.530048 C61.2378252,110.951838 61.3804824,111.482776 61.7936327,111.71957 L61.8028962,111.72512 L60.8598759,113.41783 L60.8506125,113.41228 C60.4356095,113.175486 59.9094449,113.327182 59.674153,113.748972 C59.4388612,114.172612 59.5852238,114.7054 59.9983742,114.940344 L60.0076376,114.944044 L58.9664247,116.8125 L41.4696008,106.991082 L38.0625,89.25" id="Fill-640" fill="#DEBAA4" fill-rule="nonzero"></path>
+                                    <path d="M63.577395,107.441105 L71.8048621,112.712693 C72.3470169,113.057109 73.04356,112.836277 73.3541321,112.212277 C73.6593184,111.576121 73.4708209,110.78599 72.926871,110.435496 L64.699404,105.163908 C64.155454,104.81544 63.4607061,105.040324 63.1465437,105.670402 C62.839562,106.294402 63.0298547,107.092637 63.577395,107.441105" id="Fill-642" fill="#DEBAA4" fill-rule="nonzero"></path>
+                                    <g id="Group-3" fill="#425480" fill-rule="nonzero">
+                                        <g id="Mask">
+                                            <path d="M15.1110903,84 C11.6275189,79.0971826 8.67929329,73.7771843 6.3123002,68.1038976 C-2.10410007,47.9420245 -2.10410007,25.7318301 6.3123002,5.56995722 C7.78450107,2.05210596 11.8435692,0.383381649 15.3921468,1.83787784 C18.9349887,3.29801162 20.6175039,7.32512447 19.1510389,10.8467341 C12.151393,27.6053867 12.151393,46.0665889 19.1510389,62.830879 C20.4339568,65.9183949 21.9367488,68.8781255 23.625,71.6969165" id="path-7"></path>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                    <g id="Hand-Clipped">
+                        <mask id="mask-18" fill="white">
+                            <use xlink:href="#path-17"></use>
+                        </mask>
+                        <g id="path-1"></g>
+                        <g id="Hand" mask="url(#mask-18)">
+                            <g transform="translate(124.687500, 94.500000)" id="Group">
+                                <g transform="translate(56.437500, 51.187500) rotate(-7.000000) translate(-56.437500, -51.187500) translate(5.250000, 6.562500)">
+                                    <path d="M44.7698386,62.5681196 L50.1156673,54.4744078 C50.4367055,53.8621888 51.2050331,53.6350466 51.8290739,53.9615634 C52.4440967,54.2934038 52.6785628,55.0511358 52.3539174,55.6633547 L50.4799916,60.0908512 L50.939906,64.3125 L45.2946821,64.2699109 C44.6778558,63.9416196 44.4488004,63.1803387 44.7698386,62.5681196" id="Fill-595" fill="#F1D6C6" fill-rule="nonzero"></path>
+                                    <path d="M1.3125,74.5801936 C11.6239759,75.7615877 21.9582438,74.4851388 31.6467387,70.875 L42,81.9071652 C31.0807376,86.954764 19.3409637,89.4455852 7.47773317,89.2380168" id="Fill-597" fill="#DEBAA3" fill-rule="nonzero"></path>
+                                    <path d="M56.7478404,65.5221018 L66.2728578,61.2273176 C66.8501315,60.9664936 67.0918649,60.2985727 66.8356997,59.7293421 C66.5632986,59.1565867 65.8904138,58.9045743 65.318552,59.1653983 L55.7935347,63.4566577 C55.216261,63.7174817 54.9655076,64.3889272 55.2306928,64.9581579 C55.5030938,65.5309133 56.1705667,65.7829257 56.7478404,65.5221018" id="Fill-599" fill="#F1D6C6" fill-rule="nonzero"></path>
+                                    <path d="M58.1964129,69.4528635 L67.5231646,65.3105949 C68.1479417,65.0308133 68.4251865,64.321032 68.1342747,63.7088927 C67.8472677,63.098631 67.1053448,62.8338712 66.4903297,63.1080195 L57.1635781,67.2521659 C56.5388011,67.5300698 56.2615561,68.2454842 56.5544204,68.8519905 C56.8453323,69.4622522 57.5716358,69.7307673 58.1964129,69.4528635" id="Fill-601" fill="#F1D6C6" fill-rule="nonzero"></path>
+                                    <path d="M59.4333949,72.0841783 L66.2449054,69.1077532 C66.8437196,68.8493953 67.1000868,68.1751873 66.8306206,67.6036145 C66.5517977,67.0320418 65.8481911,66.7789925 65.2549909,67.0408897 L58.4434803,70.0102365 C57.8446662,70.2721336 57.5845564,70.9463417 57.8596366,71.5179143 C58.142202,72.0930262 58.8345809,72.3460755 59.4333949,72.0841783" id="Fill-603" fill="#DEBAA3" fill-rule="nonzero"></path>
+                                    <path d="M54.5495269,59.0625 L55.5455626,61.1988796 L55.536022,61.2025919 C55.0914313,61.4011954 54.8929875,61.9227615 55.0990638,62.360803 C55.3070483,62.8062687 55.8394121,63.0048722 56.2782785,62.8025566 L56.287819,62.7969882 L57.1502867,64.640103 L57.13693,64.6456712 C56.6923393,64.8424187 56.4938955,65.365841 56.7018798,65.8020262 C56.9079563,66.2437798 57.4403201,66.4423834 57.8849108,66.2400676 L57.888727,66.2344992 L58.7149405,68.0107942 L58.7111243,68.0145063 C58.2646255,68.2131098 58.0680898,68.7365322 58.2741661,69.1764296 C58.4821506,69.6181833 59.0126063,69.8130744 59.4533808,69.614471 L59.4629213,69.614471 L60.375,71.56524 L41.65449,80.0625 L24.9375,72.3633661" id="Fill-605" fill="#DEBAA3" fill-rule="nonzero"></path>
+                                    <path d="M54.2572836,61.5787303 L63.5945466,57.4358822 C64.2135162,57.1579396 64.4868781,56.446181 64.1959429,55.835834 C63.9089129,55.2236089 63.1727882,54.9588122 62.5518661,55.2329989 L53.224366,59.3777249 C52.5995386,59.6556675 52.3281292,60.3711822 52.6132066,60.9777732 C52.9060945,61.5824863 53.6324562,61.856673 54.2572836,61.5787303" id="Fill-607" fill="#F1D6C6" fill-rule="nonzero"></path>
+                                    <path d="M97.7084906,69.5625 L102.375,28.2487594 C102.375,28.2487594 101.52419,10.5268976 83.4537189,2.42068331 L61.8727307,0 L57.75,61.2680724 C81.2360633,55.8974724 97.7084906,69.5625 97.7084906,69.5625" id="Fill-646" fill="#F3F4F4" fill-rule="nonzero"></path>
+                                    <path d="M93.1875,74.8125 L91.7584742,33.2472104 C91.7584742,33.2472104 88.3042186,15.8401145 69.1083205,10.5 L47.25,11.305211 L52.1537759,72.5310689 C74.7648037,63.7352572 93.1875,74.8125 93.1875,74.8125" id="Fill-648" fill="#FEFEFE" fill-rule="nonzero"></path>
+                                    <path d="M91.875,32.8125 C91.875,32.8125 88.4412684,15.7366631 69.3715624,10.5 L65.625,26.1331947 C83.5822139,24.4839384 91.875,32.8125 91.875,32.8125" id="Fill-650" fill="#D8D8D8" fill-rule="nonzero"></path>
+                                    <path d="M44.7698386,62.5681196 L50.1156673,54.4744078 C50.4367055,53.8621888 51.2050331,53.6350466 51.8290739,53.9615634 C52.4440967,54.2934038 52.6785628,55.0511358 52.3539174,55.6633547 L50.4799916,60.0908512 L50.939906,64.3125 L45.2946821,64.2699109 C44.6778558,63.9416196 44.4488004,63.1803387 44.7698386,62.5681196" id="Fill-652" fill="#DEBAA3" fill-rule="nonzero"></path>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                    <g id="Rectangle-7-Clipped">
+                        <mask id="mask-20" fill="white">
+                            <use xlink:href="#path-19"></use>
+                        </mask>
+                        <g id="path-1"></g>
+                        <polygon id="Rectangle-7" fill="#1E2A45" fill-rule="nonzero" mask="url(#mask-20)" transform="translate(106.312500, 222.468750) scale(-1, 1) rotate(12.000000) translate(-106.312500, -222.468750) " points="98.4375 216.829493 105.087322 211.3125 114.1875 226.824589 106.311063 233.625"></polygon>
+                    </g>
+                </g>
+                <polygon id="Rectangle-7" fill="#1E2A45" fill-rule="nonzero" transform="translate(80.718750, 144.375000) scale(-1, 1) rotate(51.000000) translate(-80.718750, -144.375000) " points="78.8608175 127.3125 85.3125 128.728347 81.9254337 161.4375 76.125 149.696548"></polygon>
+                <g id="Head" transform="translate(101.062500, 91.218750) rotate(23.000000) translate(-101.062500, -91.218750) translate(32.812500, 23.625000)" fill-rule="nonzero">
+                    <g id="Group-9">
+                        <path d="M63.6591374,112.875 C68.8469717,112.875 73.2166875,116.425323 74.4621526,121.228364 C74.687376,122.126432 74.8125,123.062634 74.8125,124.029344 C74.8125,130.189973 69.8190892,135.1875 63.6591374,135.1875 C57.4991858,135.1875 52.5,130.189973 52.5,124.029344 C52.5,117.868714 57.4991858,112.875 63.6591374,112.875" id="Fill-613" fill="#D2AD95"></path>
+                        <path d="M100.870814,62.795355 C102.528911,97.016779 93.8010026,119.231971 60.1249991,121.972014 C36.3358889,123.900748 1.7177425,94.7237071 0.0577763002,60.498527 C-1.59471257,26.2752249 32.4813278,5.67889306 66.2190193,3.99805811 C89.1220663,2.86185124 81.0409472,17.865416 92.4176974,36.255065 C97.8013716,44.9616023 100.336185,51.8051358 100.870814,62.795355" id="Fill-615" fill="#736253"></path>
+                        <path d="M112.875307,64.4352371 C112.921118,68.021235 116.160336,70.9212159 120.090535,70.874442 L128.116999,70.7925877 C132.045291,70.7458137 135.225335,67.7795699 135.18716,64.1935721 C135.150892,60.6075742 131.911674,57.7075933 127.977658,57.7504694 L119.951193,57.8362215 C116.019085,57.8732509 112.83904,60.8453415 112.875307,64.4352371" id="Fill-618" fill="#F3A082"></path>
+                        <path d="M69.8405911,56.5163239 C70.7011299,47.920671 55.8290622,17.4939281 55.8290622,17.4939281 L73.5218892,6.5625 C102.915783,9.95217706 125.399005,35.2981415 124.670278,65.5062556 C124.506455,72.3472742 123.107374,78.8500725 120.78938,84.8931902 C117.716296,85.0744464 112.632151,85.1473226 112.006989,85.6051346 C111.351699,86.094713 111.210473,87.0252859 111.703823,87.6830402 C113.21212,89.7235734 115.294737,91.0970093 117.616497,91.8014791 C107.570601,110.257841 87.8629461,122.590734 65.4362146,122.045097 C59.5273075,121.904951 53.8952039,120.776304 48.5625,118.988034 C48.5625,118.988034 68.9800524,65.106371 69.8405911,56.5163239" id="Fill-620" fill="#DEBAA3"></path>
+                        <path d="M114.317627,62.9967372 C112.867617,63.0685654 111.635109,61.9455925 111.566145,60.5055242 C111.490108,59.0549445 112.612982,57.8251052 114.054149,57.753277 C115.504159,57.6814488 116.736667,58.7991659 116.809168,60.2444899 C116.881668,61.6915658 115.762331,62.924909 114.317627,62.9967372" id="Fill-622" fill="#3A3129"></path>
+                        <path d="M74.79994,70.3625399 C75.0809342,76.1545319 70.6129411,81.0803972 64.827439,81.3623491 C59.0382152,81.6443009 54.1124435,77.1791413 53.8258667,71.3908349 C53.5355681,65.5988429 58.0091439,60.6785062 63.7983678,60.3873402 C69.5913134,60.1090739 74.5096414,64.5705478 74.79994,70.3625399" id="Fill-624" fill="#DEBAA3"></path>
+                        <path d="M23.625,20.7667422 C23.9821959,25.3941322 48.569185,18.2845375 64.7081173,16.9572868 C82.4246651,15.4993939 92.0782582,12.8884402 91.8717543,10.1866048 C91.6615296,7.48476949 88.5397857,-2.18087133 56.5726072,0.44901605 C37.2579794,2.03755133 23.625,20.7667422 23.625,20.7667422" id="Fill-626" fill="#736253"></path>
+                    </g>
+                </g>
+                <polygon id="Rectangle-7" fill="#1E2A45" fill-rule="nonzero" transform="translate(137.812500, 187.031250) scale(-1, 1) rotate(51.000000) translate(-137.812500, -187.031250) " points="129.9375 181.391992 136.587322 175.875 145.6875 191.38709 137.811064 198.1875"></polygon>
+                <polygon id="Rectangle-7" fill="#1E2A45" fill-rule="nonzero" transform="translate(69.562500, 148.968750) scale(-1, 1) rotate(51.000000) translate(-69.562500, -148.968750) " points="64.8826666 135.398265 71.3109662 133.875 76.125 164.0625 63 159.626785"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,52 @@
+[
+    {
+        "id": "5f1abfc0f739deab4553b192",
+        "name": "Scosdale Organization",
+        "address": "6357 N Scosdale Ave",
+        "number": "83-432467",
+        "city": "Scosdale",
+        "state": "79",
+        "zip": "80221",
+        "taxe_rate": ["80221"]
+    },
+    {
+        "id": "5f1abfc0f090debb05b98d62",
+        "name": "Organization of Phoenix",
+        "address": "1234 Phoenix St",
+        "number": "432467",
+        "city": "Phoenix",
+        "state": "52",
+        "zip": "80323",
+        "taxe_rate": ["80322", "80323"]
+    },
+    {
+        "id": "5f1abfc068a0ab73dcdff0ac",
+        "name": "New York Test Organization",
+        "address": "34 New York St",
+        "number": "890-2467",
+        "city": "New York",
+        "state": "15",
+        "zip": "80123",
+        "taxe_rate": ["80123"]
+    },
+    {
+        "id": "5f1abfc01006572aeaf515f2",
+        "name": "Organization Washington DC",
+        "address": "4 Washington St",
+        "number": "90-247",
+        "city": "Washington",
+        "state": "1",
+        "zip": "80100",
+        "taxe_rate": ["80100"]
+    },
+    {
+        "id": "5f1abfc00ae25f339a49d8f7",
+        "name": "Organization_1 LA",
+        "address": "1784 LA Ave",
+        "number": "8-246",
+        "city": "Los Angeles",
+        "state": "63",
+        "zip": "80504",
+        "taxe_rate": ["80504"]
+    }
+]

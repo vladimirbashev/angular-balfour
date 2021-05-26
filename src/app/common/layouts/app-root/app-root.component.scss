@@ -1,0 +1,23 @@
+:host,
+.rp-unauthorized {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.rp-unauthorized {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    h1 {
+        font-size: 5em;
+    }
+
+    button {
+        margin-top: 16px;
+    }
+}

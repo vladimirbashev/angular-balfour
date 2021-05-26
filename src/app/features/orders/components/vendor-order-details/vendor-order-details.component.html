@@ -1,0 +1,481 @@
+<ng-container *ngIf="ctx$ | async as ctx">
+    <div class="rp-vendor-order-details-header" fxLayout="column">
+        <div fxLayout="row wrap" fxLayoutGap="2em">
+            <div fxLayout="row" fxLayoutGap="1em" class="bottom-wrapper">
+                <div fxLayout="column" fxLayoutGap="1em">
+                    <div class="rp-label">Envelope number:</div>
+                    <div class="rp-label">School name:</div>
+                    <!-- <div class="rp-label">School tax rate:</div> -->
+                    <div class="rp-label">School number:</div>
+                    <div class="rp-label">Last update:</div>
+                </div>
+                <div fxLayout="column" fxLayoutGap="1em" class="values">
+                    <div>{{ order?.id }}</div>
+                    <div>{{ order?.org_name }}</div>
+                    <div>{{ order?.org_number }}</div>
+                    <div>{{ order?.update_date | date:'MM/dd/yyyy hh:mm a' }}</div>
+                </div>
+            </div>
+            <div fxLayout="row" fxLayoutGap="1em">
+                <div fxLayout="column" fxLayoutGap="1em">
+                    <div class="rp-label">PO #:</div>
+                    <div *ngIf="!inGroup(ctx.profile?.groups, 'Reps')" class="rp-label">Rep name:</div>
+                    <div *ngIf="!inGroup(ctx.profile?.groups, 'Reps')" class="rp-label">Rep number:</div>
+                    <div *ngIf="order?.date_mailed" class="rp-label">Date submitted:</div>
+                    <div class="rp-label">Status:</div>
+                </div>
+                <div fxLayout="column" fxLayoutGap="1em" class="values">
+                    <div>{{ order?.purchase_number }}</div>
+                    <div *ngIf="!inGroup(ctx.profile?.groups, 'Reps')">{{ order?.rep_name }}</div>
+                    <div *ngIf="!inGroup(ctx.profile?.groups, 'Reps')"><span matPrefix>BAL&nbsp;</span>{{ order?.office_number }}</div>
+                    <div *ngIf="order?.date_mailed">{{ order?.date_mailed | date:'MM/dd/yyyy hh:mm a' }}</div>
+                    <div fxLayout="row" fxLayoutGap="8px">
+                        <rp-vendor-order-status-chip [status]="order?.status" [currentUser]="ctx.profile"
+                            [assigneeId]="order?.assignee_id" [groups]="ctx.profile?.groups">
+                        </rp-vendor-order-status-chip>
+                        <button mat-icon-button color="accent" class="rp-change-status-link"
+                            *ngIf="inGroup(ctx.profile?.groups, ['Administrators', 'AE', 'OE', 'OETL'])"
+                            (click)="onChangeStatus(ctx.profile?.groups, ctx.profile)"
+                            [disabled]="ctx.state === 'progress'">
+                            <mat-icon>edit</mat-icon>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="rp-button-container" fxFlex fxLayout="row wrap" fxLayoutAlign="end center" fxLayoutGap="8px">
+            <mat-spinner diameter="24" *ngIf="ctx.printState === 'progress'"></mat-spinner>
+            <button mat-stroked-button [matMenuTriggerFor]="menu" [disabled]="ctx.printState === 'progress'">
+                EXPORT <mat-icon>arrow_drop_down</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item (click)="onExportPdf()">
+                    Envelope summary
+                </button>
+                <!-- <button mat-menu-item (click)="onExportPdf(2)">
+                    Export summary
+                </button> -->
+                <button mat-menu-item (click)="onExportPdf(4)">
+                    Envelope summary with orders
+                </button>
+            </mat-menu>
+            <button mat-stroked-button color="" (click)="addCustomerOrder()"
+                class="rp-customer-order-btns rp-add-customer-order"
+                *ngIf="(order?.status == 'in_progress' || order?.status == 'incomplete') && inGroup(ctx.profile?.groups, ['Reps', 'Administrators'])">
+                <span>ADD CUSTOMER ORDER</span>
+                <!-- <mat-icon>add_circle_outline</mat-icon> -->
+            </button>
+            <button mat-stroked-button color="" (click)="onEditClick()" class="rp-customer-order-btns"
+                [disabled]="ctx.state === 'progress'">
+                {{ (!inGroup(ctx.profile?.groups, ['Reps', 'Administrators']) || (order?.status !== 'in_progress' && order?.status !== 'incomplete')) ? 'VIEW' : 'EDIT' }}
+            </button>
+            <button mat-stroked-button color="primary"
+                *ngIf="order?.status === 'in_progress' && inGroup(ctx.profile?.groups, ['Reps'])"
+                (click)="onSubmitVendorOrder()" [disabled]="ctx.state === 'progress' 
+                || warningChecksCountAndAttachemnts
+                || warningTotalDeposit
+                || order?.customer_order_ids?.length == 0
+                || !allOrdersCompleted || (order?.count_of_orders != order?.customer_order_ids?.length)">
+                SUBMIT
+            </button>
+
+            <button mat-stroked-button color="primary"
+                *ngIf="order?.status === 'submitted' && inGroup(ctx.profile?.groups, ['Reps'])"
+                (click)="onUnsubmitVendorOrder()">
+                UNSUBMIT
+            </button>
+            <!-- <button mat-stroked-button color="primary" 
+                *ngIf="inGroup(ctx.profile?.groups, ['Administrators', 'AE', 'OE', 'OETL'])"
+                (click)="onChangeStatus(ctx.profile?.groups)"
+                [disabled]="ctx.state === 'progress'">
+                CHANGE STATUS
+            </button> -->
+            <button mat-stroked-button color="warn"
+                *ngIf="order?.status === 'in_progress' && inGroup(ctx.profile?.groups, ['Administrators', 'Reps'])"
+                (click)="onDeleteVendorOrder()" [disabled]="ctx.state === 'progress'">
+                DELETE
+            </button>
+        </div>
+    </div>
+    <mat-divider></mat-divider>
+    <div>
+        <mat-expansion-panel
+            [disabled]="!inGroup(ctx.profile?.groups, ['Reps', 'Administrators']) || order?.status !== 'in_progress' || ctx.state === 'progress'"
+            (closed)="resetCodeInForm()">
+            <mat-expansion-panel-header>
+                <mat-panel-title class="rp-vendor-order-subheader">
+                    <div>Code:
+                        {{ form.get('code').value == vendorOrderCodes[2][1] ? (form.get('otherCode').value || form.get('code').value) : form.get('code').value }}
+                    </div>
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <ng-container>
+                <form [formGroup]="form" fxLayout="column" fxLayoutAlign="flex-start stretch" fxLayoutGap="8px">
+                    <mat-radio-group formControlName="code" (change)="onCodeChange($event)">
+                        <mat-radio-button color="primary"
+                            *ngFor="let vendorOrderCode of getVendorOrderCodes(ctx.profile?.groups)"
+                            [value]="vendorOrderCode[1]">
+                            {{ vendorOrderCode[0] }}
+                        </mat-radio-button>
+                    </mat-radio-group>
+                    <mat-form-field fxFlex="grow" appearance="outline"
+                        *ngIf="form.get('code').value == vendorOrderCodes[2][1]">
+                        <mat-label>Other code</mat-label>
+                        <input matInput [required]="form.get('code').value == vendorOrderCodes[2][1]"
+                            formControlName="otherCode">
+                    </mat-form-field>
+
+                    <div fxFlex fxLayoutAlign="end">
+                        <button mat-stroked-button color="primary" fxFlex="25%" (click)="onUpdateCode()"
+                            [disabled]="ctx.state === 'progress' || !isCodeChanged || (form.get('code').value == vendorOrderCodes[2][1] 
+                                        && (form.get('otherCode').value == null || form.get('otherCode').value == ''))">
+                            UPDATE CODE
+                        </button>
+                    </div>
+                </form>
+            </ng-container>
+        </mat-expansion-panel>
+    </div>
+    <mat-divider></mat-divider>
+    <mat-tab-group class="scrolled-block">
+        <mat-tab label="Orders">
+            <div>
+                <div fxLayout="column" fxLayoutAlign="flex-start stretch" fxLayoutGap="24px"
+                    class="rp-vendor-order-details-info">
+                    <div fxLayout="row" fxLayoutGap="1em">
+                        <div fxLayout="column" fxLayoutGap="1em">
+                            <div class="rp-label">Number of orders:</div>
+                            <div class="rp-label">Total price:</div>
+                            <div class="rp-label">Total deposit in envelope:</div>
+                            <div class="rp-label">Total deposit on envelope:</div>
+                            <div class="rp-label" *ngIf="order?.payment_type == 'wire' || order?.payment_type_2 == 'wire'
+                            || (order?.additional_payment_types && order?.additional_payment_types.includes('wire'))">
+                                Wire number:</div>
+                            <div class="rp-label" *ngIf="order?.payment_type == 'wire' || order?.payment_type_2 == 'wire'
+                            || (order?.additional_payment_types && order?.additional_payment_types.includes('wire'))">
+                                Wire total deposit on envelope:
+                            </div>
+                            <div class="rp-label" *ngIf="order?.payment_type == 'check' || order?.payment_type_2 == 'check'
+                            || (order?.additional_payment_types && order?.additional_payment_types.includes('check'))">
+                                Check number:</div>
+                            <div class="rp-label" *ngIf="order?.payment_type == 'check' || order?.payment_type_2 == 'check'
+                            || (order?.additional_payment_types && order?.additional_payment_types.includes('check'))">
+                                Check total deposit on
+                                envelope:</div>
+                            <!-- <div class="rp-label" *ngIf="(order?.payment_type == 'chase' || order?.payment_type_2 == 'chase') && order?.chase_number">Chase number:</div> -->
+                            <div class="rp-label" *ngIf="order?.payment_type == 'chase' || order?.payment_type_2 == 'chase'
+                            || (order?.additional_payment_types && order?.additional_payment_types.includes('chase'))">
+                                Chase total deposit on
+                                envelope:</div>
+                            <!-- <div class="rp-label"
+                                *ngIf="order?.payment_type == 'rep_gratis' || order?.payment_type_2 == 'rep_gratis'
+                                    || (order?.additional_payment_types && order?.additional_payment_types.includes('rep_gratis'))">Rep Gratis
+                                total deposit on
+                                envelope:</div>
+                            <div class="rp-label"
+                                *ngIf="order?.payment_type == 'bill_rep_office' || order?.payment_type_2 == 'bill_rep_office'
+                                    || (order?.additional_payment_types && order?.additional_payment_types.includes('bill_rep_office'))">Bill Rep Office @ NET
+                                total deposit on
+                                envelope:</div> -->
+                        </div>
+                        <div fxLayout="column" fxFlex fxLayoutGap="1em">
+                            <div fxFlex fxLayoutAlign="end">
+                                <span *ngIf="order?.count_of_orders === order?.customer_order_ids?.length">
+                                    {{ order?.count_of_orders }}
+                                </span>
+                                <span class="rp-error"
+                                    *ngIf="order?.count_of_orders != order?.customer_order_ids?.length">
+                                    <strong>{{ order?.customer_order_ids?.length }} /
+                                        {{ order?.count_of_orders }}</strong>.
+                                    Match orders number for Submit
+                                </span>
+                            </div>
+
+                            <div fxFlex class="rp-label" fxLayoutAlign="end">{{ order?.total_price | currency }}</div>
+
+                            <div fxFlex fxLayoutAlign="end">
+                                <span *ngIf="totalDeposist == ordersDeposit">{{ ordersDeposit | currency }}</span>
+                                <span *ngIf="totalDeposist != ordersDeposit"
+                                    class="rp-error">{{ ordersDeposit | currency }}
+                                </span>
+                            </div>
+
+                            <div fxFlex fxLayoutAlign="end">
+                                <span *ngIf="totalDeposist == ordersDeposit">
+                                    {{ totalDeposist | currency }}
+                                </span>
+                                <span class="rp-error" *ngIf="totalDeposist != ordersDeposit">
+                                    <strong>{{ totalDeposist | currency }}</strong>.
+                                    Match deposits for Submit
+                                </span>
+                            </div>
+
+                            <!-- Wire payments info -->
+                            <div fxFlex fxLayoutAlign="end"
+                                *ngIf="order?.payment_type == 'wire' || order?.payment_type_2 == 'wire' 
+                                || (order?.additional_payment_types && order?.additional_payment_types.includes('wire'))">
+                                <span *ngIf="order?.wire_number">
+                                    {{ order?.wire_number }}
+                                </span>
+                                <span class="rp-error" *ngIf="!order?.wire_number">
+                                    Enter wire# for Submit
+                                </span>
+                            </div>
+                            <div fxFlex fxLayoutAlign="end"
+                                *ngIf="order?.payment_type == 'wire' || order?.payment_type_2 == 'wire'
+                                || (order?.additional_payment_types && order?.additional_payment_types.includes('wire'))">
+                                <span>{{ order?.wire_deposit | currency }}</span>
+                            </div>
+                            <!-- Check payments info -->
+                            <div fxFlex fxLayoutAlign="end"
+                                *ngIf="order?.payment_type == 'check' || order?.payment_type_2 == 'check'
+                                || (order?.additional_payment_types && order?.additional_payment_types.includes('check'))">
+                                <span *ngIf="order?.check_number && !warningChecksCountAndAttachemnts">
+                                    {{ order?.check_number }}
+                                </span>
+                                <span class="rp-error" *ngIf="!order?.check_number">
+                                    Enter check# for Submit
+                                </span>
+                                <span class="rp-error" *ngIf="warningChecksCountAndAttachemnts">
+                                    {{ order?.check_number }}. Add attachment (check) for Submit
+                                </span>
+                            </div>
+                            <div fxFlex fxLayoutAlign="end"
+                                *ngIf="order?.payment_type == 'check' || order?.payment_type_2 == 'check'
+                                || (order?.additional_payment_types && order?.additional_payment_types.includes('check'))">
+                                <span>{{ order?.check_deposit | currency }}</span>
+                            </div>
+
+                            <!-- Chase payments info -->
+
+                            <!-- <div fxFlex fxLayoutAlign="end" *ngIf="(order?.payment_type == 'chase' || order?.payment_type_2 == 'chase')  && order?.chase_number">
+                                <span *>
+                                    {{ order?.chase_number }}
+                                </span>
+                            </div> -->
+                            <div fxFlex fxLayoutAlign="end"
+                                *ngIf="order?.payment_type == 'chase' || order?.payment_type_2 == 'chase'
+                                || (order?.additional_payment_types && order?.additional_payment_types.includes('chase'))">
+                                <span>{{ chaseAmount | currency }}</span>
+                            </div>
+
+                            <!-- Rep Gratis payments info -->
+                            <!-- <div fxFlex fxLayoutAlign="end"
+                                *ngIf="order?.payment_type == 'rep_gratis' || order?.payment_type_2 == 'rep_gratis'
+                                || (order?.additional_payment_types && order?.additional_payment_types.includes('rep_gratis'))">
+                                <span>{{ order?.rep_gratis_deposit | currency }}</span>
+                            </div> -->
+
+                            <!-- Bill Rep Office @ NET payments info -->
+                            <!-- <div fxFlex fxLayoutAlign="end"
+                                *ngIf="order?.payment_type == 'bill_rep_office' || order?.payment_type_2 == 'bill_rep_office'
+                                || (order?.additional_payment_types && order?.additional_payment_types.includes('bill_rep_office'))">
+                                <span>{{ order?.bill_rep_office_deposit | currency }}</span>
+                            </div> -->
+                        </div>
+                    </div>
+                    <!-- <div fxLayout="row" fxLayoutAlign="center center">
+        <mat-form-field fxFlex="50%" fxFlex.lt-md="100%" appearance="outline">
+            <mat-label>Check number</mat-label>
+            <input matInput placeholder="Check number">
+        </mat-form-field>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="center center">
+        <mat-form-field fxFlex="50%" fxFlex.lt-md="100%" appearance="outline">
+            <mat-label>Credit card number</mat-label>
+            <input matInput placeholder="Credit card number">
+        </mat-form-field>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="center center">
+        <mat-form-field fxFlex="50%" fxFlex.lt-md="100%" appearance="outline">
+            <mat-label>Wire number</mat-label>
+            <input matInput placeholder="Wire number">
+        </mat-form-field>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="center center">
+        <mat-form-field fxFlex="50%" fxFlex.lt-md="100%" appearance="outline">
+            <mat-label>Wireless batch number</mat-label>
+            <input matInput placeholder="Wireless batch number">
+        </mat-form-field>
+    </div> -->
+                </div>
+                <mat-divider></mat-divider>
+                <ng-container [ngSwitch]="ctx.customerOrdersProgress">
+                    <rp-state state="progress" *ngSwitchCase="true">
+                        <div class="rp-state-text">Orders are loading</div>
+                    </rp-state>
+                    <div class="rp-vendor-order-details-co" *ngSwitchCase="false">
+                        <div *ngIf="!allOrdersCompleted" class="rp-customer-orders-incomplete">
+                            <div class="rp-co-error" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="0.5em">
+                                <mat-icon>error_outline</mat-icon>
+                                <span>There are incomplete orders! Please complete all orders for Submit</span>
+                            </div>
+                        </div>
+                        <mat-divider *ngIf="!allOrdersCompleted"></mat-divider>
+                        <!-- <h3>Orders</h3> -->
+                        <ng-container *ngFor="let corder of customerOrders$ | async; trackBy: trackById">
+                            <div class="rp-customer-order-details" fxLayout="column" fxLayoutGap="12px">
+                                <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="8px">
+                                    <div class="rp-customer-order-details--number"
+                                        (click)="onEditCustomerOrder(corder?.id)">{{ corder?.id }}</div>
+                                    <div class="rp-customer-order-details--incomplete"
+                                        *ngIf="corder?.status == 'incomplete'">Incomplete</div>
+                                    <div fxFlex="auto"></div>
+                                    <mat-spinner diameter="24" *ngIf="ctx.printOrderState === 'progress'"></mat-spinner>
+                                    <button [disabled]="ctx.printOrderState === 'progress'" mat-icon-button
+                                        color="primary" (click)="onExportOrderPdf(corder)"
+                                        aria-label="Print Customer Order">
+                                        <mat-icon>picture_as_pdf</mat-icon>
+                                    </button>
+                                    <!-- <mat-menu #menu="matMenu">
+                                        <button mat-menu-item (click)="onExportOrderPdf(corder)">
+                                            Export 
+                                        </button>
+                                        <button mat-menu-item (click)="onExportOrderPdf(corder, 2)">
+                                            Export summary
+                                        </button>
+                                    </mat-menu> -->
+
+                                    <button
+                                        *ngIf="order?.status === 'in_progress' && inGroup(ctx.profile?.groups, ['Administrators', 'Reps'])"
+                                        mat-icon-button color="primary" (click)="onDeleteCustomerOrder(corder)"
+                                        aria-label="Remove Customer Order from Envelope">
+                                        <mat-icon>delete</mat-icon>
+                                    </button>
+                                </div>
+                                <div fxLayout="row">
+                                    <div class="rp-customer-order-details--subtitle">
+                                        {{ corder?.customer?.first_name }} {{ corder?.customer?.last_name }}
+                                    </div>
+                                    <div fxFlex="auto"></div>
+                                    <div class="rp-customer-order-details--price">
+                                        {{ corder?.payment_info?.fully_prepaid ? 'Fully prepaid' : 'Deposit' }}
+                                        {{ getCustomerOrderDeposit(corder)| currency }}</div>
+                                </div>
+                                <div fxLayout="row">
+                                    <div class="rp-customer-order-details--date">
+                                        {{ corder?.customer?.phone }}
+                                        <span *ngIf="corder?.customer?.phone && corder?.customer?.email"> * </span>
+                                        {{ corder?.customer?.email }}
+                                    </div>
+                                    <div fxFlex="auto"></div>
+                                    <div class="rp-customer-order-details--price">Price:
+                                        {{ corder?.total_price?.toFixed(2) | currency }}</div>
+                                </div>
+                            </div>
+                            <mat-divider></mat-divider>
+                        </ng-container>
+                    </div>
+                </ng-container>
+            </div>
+        </mat-tab>
+        <mat-tab label="Notes"
+            *ngIf="!inGroup(ctx.profile?.groups, ['CS']) || !(order?.notes == null || order?.notes?.length < 1)">
+            <div fxFlex *ngIf="(notesState$ | async) == 'view'">
+                <div *ngIf="!inGroup(ctx.profile?.groups, ['CS']) && !(order?.notes == null || order?.notes?.length < 1) && !(inGroup(ctx.profile?.groups, ['Reps']) && order?.status !== 'in_progress')"
+                    class="rp-vendor-order-note-form-actions" fxLayout="row" fxLayoutAlign="end">
+                    <button mat-stroked-button (click)="onAddNote()">
+                        ADD NOTE
+                    </button>
+                </div>
+                <mat-divider
+                    *ngIf="!inGroup(ctx.profile?.groups, ['CS']) && !(inGroup(ctx.profile?.groups, ['Reps']) && order?.status !== 'in_progress')">
+                </mat-divider>
+                <ng-container *ngFor="let note of order?.notes">
+                    <div class="rp-vendor-order-note-form" fxLayout="column">
+                        <markdown [data]="note.content"></markdown>
+                        <div fxLayout="row" fxLayoutAlign="end center">
+                            <span fxFlex></span>
+                            <i>By {{ ctx.profile?.id == note.author_id ? "me" : note.author_name }}</i>
+                            <button color="primary" mat-icon-button (click)="onNoteDelete(note)"
+                                *ngIf="inGroup(ctx.profile?.groups, 'Administrators') || ctx.profile?.id == note.author_id">
+                                <mat-icon>delete</mat-icon>
+                            </button>
+                        </div>
+                    </div>
+                    <mat-divider></mat-divider>
+                </ng-container>
+                <rp-state state="empty" *ngIf="order?.notes == null || order?.notes?.length < 1">
+                    <div class="rp-state-text">There are no notes about this envelope!</div>
+                    <button mat-stroked-button (click)="onAddNote()"
+                        *ngIf="!inGroup(ctx.profile?.groups, ['CS']) && !(inGroup(ctx.profile?.groups, ['Reps']) && order?.status !== 'in_progress')">
+                        ADD NOTE
+                    </button>
+                </rp-state>
+            </div>
+            <div fxFlex *ngIf="(notesState$ | async) == 'add'">
+                <form class="rp-vendor-order-note-form" [formGroup]="addNoteForm" fxLayout="column"
+                    fxLayoutAlign="flex-start stretch" fxLayoutGap="8px">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Note</mat-label>
+                        <textarea matInput formControlName="content"></textarea>
+                    </mat-form-field>
+                </form>
+                <mat-divider></mat-divider>
+                <div class="rp-vendor-order-note-form-actions" fxLayout="row" fxLayoutAlign="end center"
+                    fxLayoutGap="8px">
+                    <button mat-stroked-button color="warn" (click)="onAddNoteCancel()">
+                        CANCEL
+                    </button>
+
+                    <button mat-stroked-button color="primary" [disabled]="!addNoteForm.valid"
+                        (click)="onAddNoteConfirm(ctx.profile)">
+                        ADD
+                    </button>
+                </div>
+            </div>
+        </mat-tab>
+        <mat-tab>
+            <ng-template mat-tab-label>
+                <span *ngIf="!warningChecksCountAndAttachemnts">Attachments</span>
+                <span matBadge="!" matBadgeColor="warn" *ngIf="warningChecksCountAndAttachemnts">Attachments</span>
+            </ng-template>
+            <rp-state state="empty" *ngIf="order?.attachments == null || order?.attachments?.length < 1">
+                <div class="rp-state-text">There are no attachments!</div>
+                <button mat-stroked-button (click)="fileInput.click()"
+                    *ngIf="inGroup(ctx.profile?.groups, ['Reps', 'Administrators'])">
+                    ADD ATTACHMENTS
+                </button>
+                <input type="file" #fileInput hidden (change)="onUploadAttachments($event.target.files)" multiple>
+            </rp-state>
+            <div *ngIf="order?.attachments && order?.attachments?.length > 0">
+                <div *ngIf="inGroup(ctx.profile?.groups, ['Reps', 'Administrators'])"
+                    class="rp-vendor-order-note-form-actions" fxLayout="row" fxLayoutAlign="end">
+                    <button mat-stroked-button (click)="fileInput.click()">
+                        ADD ATTACHMENTS
+                    </button>
+                    <input type="file" #fileInput hidden (change)="onUploadAttachments($event.target.files)" multiple>
+                </div>
+                <mat-divider *ngIf="inGroup(ctx.profile?.groups, ['Reps', 'Administrators'])"></mat-divider>
+                <div fxLayout="column" fxLayoutGap="8px">
+                    <div fxLayout="column" *ngFor="let attachment of order?.attachments">
+                        <div class="rp-vendor-order-attachment" fxLayout="row" fxLayoutGap="8px"
+                            fxLayoutAlign="start center">
+                            <img *ngIf="attachment.type.includes('image')" (click)="attachmentLink.click()"
+                                src="{{ attachment.uri }}" alt="{{ attachment.name }}">
+                            <div class="rp-vendor-order-attachment-details" (click)="attachmentLink.click()"
+                                fxLayout="column" fxFlex fxLayoutAlign="center start">
+                                <span class="rp-vendor-order-attachment-title">{{ attachment.name }}</span>
+                                <span class="rp-vendor-order-attachment-subtitle">{{ attachment.type }}</span>
+                            </div>
+                            <div fxLayout="row" fxLayoutAlign="end center">
+                                <button color="primary" mat-icon-button (click)="attachmentLink.click()">
+                                    <mat-icon>cloud_download</mat-icon>
+                                </button>
+                                <a #attachmentLink target="_blank" download="{{ attachment.name }}" hidden
+                                    href="{{ attachment.uri }}">
+                                </a>
+                                <button color="primary" mat-icon-button (click)="onDeleteAttachment(attachment)"
+                                    *ngIf="inGroup(ctx.profile?.groups, ['Reps', 'Administrators'])">
+                                    <mat-icon>delete</mat-icon>
+                                </button>
+                            </div>
+                            <mat-divider></mat-divider>
+                        </div>
+                        <mat-divider></mat-divider>
+                    </div>
+                </div>
+            </div>
+        </mat-tab>
+    </mat-tab-group>
+</ng-container>

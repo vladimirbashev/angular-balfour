@@ -1,0 +1,69 @@
+:host {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border: none;
+    width: 100%;
+    height: 100%;
+    box-shadow: none;
+    margin: 0;
+    display: flex;
+    -webkit-transition: left .35s ease, width .35s ease;
+    -moz-transition: left .35s ease, width .35s ease;
+    -ms-transition: left .35s ease, width .35s ease;
+    -o-transition: left .35s ease, width .35s ease;
+    transition: left .35s ease, width .35s ease;
+
+    .rp-document-container {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        overflow: hidden;
+        overflow-y: auto;
+
+        .rp-document-content {
+            overflow-y: auto;
+            overflow-x: hidden;
+            flex: 1;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        ::ng-deep rp-document-content {
+            display: block;
+            flex: 1;
+            overflow: hidden;
+        }
+
+        ::ng-deep rp-document-footer {
+            display: flex;
+            padding: 16px;
+            box-shadow: none;
+            border-top: 1px solid #E8E8E8;
+        
+            .footer-btns {
+                border-radius: 2px;
+                height: 46px;
+            }
+        }
+    }
+}
+
+:host-context(.gt-md) {
+    z-index: 10;
+    position: relative;
+    display: flex;
+    flex: 1 0 100%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 960px;
+    max-width: 100%;
+}
+
+:host-context(.menu-container) {
+    margin: 0;
+}

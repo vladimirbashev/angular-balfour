@@ -1,0 +1,7 @@
+@mixin rp-state-mixin($theme) {
+    .rp-state-text {
+        color: $balfour-grey-color;
+    }
+}
+
+@include rp-state-mixin($theme);

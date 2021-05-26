@@ -1,0 +1,418 @@
+<ng-container *ngIf="{state: state$ | async, editState: editState$ | async} as ctx">
+    <rp-document-layout>
+        <rp-document-content>
+            <rp-state [state]="ctx.state" *ngIf="ctx.state === 'progress'">
+                <div class="rp-state-text">Product details loading</div>
+            </rp-state>
+            <rp-state [state]="ctx.state" *ngIf="ctx.state === 'error'">
+                <div class="rp-state-text">{{ error$ | async }}</div>
+                <button mat-stroked-button (click)="onReload()">Reload</button>
+            </rp-state>
+            <mat-horizontal-stepper *ngIf="ctx.state === 'data'" #stepper [linear]="false"
+                (selectionChange)="selectionChanged($event)" stepperScrollUp>
+                <mat-step [stepControl]="form.get('customer')">
+                    <form class="scrolled-block" [formGroup]="form.get('customer')">
+                        <ng-template matStepLabel>Customer</ng-template>
+                        <div fxLayout="column" fxLayoutGap="16px">
+                            <h3>Customer information</h3>
+
+                            <div fxLayout="row" fxLayoutGap="16px">
+                                <mat-form-field fxFlex="50%" appearance="outline">
+                                    <mat-label>First name</mat-label>
+                                    <input matInput [placeholder]="'First name'" formControlName="first_name" required>
+                                    <mat-error *ngIf="hasError('customer.first_name', 'required')">
+                                        First name is required!
+                                    </mat-error>
+                                </mat-form-field>
+                    
+                                <mat-form-field fxFlex="50%" appearance="outline">
+                                    <mat-label>Last name</mat-label>
+                                    <input matInput [placeholder]="'Last name'" formControlName="last_name" required>
+                                    <mat-error *ngIf="hasError('customer.last_name', 'required')">
+                                        Last name is required!
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+                    
+                            <!-- <div fxLayout="row" fxLayoutGap="20px" fxLayoutAlign="start center">
+                                <mat-form-field fxFlex="100%" appearance="outline">
+                                    <mat-label>Organization/School name</mat-label>
+                                    <rp-organization-picker formControlName="org" required disabled="true"></rp-organization-picker>
+                                    <mat-error *ngIf="hasError('customer.org', 'required')">
+                                        Organization name is required!
+                                    </mat-error>
+                                </mat-form-field>
+                                <button mat-mini-fab color="primary" class="btn-choose" (click)="onSelectOrganization()" title="Choose Organization">
+                                    <mat-icon>account_balance</mat-icon>
+                                </button>
+                            </div> -->
+
+                            <div fxLayout="row" fxLayoutGap="16px">
+                                <mat-form-field fxFlex="50%" appearance="outline">
+                                    <mat-label>Address</mat-label>
+                                    <input matInput [placeholder]="'Address'" formControlName="address">
+                                </mat-form-field>
+                                <mat-form-field fxFlex="50%" appearance="outline">
+                                    <mat-label>Apt. number</mat-label>
+                                    <input matInput [placeholder]="'Apt. number'" formControlName="apt_num">
+                                </mat-form-field>
+                            </div>
+    
+                            <div fxLayout="row" fxLayoutGap="16px">
+                                <mat-form-field fxFlex="50%" appearance="outline">
+                                    <mat-label>City</mat-label>
+                                    <input matInput [placeholder]="'City'" formControlName="city">
+                                </mat-form-field>
+                                <div fxFlex="50%">
+                                    <mat-form-field fxFlex="50%" appearance="outline">
+                                        <mat-label>State</mat-label>
+                                        <input matInput [placeholder]="'State'" formControlName="state">
+                                    </mat-form-field>
+                                    <mat-form-field fxFlex="50%" appearance="outline">
+                                        <mat-label>Zip</mat-label>
+                                        <input matInput maxlength="6" [placeholder]="'Zip'" formControlName="zip">
+                                        <mat-error *ngIf="hasError('customer.zip', 'pattern')">
+                                            Zip in not valid!
+                                        </mat-error>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+    
+                            <div fxLayout="row" fxLayoutGap="16px">
+                                <mat-form-field fxFlex="50%" appearance="outline">
+                                    <mat-label>Primary/Parents Phone Number</mat-label>
+                                    <input matInput maxlength="13" minlength="10" [placeholder]="'Primary/Parents Phone Number'"
+                                        formControlName="phone" required>
+                                    <mat-error
+                                        *ngIf="hasError('customer.phone', 'required') || hasError('customer.phone', 'pattern')">
+                                        Phone number is not valid!
+                                    </mat-error>
+                                </mat-form-field>
+                                <mat-form-field fxFlex="50%" appearance="outline">
+                                    <mat-label>Additional/Students Phone Number</mat-label>
+                                    <input matInput maxlength="13" minlength="10" [placeholder]="'Additional/Students Phone Number'" 
+                                    formControlName="additional_phone">
+                                    <mat-error *ngIf="hasError('customer.additional_phone', 'pattern')">
+                                        Phone number is not valid!
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+                            <div fxLayout="row" fxLayoutGap="16px">
+                                <mat-form-field fxFlex="50%" appearance="outline">
+                                    <mat-label>Primary/Parents Email</mat-label>
+                                    <input matInput [placeholder]="'Primary/Parents Email'"
+                                        formControlName="email" required>
+                                    <mat-error
+                                        *ngIf="hasError('customer.email', 'required') || hasError('customer.email', 'pattern')">
+                                        Email is not valid!
+                                    </mat-error>
+                                </mat-form-field>
+                                <mat-form-field fxFlex="50%" appearance="outline">
+                                    <mat-label>Additional/Students Email</mat-label>
+                                    <input matInput [placeholder]="'Additional/Students Email'" formControlName="additional_email">
+                                    <mat-error *ngIf="hasError('customer.additional_email', 'pattern')">
+                                        Email is not valid!
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+                            <mat-form-field appearance="outline">
+                                <mat-label>Order date</mat-label>
+                                <input required matInput [matDatepicker]="orderDatePicker" formControlName="order_date">
+                                <mat-datepicker-toggle matSuffix [for]="orderDatePicker"></mat-datepicker-toggle>
+                                <mat-datepicker #orderDatePicker></mat-datepicker>
+                            </mat-form-field>
+                            <mat-form-field appearance="outline">
+                                <mat-label>Design #</mat-label>
+                                <input matInput formControlName="design_number">
+                            </mat-form-field>
+                            <mat-form-field appearance="outline">
+                                <mat-label>Promo code</mat-label>
+                                <input matInput formControlName="promo_code">
+                            </mat-form-field>
+                        </div>
+                    </form>
+                </mat-step>
+                <mat-step *ngFor="let qg of details?.product?.question_groups; trackBy: trackById"
+                    [stepControl]="formlyForm.get(qg.id)">
+                    <ng-template matStepLabel>{{ qg?.name }}</ng-template>
+                    {{formlyForm.get(qg.id).value | json}}
+                    <formly-form class="scrolled
+                    -block" [form]="formlyForm"
+                        [model]="formlyModel" [fields]="formlySteps[qg.id].fields"
+                        [options]="formlyOptions[qg.id]">
+                    </formly-form>
+                </mat-step>
+                <mat-step class="scrolled-block">
+                    <ng-template matStepLabel>Pricing</ng-template>
+                    <div fxLayout="column" fxLayoutGap="16px">
+                        <h3>Pricing details</h3>
+                        <div *ngFor="let qg of details?.product?.question_groups; trackBy: trackById; let i = index"
+                            fxLayout="row" fxLayoutGap="16px" fxLayoutAlign="start center">
+                            <div class="rp-menu-list-item-price">{{ i + 1 }}. {{ qg.name }}</div>
+                            <div fxFlex></div>
+                            <mat-form-field *ngIf="formlyForm.get(qg.id + '.price')" appearance="outline">
+                                <span matPrefix>$&nbsp;</span>
+                                <mat-label>Price</mat-label>
+                                <input matInput type="number" (change)="setTaxes()" [value]="formlyForm.value[qg.id].price"
+                                    [formControl]="formlyForm.get(qg.id + '.price')">
+                            </mat-form-field>
+                        </div>
+                        <div fxLayout="row" fxLayout="row" fxLayoutGap="16px" fxLayoutAlign="start center">
+                            <div class="rp-menu-list-item-price">Product total</div>
+                            <div fxFlex></div>
+                            <div class="rp-menu-list-item-price">{{ productTotal | currency }}</div>
+                        </div>
+                        <!-- <div fxLayout="row" fxLayout="row" fxLayoutGap="16px" fxLayoutAlign="start center">
+                            <div class="rp-menu-list-item-price">Prod TTL</div>
+                            <div fxFlex></div>
+                            <mat-form-field appearance="outline">
+                                <span matPrefix>$&nbsp;</span>
+                                <mat-label>Price</mat-label>
+                                <input matInput type="number" [formControl]="form.get('pricing.prod_ttl')">
+                            </mat-form-field>
+                        </div> -->
+                        <div fxLayout="row" fxLayout="row" fxLayoutGap="16px" fxLayoutAlign="start center">
+                            <div class="rp-menu-list-item-price">PKG/HDL</div>
+                            <div fxFlex></div>
+                            <mat-form-field appearance="outline">
+                                <span matPrefix>$&nbsp;</span>
+                                <mat-label>Price</mat-label>
+                                <input matInput type="number" (change)="setTaxes()" [formControl]="form.get('pricing.pkg_hdl')">
+                            </mat-form-field>
+                        </div>
+                        <div fxLayout="row" fxLayout="row" fxLayoutGap="16px" fxLayoutAlign="start center">
+                            <div class="rp-menu-list-item-price">Subtotal</div>
+                            <div fxFlex></div>
+                            <div class="rp-menu-list-item-price">{{ subtotal | currency }}</div>
+                        </div>
+                        <div fxLayout="row" fxLayout="row" fxLayoutGap="16px" fxLayoutAlign="start center">
+                            <div class="rp-menu-list-item-price">Taxes</div>
+                            <div fxFlex></div>
+                            <div fxLayout="column">
+                                <mat-form-field appearance="outline" fxLayout="row" fxLayoutAlign="end">
+                                    <span matPrefix>$&nbsp;</span>
+                                    <mat-label>Tax</mat-label>
+                                    <input matInput type="number" (change)="setTaxesAsFixed()" [formControl]="form.get('pricing.taxes')">
+                                </mat-form-field>
+                                <span *ngIf="taxValidation()" fxLayout="row" fxLayoutAlign="end" class="rp-tax-validation">
+                                    Input taxes is not equal to auto-calculate taxes({{ tax | currency }} with taxe-rate: {{ taxe_rate | percent }})! Please check it before saving!
+                                </span> 
+                            </div>
+                        </div>
+                        <div fxLayout="row" fxLayout="row" fxLayoutGap="16px" fxLayoutAlign="start center">
+                            <div class="rp-menu-list-item-price">Total</div>
+                            <div fxFlex></div>
+                            <div class="rp-menu-list-item-price">{{ total | currency }}</div>
+                        </div>
+                        <div fxLayout="row" fxLayout="row" fxLayoutGap="16px" fxLayoutAlign="start center">
+                            <!-- <mat-form-field appearance="outline">
+                                <input matInput [formControl]="form.get('pricing.discount.name')">
+                            </mat-form-field> -->
+                            <mat-form-field appearance="outline">
+                                <mat-label>Discount</mat-label>
+                                <mat-select [formControl]="form.get('pricing.discount.name')">
+                                    <mat-option *ngFor="let discountType of discountTypes" [value]="discountType[0]">
+                                        {{ discountType[1] }}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                            <div fxFlex></div>
+                            <mat-form-field appearance="outline">
+                                <span matPrefix>$&nbsp;</span>
+                                <mat-label>Discount Amount</mat-label>
+                                <input matInput type="number" (change)="setTaxes()" [formControl]="form.get('pricing.discount.value')">
+                                <mat-hint>*enter as negative</mat-hint>
+                            </mat-form-field>
+                        </div>
+                        <div fxLayout="row" fxLayout="row" fxLayoutGap="16px" fxLayoutAlign="start center">
+                            <div class="rp-menu-list-item-price">Amount Paid</div>
+                            <div fxFlex></div>
+                            <mat-form-field appearance="outline">
+                                <span matPrefix>$&nbsp;</span>
+                                <mat-label>Amount Paid</mat-label>
+                                <input matInput type="number" [formControl]="form.get('pricing.amt_paid')">
+                            </mat-form-field>
+                        </div>
+                        <div fxLayout="row" fxLayout="row" fxLayoutGap="16px" fxLayoutAlign="start center">
+                            <div class="rp-menu-list-item-price">Balance Due</div>
+                            <div fxFlex></div>
+                            <div class="rp-menu-list-item-price">{{ balDue | currency }}</div>
+                        </div>
+                    </div>
+                </mat-step>
+                <mat-step class="scrolled-block" [stepControl]="form.get('payment')">
+                    <form [formGroup]="form.get('payment')">
+                        <ng-template matStepLabel>Payment</ng-template>
+                        <div fxLayout="column" fxLayoutGap="16px">
+                            <h3 >Payment information</h3>
+                            <div fxLayout="column" fxLayoutGap="16px" fxLayoutAlign="start start" fxFlex="grow">
+                                <mat-radio-group formControlName="payment_type">
+                                    <mat-radio-button color="primary"
+                                        *ngFor="let type of paymentTypes"
+                                        [value]="type[0]">{{ type[1] }}</mat-radio-button>
+                                </mat-radio-group>
+                            </div>
+
+                            <div *ngIf="form.get('payment.payment_type')?.value == paymentTypes[0][0]
+                            || form.get('payment.payment_type')?.value == paymentTypes[1][0]" fxLayout="row" fxLayoutGap="16px">
+                                <mat-form-field fxFlex appearance="outline">
+                                    <span matPrefix>$&nbsp;</span>
+                                    <mat-label>Deposit only</mat-label>
+                                    <input matInput formControlName="deposit_only">
+                                </mat-form-field>
+                                <mat-form-field fxFlex appearance="outline">
+                                    <span matPrefix>$&nbsp;</span>
+                                    <mat-label>Fully prepaid</mat-label>
+                                    <input matInput formControlName="fully_prepaid">
+                                </mat-form-field>
+                            </div>
+
+                            <div *ngIf="form.get('payment.payment_type')?.value == paymentTypes[2][0]
+                                || form.get('payment.payment_type')?.value == paymentTypes[4][0]" fxLayout="row" fxLayoutGap="16px">
+                                <mat-form-field fxFlex="50%" appearance="outline">
+                                    <span matPrefix>$&nbsp;</span>
+                                    <mat-label>Check Deposit Amount Covered by Rep</mat-label>
+                                    <input matInput formControlName="rep_gratis_amount">
+                                </mat-form-field>
+                                <mat-form-field fxFlex="50%" appearance="outline">
+                                    <span matPrefix>$&nbsp;</span>
+                                    <mat-label>Chase Deposit Amount Covered by Rep</mat-label>
+                                    <input matInput formControlName="chase_rep_gratis_amount">
+                                </mat-form-field>
+                            </div>
+
+                            <div *ngIf="form.get('payment.payment_type')?.value == paymentTypes[2][0]" fxLayout="row" fxLayoutGap="16px">
+                                <mat-form-field fxFlex="50%" appearance="outline">
+                                    <span matPrefix>$&nbsp;</span>
+                                    <mat-label>Check Deposit Amount Covered by Customer</mat-label>
+                                    <input matInput formControlName="check_rep_gratis_amount_by_cust">
+                                </mat-form-field>
+                                <mat-form-field fxFlex="50%" appearance="outline">
+                                    <span matPrefix>$&nbsp;</span>
+                                    <mat-label>Chase Deposit Amount Covered by Customer</mat-label>
+                                    <input matInput formControlName="chase_rep_gratis_amount_by_cust">
+                                </mat-form-field>
+                            </div>
+                            <div *ngIf="form.get('payment.payment_type')?.value == paymentTypes[3][0]">
+                                * NOTE - Please add a note to Special Instructions on Envelope saying Full Gratis and Customer Order #
+                            </div>
+                            <!-- <h3>Credit card installment:</h3>
+                            <div fxLayout="row" fxLayoutGap="16px" fxLayoutAlign="start center">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Payment count</mat-label>
+                                    <input matInput formControlName="payment_count">
+                                </mat-form-field>
+                                <h3 class="margin-bottom">Payments of Totaling {{ total }}</h3>
+                            </div>
+                            <div fxLayout="row" fxLayoutGap="16px">
+                                <mat-form-field fxFlex appearance="outline">
+                                    <mat-label>Cash</mat-label>
+                                    <input matInput formControlName="cash">
+                                </mat-form-field>
+                                <mat-form-field fxFlex appearance="outline">
+                                    <mat-label>Check/Money Order</mat-label>
+                                    <input matInput formControlName="check_money_order">
+                                </mat-form-field>
+                            </div> -->
+                            <!-- <div fxLayout="row" fxLayoutGap="16px">
+                                <mat-form-field fxFlex appearance="outline">
+                                    <mat-label>Check #</mat-label>
+                                    <input matInput formControlName="check_number">
+                                </mat-form-field>
+                                <mat-form-field fxFlex appearance="outline">
+                                    <mat-label>Wire/EFT #</mat-label>
+                                    <input matInput formControlName="wire_number">
+                                </mat-form-field>
+                            </div> -->
+                        </div>
+                    </form>
+                </mat-step>
+                <mat-step class="scrolled-block">
+                    <ng-template matStepLabel>Review</ng-template>
+                    <div fxLayout="column" fxLayoutGap="16px" *ngIf="{f: form.value, r: reviewGroupValues} as values">
+                        <h2>Review</h2>
+                        <h3>Customer</h3>
+                        <div>Full name: {{ values.f?.customer?.last_name }}
+                            {{ values.f?.customer?.first_name }}</div>
+                        <div>Address: {{ values.f?.customer?.address }} / Apt.num: 
+                                {{ values.f?.customer?.apt_num }}</div>
+                        <div>City: {{ values.f?.customer?.city }}</div>
+                        <div>State: {{ values.f?.customer?.state }}</div>
+                        <div>Zip: {{ values.f?.customer?.zip }}</div>
+                        <div>Emails: {{ values.f?.customer?.email }} / {{ values.f?.customer?.additional_email || '-' }}</div>
+                        <div>Phones: {{ values.f?.customer?.phone }} / {{ values.f?.customer?.additional_phone || '-' }}</div>
+
+                        <div>Order date: {{ values.f?.customer?.order_date | date:'shortDate' }}</div>
+                        <div>Promo code: {{ values.f?.customer?.promo_code }}</div>
+                        <div>Design #: {{ values.f?.customer?.design_number }}</div>
+                        <ng-container *ngFor="let rv of values.r">
+                            <h3>{{ rv.group }}</h3>
+                            <div *ngFor="let qv of rv.values">{{ qv.question }}: {{ qv.value }}</div>
+                        </ng-container>
+                        <h3>Pricing</h3>
+                        <div *ngFor="let qg of details?.product?.question_groups; trackBy: trackById; let i = index"
+                            fxFlex="row" fxLayout="start center" fxLayoutGap="16px">
+                            <div>{{ i + 1 }}. {{ qg?.name }}:</div>
+                            <div fxFlex></div>
+                            <div>{{ formlyForm.value[qg.id].price || 0 | currency}}</div>
+                        </div>
+                        <div fxFlex="row" fxLayout="start center" fxLayoutGap="16px">
+                            <div class="rp-menu-list-item-price">Product total: </div>
+                            <div fxFlex></div>
+                            <div class="rp-menu-list-item-price">{{ productTotal | currency }}</div>
+                        </div>
+                        <div *ngIf="values?.f?.pricing?.pkg_hdl" fxFlex="row" fxLayout="start center"
+                            fxLayoutGap="16px">
+                            <div>PKG/HDL</div>
+                            <div fxFlex></div>
+                            <div class="rp-menu-list-item-price">{{ values?.f?.pricing?.pkg_hdl | currency }}</div>
+                        </div>
+                        <div *ngIf="subtotal > productTotal" fxFlex="row" fxLayout="start center" fxLayoutGap="16px">
+                            <div class="rp-menu-list-item-price">Subtotal</div>
+                            <div fxFlex></div>
+                            <div class="rp-menu-list-item-price">{{ subtotal | currency }}</div>
+                        </div>
+                        <div *ngIf="values?.f?.pricing?.taxes" fxFlex="row" fxLayout="start center" fxLayoutGap="16px">
+                            <div>Taxes</div>
+                            <div fxFlex></div>
+                            <div class="rp-menu-list-item-price">{{ values?.f?.pricing?.taxes | currency }}</div>
+                        </div>
+                        <mat-divider></mat-divider>
+                        <div fxFlex="row" fxLayout="start center" fxLayoutGap="16px">
+                            <div class="rp-menu-list-item-price">Total</div>
+                            <div fxFlex></div>
+                            <div class="rp-menu-list-item-price">{{ total | currency }}</div>
+                        </div>
+                        <div *ngIf="values?.f?.pricing?.custom?.value" fxFlex="row" fxLayout="start center"
+                            fxLayoutGap="16px">
+                            <div>{{ values?.f?.pricing?.custom?.name }}</div>
+                            <div fxFlex></div>
+                            <div class="rp-menu-list-item-price">{{ values?.f?.pricing?.custom?.value | currency }}</div>
+                        </div>
+                        <h3>Payment</h3>
+                        <div>Type: {{ paymentTypeTitles[values.f?.payment?.payment_type] }}</div>
+                        <div>Deposit only: {{ values.f?.payment?.deposit_only | currency }}</div>
+                        <div>Balance Due: {{ balDue | currency }}</div>
+                        <div>Fully prepaid: {{ values.f?.payment?.fully_prepaid | currency }}</div>
+                        <!-- <div>Payment count: {{ values.f?.payment?.payment_count }}</div>
+                        <div>Cash: {{ values.f?.payment?.cash }}</div>
+                        <div>Check/Money Order: {{ values.f?.payment?.check_money_order }}</div>
+                        <div>Check #: {{ values.f?.payment?.check_number }}</div>
+                        <div>Wire #: {{ values.f?.payment?.wire_number }}</div> -->
+                    </div>
+                </mat-step>
+            </mat-horizontal-stepper>
+        </rp-document-content>
+        <rp-document-footer *ngIf="ctx.state === 'data'" class="mat-elevation-z6">
+            <div class="rp-document-footer-content" fxFlex="grow" fxLayout="row" fxLayoutGap="16px">
+                <button mat-flat-button (click)="onCancel()" color="warn">{{ cancelButtonText }}</button>
+                <div fxFlex="auto"></div>
+                <button mat-stroked-button *ngIf="stepIndex != 0" (click)="stepper?.previous()">Previous</button>
+                <button mat-stroked-button *ngIf="stepIndex != stepper?.steps?.length - 1"
+                    (click)="stepper?.next()">Next</button>
+                <button mat-flat-button *ngIf="isSaveVisible" color="primary"
+                    (click)="saveCustomerOrder()">{{ ctx.editState === 'create' ? 'Create' : 'Save' }}</button>
+            </div>
+        </rp-document-footer>
+    </rp-document-layout>
+</ng-container>

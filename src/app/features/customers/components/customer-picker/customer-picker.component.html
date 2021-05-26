@@ -1,0 +1,8 @@
+<input type="text" [placeholder]="placeholder" matInput [formControl]="customerCtrl" [matAutocomplete]="auto" (blur)="onTouched()">
+<mat-progress-spinner diameter="15" [ngStyle]="{opacity: searching ? 1 : 0}" mode="indeterminate">
+</mat-progress-spinner>
+<mat-autocomplete #auto="matAutocomplete" [displayWith]="displayCustomer">
+    <mat-option *ngFor="let customer of searchResults$ | async" [value]="customer">
+        {{ customer.last_name }} {{ customer?.first_name }}
+    </mat-option>
+</mat-autocomplete>

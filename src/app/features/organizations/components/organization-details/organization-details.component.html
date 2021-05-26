@@ -1,0 +1,64 @@
+<ng-container>
+    <form [formGroup]="form">
+        <div fxLayout="column" fxLayoutGap="16px">
+            <div *ngIf="!form?.get('name')?.value" fxLayout="row" fxLayoutGap="16px">
+                <mat-icon color="accent">error_outline</mat-icon>
+                <div class="attention-message">To find a school start to enter the name</div>
+            </div>
+            <mat-form-field fxFlex="80%" appearance="outline" class="org-name">
+                <mat-label>School/Organization name</mat-label>
+                <input type="text" [placeholder]="placeholder" matInput required [formControl]="orgCtrl" [matAutocomplete]="auto" >
+                <mat-progress-spinner diameter="18" [ngStyle]="{opacity: searching ? 1 : 0}" mode="indeterminate">
+                </mat-progress-spinner>
+                <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayOrg">
+                    <mat-option *ngFor="let org of searchResults$ | async" [value]="org.name" class="org-option" (onSelectionChange)="setOrganization(org)">
+                        <div class="org-option-title">{{ org.name }} </div>
+                        <div class="org-option-details">{{ org.city }}, {{ org.state }}, <b>{{ org.number }}</b> </div>
+                    </mat-option>
+                </mat-autocomplete>
+                <mat-error *ngIf="hasError('name', 'required')">
+                    Name is required!
+                </mat-error>
+            </mat-form-field>
+        </div>
+
+        <div fxLayout="row" fxLayoutGap="16px">
+            <mat-form-field fxFlex="30%" appearance="outline">
+                <mat-label>School code/number</mat-label>
+                <input matInput [placeholder]="'Number'" formControlName="number">
+            </mat-form-field>
+            <mat-form-field fxFlex="70%" appearance="outline">
+                <mat-label>Address</mat-label>
+                <input matInput [placeholder]="'Address'" formControlName="address">
+            </mat-form-field>
+        </div>
+
+        <div fxLayout="row" fxLayoutGap="16px">
+            <mat-form-field fxFlex="30%" appearance="outline">
+                <mat-label>City</mat-label>
+                <input matInput [placeholder]="'City'" formControlName="city">
+            </mat-form-field>
+            <mat-form-field fxFlex="10%" appearance="outline">
+                <mat-label>State</mat-label>
+                <input matInput [placeholder]="'State'" formControlName="state">
+            </mat-form-field>
+            <mat-form-field fxFlex="20%" appearance="outline">
+                <mat-label>Zip</mat-label>
+                <input matInput [placeholder]="'Zip'" formControlName="zip" mask='00000-0000'>
+                <mat-error *ngIf="hasError('zip', 'pattern')">
+                    Invalid 9 or 5 digit Zip code entered. Use 00000-0000 or 00000 format
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field fxFlex="15%" appearance="outline">
+                <span matSuffix>%&nbsp;</span>
+                <mat-label>Tax rate</mat-label>
+                <input matInput [placeholder]="'Tax rate'" formControlName="taxe_rate">
+            </mat-form-field>
+            <mat-form-field fxFlex="15%" appearance="outline">
+                <span matPrefix>$&nbsp;</span>
+                <mat-label>Handling fee</mat-label>
+                <input matInput [placeholder]="'Handling Fee'" formControlName="handling_fee">
+            </mat-form-field>
+        </div>
+    </form>
+</ng-container>

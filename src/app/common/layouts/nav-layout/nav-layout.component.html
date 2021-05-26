@@ -1,0 +1,36 @@
+<ng-container *ngIf="{sidenav: sidenav.mediaState$ | async} as ctx">
+    <mat-toolbar color="custom">
+        <button mat-icon-button (click)="appbar.icon?.callback()">
+            <mat-icon>{{ appbar?.icon?.icon }}</mat-icon>
+        </button>
+        <span *ngIf="appbar.title">{{ appbar.title }}</span>
+        <span *ngIf="!appbar.title">Rep Portal</span>
+        <span class="app-bar-spacer"></span>
+        <ng-container *ngFor="let act of actions">
+            <mat-spinner diameter="24" *ngIf="act.in_progress"></mat-spinner>
+            <button *ngIf="!act.in_progress" mat-icon-button (click)="act.action()" [matTooltip]="act.tooltip" [matTooltipPosition]="'below'">
+                <mat-icon>{{act.icon}}</mat-icon>
+            </button>
+        </ng-container>
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+            <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="goToUserSettings()">
+                <mat-icon>settings</mat-icon>
+                <span>User Settings</span>
+            </button>
+        </mat-menu>
+    </mat-toolbar>
+    <mat-sidenav-container class="rp-sidenav-container"
+        [ngClass]="[ctx.sidenav.expandable ? 'rp-sidenav-expandable' : '', sidenav.expanded ? 'rp-sidenav-expanded' : '', (ctx.sidenav.expandable || sidenav.opened ? 'rp-sidenav-opened' : ''), 'rp-sidenav-mode-' + ctx.sidenav.mode]"
+        (backdropClick)="closeSidenav()">
+        <mat-sidenav class="rp-sidenav" [mode]="ctx.sidenav.mode"
+            [opened]="ctx.sidenav.expandable ? true : sidenav.opened" [fixedInViewport]="ctx.sidenav.fixedInViewport">
+            <rp-applications-sidenav></rp-applications-sidenav>
+        </mat-sidenav>
+        <mat-sidenav-content class="rp-sidenav-content">
+            <router-outlet></router-outlet>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</ng-container>

@@ -1,0 +1,21 @@
+@mixin rp-applications-sidenav-mixin($theme) {
+    $primary: map-get($theme, primary);
+
+    .rp-sidenav-info {
+        background-color: mat-color($primary, lighter);
+    }
+
+    .rp-sidenav-menu mat-list-item.selected:not(:hover) {
+        background-color: mat-color($primary, default);
+        color: mat-color($primary, '500-contrast');
+        mat-icon {
+            color: mat-color($primary, '500-contrast');
+        }
+    }
+
+    .rp-sidenav-menu mat-icon {
+        color: mat-color($primary, default);
+    }
+}
+
+@include rp-applications-sidenav-mixin($theme);

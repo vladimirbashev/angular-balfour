@@ -1,0 +1,32 @@
+@mixin rp-menu-list-item($theme) {
+    $primary: map-get($theme, primary);
+    $accent: map-get($theme, accent);
+
+    .rp-menu-list-item-id {
+        padding: 2px 0px;
+        color: $balfour-primary-color;
+        .rp-co-incomplete {
+            color: $balfour-error-color;
+        }
+    }
+    .rp-menu-list-item-title {
+        padding: 2px 0px;
+        color: $balfour-primary-black-color; 
+    }
+    .rp-menu-list-item-subtitle {
+        padding: 2px 0px;
+        color: $balfour-primary-black-color;
+    }
+    .rp-menu-list-item-price {
+        padding: 2px 0px;
+        color: $balfour-light-black-color;
+        font-weight: 900;
+    }
+
+    rp-customer-order-list-item.selected {
+        background-color: mat-color($accent, 50);
+        color: mat-color($accent, '100-contrast');
+    }
+} 
+
+// @include rp-menu-list-item($theme);

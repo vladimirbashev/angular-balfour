@@ -1,0 +1,39 @@
+<h2 mat-dialog-title>Add organization</h2>
+<div mat-dialog-content [formGroup]="form" style="overflow-y: hidden;" fxLayout="column" >
+
+
+  <mat-progress-bar *ngIf="loading$ | async" mode="indeterminate">
+  </mat-progress-bar>
+  <div fxFlex class="rp-search">
+    <mat-form-field floatLabel="never" appearance="fill" fxFlex appearance="outline">
+      <button matPrefix mat-icon-button>
+        <mat-icon>search</mat-icon>
+      </button>
+      <input type="text" matInput [placeholder]="'Search organization'" formControlName="search">
+      <button matSuffix mat-icon-button *ngIf="form.get('search').value.length > 0" (click)="clearSearch()">
+        <mat-icon>clear</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
+
+
+  <div class="menu"  infiniteScroll [infiniteScrollDistance]="2" 
+  [infiniteScrollThrottle]="50" [scrollWindow]="false" (scrolled)="readMore()">
+    <mat-selection-list  [multiple]="false"  >
+      <mat-list-option class="rp-dialog-list-item" *ngFor="let organization of organizations$ | async; trackBy: trackById" [value]="organization">
+        {{ organization?.name }} - {{ organization?.number }}
+      </mat-list-option>
+    </mat-selection-list>
+  </div>
+
+
+
+
+</div>
+<div mat-dialog-actions fxLayout="row">
+  <div fxFlex></div>
+  <button mat-button mat-dialog-close color="primary" [disabled]="loading$ | async">Cancel</button>
+  <button mat-button color="primary"
+    [disabled]="!organizationsList?.selectedOptions?.selected?.length || (loading$ | async)"
+    (click)="onAdd()">Choose</button>
+</div>

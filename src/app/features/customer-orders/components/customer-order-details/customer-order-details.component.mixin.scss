@@ -1,0 +1,22 @@
+@mixin rp-customer-order-details($theme) {
+    $primary: map-get($theme, primary);
+
+    .order-details-container {
+        .rp-co-error {
+            background-color: rgba($balfour-error-color, 0.11); 
+            color: $balfour-error-color;
+            padding: 16px;
+            padding-left: 24px;
+        }
+        .rp-order-header {
+            background-color: rgba(mat-color($primary, 50), 0.5); 
+            color: mat-color($primary, '100-contrast');
+        }
+        .rp-button-container {
+            background-color: rgba(mat-color($primary, 50), 0.5); 
+            color: mat-color($primary, '100-contrast');
+        }
+    }
+}
+
+// @include rp-customer-order-details($theme);

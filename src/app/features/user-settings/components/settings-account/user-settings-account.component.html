@@ -1,0 +1,28 @@
+<ng-container>
+    <form [formGroup]="form.get('profile')">
+        <mat-form-field appearance="outline">
+            <mat-label>Full name</mat-label>
+            <input matInput [placeholder]="'Full name'" formControlName="full_name" required>
+            <mat-error *ngIf="hasProfileError('full_name', 'required')">
+                Full name is required!
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Email address</mat-label>
+            <input matInput [placeholder]="'Email address'" formControlName="email" required>
+            <mat-error *ngIf="hasProfileError('email', 'required') || hasProfileError('email', 'pattern')">
+                Email address is not valid!
+            </mat-error>
+        </mat-form-field>
+    </form>
+    <form [formGroup]="form.get('preference')">
+        <mat-form-field appearance="outline">
+            <mat-label>Office number</mat-label>
+            <span matPrefix>BAL&nbsp;</span>
+            <input matInput [placeholder]="'Office number'" minlength="4" maxlength="4" formControlName="office_number" required>
+            <mat-error *ngIf="hasPreferenceError('office_number', 'required') || hasPreferenceError('office_number', 'pattern')">
+                Office number is not valid! It contains 4 numbers.
+            </mat-error>
+        </mat-form-field>
+    </form>
+</ng-container>

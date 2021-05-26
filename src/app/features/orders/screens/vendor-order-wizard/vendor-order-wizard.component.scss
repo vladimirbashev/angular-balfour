@@ -1,0 +1,86 @@
+:host {
+    flex: 1;
+    overflow: hidden;
+
+    rp-document-content {
+        display: flex !important;
+        overflow: hidden;
+
+        mat-horizontal-stepper {
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            flex: 1;
+        }
+
+        ::ng-deep {
+            .mat-horizontal-content-container {
+                overflow-y: auto;
+            }
+            .mat-form-field-appearance-outline .mat-form-field-prefix {
+                transition: top 0.25s ease;
+            }
+
+            .mat-form-field-appearance-outline.mat-form-field-hide-placeholder .mat-form-field-prefix {
+                top: -0.25em;
+            }
+
+            .mat-form-field-appearance-outline:not(.mat-form-field-hide-placeholder) .mat-form-field-prefix {
+                top: 0;
+            }
+        }
+    }
+    .rp-labeled-container {
+        div {
+            line-height: 24px;
+        }
+    }
+
+    .rp-champ-checkbox {
+        margin-top: 8px;
+    }
+
+    .mat-radio-button {
+        margin-right: 16px;;
+    }
+
+    .btn-choose {
+        height: 36px;
+        margin-left: 24px;
+    }
+
+}
+
+.tp16 {
+    padding-top: 16px;
+}
+
+.bm16 {
+    margin-bottom: 16px;
+}
+
+.rp-price {
+    font-weight: 900;
+    font-size: 16px;
+    text-align: right;
+}
+
+form {
+    padding: 16px;
+
+    .mat-radio-button~.mat-radio-button {
+        margin-left: 16px;
+    }
+}
+
+rp-document-footer {
+    padding: 16px;
+}
+
+.mt2 { 
+    margin-top: 2px;
+}
+
+.mt16 { 
+    margin-top: 16px;
+}

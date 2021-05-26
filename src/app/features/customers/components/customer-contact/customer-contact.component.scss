@@ -1,0 +1,26 @@
+:host {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 24px 12px;
+    box-sizing: border-box;
+
+    mat-form-field {
+        padding-right: 8px;
+    }
+
+    .mat-tab-group {
+        overflow: auto;
+    }
+
+    ::ng-deep .mat-tab-body-wrapper {
+        flex: 1;
+        margin-top: 8px;
+    }
+
+    .btn-choose {
+        margin-bottom: 16px;
+        //height: 36px;
+        // margin-left: 24px;
+    }
+}

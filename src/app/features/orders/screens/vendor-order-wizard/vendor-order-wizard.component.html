@@ -1,0 +1,1057 @@
+<ng-container *ngIf="ctx$ | async as ctx">
+    <rp-document-layout>
+        <rp-document-content>
+            <div *ngIf="ctx.loading">
+                Loading
+            </div>
+            <mat-horizontal-stepper *ngIf="!ctx.loading" #stepper [linear]="true"
+                (selectionChange)="onStepChange($event)">
+                <mat-step [stepControl]="form.get('step1')">
+                    <form class="scrolled-block" [formGroup]="form.get('step1')">
+                        <ng-template matStepLabel>Routing</ng-template>
+                        <div fxLayout="column" fxLayoutGap="16px">
+                            <div fxLayout="row wrap" fxLayoutGap="16px" fxLayoutAlign="start center">
+                                <mat-form-field fxFlex="grow" appearance="outline">
+                                    <mat-label>Envelope number</mat-label>
+                                    <input matInput formControlName="id">
+                                </mat-form-field>
+                            </div>
+                            <div fxLayout="row wrap" fxLayoutGap="16px" fxLayoutAlign="start center">
+                                <mat-form-field fxFlex="grow" appearance="outline">
+                                    <mat-label>PO# (Champ Only)</mat-label>
+                                    <input matInput maxlength="7" minlength="6" formControlName="purchase_number">
+                                    <mat-error *ngIf="form.get('step1.purchase_number').hasError('required')">Purchase
+                                        number is required</mat-error>
+                                    <mat-error *ngIf="form.get('step1.purchase_number').hasError('pattern')">Purchase
+                                        number conatins 6-7 numeric digits. Ex.: 1234567</mat-error>
+                                </mat-form-field>
+                            </div>
+                            <div fxLayout="row wrap" fxLayoutGap="16px" fxLayoutAlign="start center"
+                                formGroupName="routing">
+                                <mat-form-field fxFlex="grow" appearance="outline">
+                                    <mat-label>Routing information</mat-label>
+                                    <mat-select required formControlName="type">
+                                        <mat-option *ngFor="let routingType of routingTypes" [value]="routingType[1]">
+                                            {{ routingType[1] }}
+                                        </mat-option>
+                                    </mat-select>
+                                    <mat-error *ngIf="form.get('step1.type').hasError('required')">Routing information
+                                        is
+                                        required</mat-error>
+                                </mat-form-field>
+                                <mat-checkbox color="primary" formControlName="trade_in_enclosed">Trade in Enclosed
+                                </mat-checkbox>
+                            </div>
+                            <div fxLayout="row wrap" fxLayoutGap="16px" fxLayoutAlign="start center">
+                                <mat-form-field fxFlex="grow" appearance="outline">
+                                    <mat-label>Office number</mat-label>
+                                    <input matInput required minlength="4" maxlength="4"
+                                        formControlName="office_number">
+                                    <span matPrefix>BAL&nbsp;</span>
+                                    <mat-error *ngIf="form.get('step1.office_number').hasError('required')">Office
+                                        number is required</mat-error>
+                                    <mat-error *ngIf="form.get('step1.office_number').hasError('pattern')">Office
+                                        number contains 4 numeric digits</mat-error>
+                                </mat-form-field>
+                                <mat-form-field fxFlex="grow" appearance="outline">
+                                    <mat-label>Sales Rep Name</mat-label>
+                                    <input matInput required formControlName="rep_name">
+                                    <mat-error *ngIf="form.get('step1.rep_name').hasError('required')">Sales Rep Name is
+                                        required</mat-error>
+                                </mat-form-field>
+                            </div>
+                            <div fxLayout="row" fxLayoutAlign="start center">
+                                <mat-form-field fxFlex="grow" appearance="outline">
+                                    <mat-label>Organization/School name</mat-label>
+                                    <rp-organization-picker formControlName="org" required disabled="true"></rp-organization-picker>
+                                    <mat-error *ngIf="form.get('step1.org').hasError('required')">Organization or school
+                                        is required</mat-error>
+                                </mat-form-field>
+                                <button mat-stroked-button color="acent" class="btn-choose" (click)="onSelectOrganization()">
+                                    Choose
+                                </button>
+                            </div>
+                            <div fxLayout="row wrap" fxLayoutGap="16px" fxLayoutAlign="stretch center">
+                                <div fxLayout="column" fxLayoutGap="16px" fxLayoutAlign="start start" fxFlex="grow">
+                                    <div>Type *</div>
+                                    <mat-radio-group formControlName="type">
+                                        <mat-radio-button color="primary"
+                                            *ngFor="let vendorOrderType of vendorOrderTypes"
+                                            [value]="vendorOrderType[1]">{{ vendorOrderType[0] }}</mat-radio-button>
+                                    </mat-radio-group>
+                                </div>
+                                <div class="mt16" fxLayout="column" fxLayoutGap="16px" fxLayoutAlign="start start" fxFlex="grow">
+                                    <!-- *ngIf="inGroup(ctx.profile?.groups, ['OE', 'OETL', 'AE'])"> -->
+                                    <div>Code *</div>
+                                    <mat-radio-group formControlName="code" (change)="onCodeChange($event)">
+                                        <mat-radio-button color="primary"
+                                            *ngFor="let vendorOrderCode of getVendorOrderCodes(ctx.profile?.groups)"
+                                            [value]="vendorOrderCode[1]">
+                                            {{ vendorOrderCode[0] }}</mat-radio-button>
+                                    </mat-radio-group>
+                                    <mat-form-field fxFlex="grow" appearance="outline"
+                                        *ngIf="form.get('step1.code').value == vendorOrderCodes[2][1]">
+                                        <mat-label>Other code</mat-label>
+                                        <!-- <input matInput required formControlName="other_code"> -->
+                                        <input matInput [required]="form.get('step1.code').value == vendorOrderCodes[2][1]" 
+                                            formControlName="other_code">
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <mat-checkbox color="primary" class="rp-champ-checkbox" formControlName="champ_short">Short
+                                Schedule Request Submitted
+                            </mat-checkbox>
+                            <div fxLayout="row wrap" fxLayoutGap="16px" fxLayoutAlign="stretch center">
+                                <mat-form-field fxFlex="grow" appearance="outline" >
+                                    <mat-label>Request Ship Date</mat-label>
+                                    <input matInput [matDatepicker]="picker2" formControlName="request_ship_date">
+                                    <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                                    <mat-datepicker #picker2></mat-datepicker>
+                                </mat-form-field>
+                                <mat-form-field fxFlex="grow" appearance="outline">
+                                    <mat-label>High School Event Date</mat-label>
+                                    <input matInput [matDatepicker]="picker3" formControlName="event_date">
+                                    <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+                                    <mat-datepicker #picker3></mat-datepicker>
+                                </mat-form-field>
+                                <mat-form-field fxFlex="grow" appearance="outline">
+                                    <mat-label>Champ Ceremony Date</mat-label>
+                                    <input matInput [matDatepicker]="picker4" formControlName="ceremony_date">
+                                    <mat-datepicker-toggle matSuffix [for]="picker4"></mat-datepicker-toggle>
+                                    <mat-datepicker #picker4></mat-datepicker>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                    </form>
+                </mat-step>
+                <mat-step [stepControl]="form.get('step2')">
+                    <form class="scrolled-block" [formGroup]="form.get('step2')">
+                        <ng-template matStepLabel>Billing & Shipping</ng-template>
+                        <h3>Bill to</h3>
+                            <div fxLayout="row" fxLayoutGap="16px" fxLayoutAlign="start center">
+                                <mat-form-field fxFlex="grow" appearance="outline">
+                                    <mat-label>Bill To</mat-label>
+                                    <mat-select required formControlName="bill_to">
+                                        <mat-option *ngFor="let billTo of vendorOrderBillTo" [value]="billTo[1]">
+                                            {{ billTo[0] }}
+                                        </mat-option>
+                                    </mat-select>
+                                    <mat-error *ngIf="form.get('step2.bill_to').hasError('required')">Bill To
+                                        is
+                                        required</mat-error>
+                                </mat-form-field>
+                                <mat-checkbox class="bm16" color="primary" fxFlex="25%" formControlName="tax_exempt">Tax Exempt
+                                </mat-checkbox>
+                            </div>
+                            <div fxLayout="row" fxLayoutGap="16px">
+                                <mat-form-field fxFlex="grow" appearance="outline">
+                                    <mat-label>Account Number</mat-label>
+                                    <input matInput formControlName="account_number">
+                                    <mat-error *ngIf="form.get('step2.account_number').hasError('required')">Account number is
+                                        required
+                                    </mat-error>
+                                </mat-form-field>
+                                <mat-form-field fxFlex="grow" appearance="outline">
+                                    <mat-label>Account Name</mat-label>
+                                    <input matInput formControlName="account_name">
+                                    <mat-error *ngIf="form.get('step2.account_name').hasError('required')">Account name is
+                                        required
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+                        <h3>Ship to</h3>
+                        <div fxLayout="column" fxLayoutGap="16px">
+                            <div fxLayout="column" fxLayoutGap="16px">
+                                <mat-button-toggle-group appearance="outline" fxFlex="grow" formControlName="ship_dest_type"
+                                    (change)="onTabChange($event)">
+                                    <mat-button-toggle fxFlex="grow" *ngFor="let vendorOrderShipDestType of vendorOrderShipDestTypes"
+                                        [value]="vendorOrderShipDestType[1]">{{ vendorOrderShipDestType[0] }}
+                                    </mat-button-toggle>
+                                </mat-button-toggle-group>
+                                <mat-error *ngIf="form.get('step2').touched && form.get('step2.ship_dest_type').hasError('required')">
+                                    Shipping destination type is required
+                                </mat-error>
+                            </div>
+                            <div *ngIf="form.get('step2.ship_dest_type').value !== 'cu'">
+                                <div fxLayout="row">
+                                    <mat-form-field fxFlex="grow" appearance="outline">
+                                        <mat-label>Name</mat-label>
+                                        <input matInput required formControlName="ship_name">
+                                        <mat-error *ngIf="form.get('step2.ship_name').hasError('required')">Name is
+                                            required
+                                        </mat-error>
+                                    </mat-form-field>
+                                </div>
+                                <div fxLayout="row">
+                                    <mat-form-field fxFlex="grow" appearance="outline">
+                                        <mat-label>Address</mat-label>
+                                        <input matInput required formControlName="ship_address">
+                                        <mat-error *ngIf="form.get('step2.ship_address').hasError('required')">Address is
+                                            required
+                                        </mat-error>
+                                    </mat-form-field>
+                                </div>
+                                <div fxLayout="row" fxLayoutGap="16px">
+                                    <mat-form-field fxFlex="50%" appearance="outline">
+                                        <mat-label>City</mat-label>
+                                        <input matInput required formControlName="ship_city">
+                                        <mat-error *ngIf="form.get('step2.ship_city').hasError('required')">City is
+                                            required
+                                        </mat-error>
+                                    </mat-form-field>
+                                    <mat-form-field fxFlex="25%" appearance="outline">
+                                        <mat-label>State</mat-label>
+                                        <input matInput required formControlName="ship_state">
+                                        <mat-error *ngIf="form.get('step2.ship_state').hasError('required')">State is
+                                            required
+                                        </mat-error>
+                                    </mat-form-field>
+                                    <mat-form-field fxFlex="25%" appearance="outline">
+                                        <mat-label>Zip</mat-label>
+                                        <input matInput required formControlName="ship_zip">
+                                        <mat-error *ngIf="form.get('step2.ship_zip').hasError('required')">ZIP is required
+                                        </mat-error>
+                                    </mat-form-field>
+                                </div>
+                                <div fxLayout="row">
+                                    <mat-form-field fxFlex="grow" appearance="outline">
+                                        <mat-label>Attention</mat-label>
+                                        <input matInput formControlName="ship_attention">
+                                    </mat-form-field>
+                                </div>
+                                <div fxLayout="row">
+                                    <mat-form-field fxFlex="grow" appearance="outline">
+                                        <mat-label>Phone</mat-label>
+                                        <input matInput required formControlName="ship_phone">
+                                        <mat-error *ngIf="form.get('step2.ship_phone').hasError('required')">Phone is
+                                            required
+                                        </mat-error>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </mat-step>
+                <mat-step [stepControl]="form.get('step3')">
+                    <form class="scrolled-block" [formGroup]="form.get('step3')">
+                        <ng-template matStepLabel>Additional info</ng-template>
+                        <div fxLayout="column" fxLayoutGap="16px">
+                            <div fxLayout="row">
+                                <mat-form-field fxFlex="grow" appearance="outline">
+                                    <mat-label># of Orders in Envelope</mat-label>
+                                    <input matInput formControlName="count_of_orders">
+                                    <mat-error *ngIf="form.get('step3.count_of_orders').hasError('pattern')">Orders
+                                        number contains numeric digits</mat-error>
+                                </mat-form-field>
+                            </div>
+                            <div fxLayout="row">
+                                <mat-form-field fxFlex="grow" appearance="outline">
+                                    <mat-label>Special instructions</mat-label>
+                                    <textarea matInput formControlName="instructions" cdkTextareaAutosize
+                                        cdkAutosizeMinRows="3"></textarea>
+                                    <mat-hint >*Please write "Bill Rep Office @ NET in the Special instructions if this is a Bill @ NET envelope"</mat-hint>
+                                </mat-form-field>
+                            </div>
+                            <div>For verification purpose only</div>
+                            <div fxLayout="row" fxLayoutGap="24px" formGroupName="verification">
+                                <mat-radio-group class="mt2" formControlName="type">
+                                    <mat-radio-button color="primary"
+                                        *ngFor="let verificationDataType of verificationDataTypes"
+                                        [value]="verificationDataType[1]">{{ verificationDataType[0] }}
+                                    </mat-radio-button>
+                                </mat-radio-group>
+                                <mat-checkbox color="primary" formControlName="cpa">CPA (Must be on file)</mat-checkbox>
+                                <mat-checkbox color="primary" formControlName="out_of_territory">OUT OF TERRITORY
+                                </mat-checkbox>
+                            </div>
+                        </div>
+                    </form>
+                </mat-step>
+                <mat-step class="scrolled-block" [stepControl]="form.get('step4')">
+                    <form [formGroup]="form.get('step4')" fxLayout="column" fxLayoutGap="16px"
+                        *ngIf="{fs1: form.get('step1').value, fs2: form.get('step2').value} as fs4ctx">
+                        <ng-template matStepLabel>Total Deposits</ng-template>
+
+                        <div class="bm16" fxLayout="row" fxFlex fxLayoutGap="8px">
+                            <div class="rp-label" >
+                                Total deposits:</div>
+                            <div >$&nbsp; {{ totalDeposist }}
+                            </div>
+                        </div>
+
+                        <mat-form-field fxFlex="grow" appearance="outline">
+                            <mat-label>Payment option 1</mat-label>
+                            <mat-select required formControlName="payment_type">
+                                <mat-option *ngFor="let paymentType of paymentTypes" [value]="paymentType[1]">
+                                    {{ paymentType[0] }}
+                                </mat-option>
+                            </mat-select>
+                            <mat-error *ngIf="form.get('step4.payment_type').hasError('required')">
+                                Payment type is required</mat-error>
+                        </mat-form-field>
+              
+                        <div *ngIf="form.get('step4.payment_type').value == paymentTypes[1][1]">
+                            <h2 class="tp16">Wire Total Deposit</h2>
+                            <div fxLayout="row" fxLayoutGap="16px">
+                                <mat-form-field fxFlex="50%" fxFlex.lt-md="100%" appearance="outline">
+                                    <mat-label>Wire/EFT #</mat-label>
+                                    <input matInput type="number" formControlName="wire_number">
+                                    <mat-error *ngIf="form.get('step4.wire_number').hasError('required')">Wire
+                                        number is required</mat-error>
+                                </mat-form-field>
+                    
+                                <mat-form-field fxFlex="50%" fxFlex.lt-md="100%" appearance="outline">
+                                    <span matPrefix>$&nbsp;</span>
+                                    <mat-label>Wire Total Deposit</mat-label>
+                                    <input matInput type="number" formControlName="wire_deposit">
+                                    <mat-error *ngIf="form.get('step4.wire_deposit').hasError('required')">Wire total
+                                        deposit is required</mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div *ngIf="form.get('step4.payment_type').value == paymentTypes[0][1]">
+                            <h2 class="tp16">Check Total Deposit</h2>
+                            <div fxLayout="row" fxLayoutGap="16px">
+                                <mat-form-field fxFlex="50%" fxFlex.lt-md="100%" appearance="outline">
+                                    <mat-label>Check #</mat-label>
+                                    <input matInput type="number" formControlName="check_number">
+                                    <mat-error *ngIf="form.get('step4.check_number').hasError('required')">Check
+                                        number is required</mat-error>
+                                </mat-form-field>
+                    
+                                <mat-form-field fxFlex="50%" fxFlex.lt-md="100%" appearance="outline">
+                                    <span matPrefix>$&nbsp;</span>
+                                    <mat-label>Check Total Deposit</mat-label>
+                                    <input matInput type="number" formControlName="check_deposit">
+                                    <mat-error *ngIf="form.get('step4.check_deposit').hasError('required')">Check total
+                                        deposit is required</mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div *ngIf="form.get('step4.payment_type').value == paymentTypes[3][1]">
+                            <h2 class="tp16">Rep Gratis Deposit</h2>
+                            <div fxLayout="row" fxLayoutGap="16px">
+                                <mat-form-field fxFlex="50%" fxFlex.lt-md="100%" appearance="outline">
+                                    <span matPrefix>$&nbsp;</span>
+                                    <mat-label>Rep Gratis Deposit</mat-label>
+                                    <input matInput type="number" formControlName="rep_gratis_deposit">
+                                    <mat-error *ngIf="form.get('step4.rep_gratis_deposit').hasError('required')">Rep Gratis total
+                                        deposit is required</mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div *ngIf="form.get('step4.payment_type').value == paymentTypes[4][1]">
+                            <h2 class="tp16">Bill Rep Office @ NET Deposit</h2>
+                            <div fxLayout="row" fxLayoutGap="16px">
+                                <mat-form-field fxFlex="50%" fxFlex.lt-md="100%" appearance="outline">
+                                    <span matPrefix>$&nbsp;</span>
+                                    <mat-label>Bill Rep Office @ NET Deposit</mat-label>
+                                    <input matInput type="number" formControlName="bill_rep_office_deposit">
+                                    <mat-error *ngIf="form.get('step4.bill_rep_office_deposit').hasError('required')">Bill Rep Office @ NET total
+                                        deposit is required</mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div fxLayout="column" *ngIf="form.get('step4.payment_type').value == paymentTypes[2][1]">
+                            <h2 class="tp16">Chase Deposits</h2>
+                            <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="16px">
+                                <!-- <mat-form-field fxFlex="50%" appearance="outline">
+                                    <mat-label>Chase #</mat-label>
+                                    <input matInput type="number" formControlName="chase_number">
+                                    <mat-error *ngIf="form.get('step4.chase_number').hasError('required')">Chase
+                                        number is required</mat-error>
+                                </mat-form-field> -->
+                                <div class="bm16" fxLayout="row" fxFlex fxLayoutGap="8px">
+                                    <div class="rp-label" >
+                                        Chase deposit:</div>
+                                    <div >$&nbsp; {{ chaseAmount }}
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div fxLayout="row">
+                                <mat-form-field fxFlex="grow" appearance="outline">
+                                    <mat-label>Chase information</mat-label>
+                                    <textarea matInput formControlName="chase_info" cdkTextareaAutosize
+                                        cdkAutosizeMinRows="3"></textarea>
+                                </mat-form-field>
+                            </div> -->
+                            <div fxLayout="row" fxLayoutAlign="start center">
+                                <h3 class="tp16">Chase Transactions</h3>
+                                <button color="accent" *ngIf="form.get('step4.chase_transactions').value.length > 0" 
+                                    mat-icon-button (click)="addTransaction()">
+                                    <mat-icon>add_circle</mat-icon>
+                                </button>
+                            </div>
+                            <mat-error *ngIf="form.get('step4.chase_transactions').hasError('minLength')">Chase
+                                transactions are required
+                            </mat-error>
+                            <div fxLayout="column" fxLayoutAlign="start center" *ngIf="form.get('step4.chase_transactions').value.length < 1">
+                                <h4>There are no chase transactions yet</h4>
+                                <button mat-stroked-button (click)="addTransaction()">
+                                    ADD TRANSACTION
+                                </button>
+                            </div>
+                            <mat-list *ngIf="form.get('step4.chase_transactions').value.length > 0">
+                                <mat-list-item  *ngFor="let transaction of form.get('step4.chase_transactions').value; let i=index">
+                                    <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="8px">
+
+                                        <mat-form-field fxFlex="30%" appearance="outline">
+                                            <span matPrefix>$&nbsp;</span>
+                                            <mat-label>Transaction Deposit</mat-label>
+                                            <input matInput type="number" name="{{ i + '.deposit' }}" [(ngModel)]="transaction.deposit" [ngModelOptions]="{standalone: true}">
+                                            <mat-error >Transaction deposit is required</mat-error>
+                                        </mat-form-field>
+
+                                        <mat-form-field fxFlex="30%" appearance="outline">
+                                            <mat-label>Transaction Date</mat-label>
+                                            <input matInput [matDatepicker]="picker2" name="{{ i + '.date' }}" [(ngModel)]="transaction.date" [ngModelOptions]="{standalone: true}">
+                                            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                                            <mat-datepicker #picker2></mat-datepicker>
+                                        </mat-form-field>
+
+                                        <mat-form-field fxFlex="35%" appearance="outline">
+                                            <mat-label>Transaction #</mat-label>
+                                            <input matInput type="number" name="{{ i + '.number' }}" [(ngModel)]="transaction.number" [ngModelOptions]="{standalone: true}">
+                                            <mat-error >Transaction number is required</mat-error>
+                                        </mat-form-field>
+                                        <button color="accent" class="bm16" mat-icon-button (click)="deleteTransaction(i)">
+                                            <mat-icon>delete</mat-icon>
+                                        </button>
+                                    </div>
+                                </mat-list-item>
+                            </mat-list>
+                        </div>
+
+                        <mat-form-field class="tp16" fxFlex="grow" appearance="outline">
+                            <mat-label>Payment option 2</mat-label>
+                            <mat-select formControlName="payment_type_2">
+                                <mat-option [value]="null">
+                                    Not selected...                             
+                                </mat-option>
+                                <mat-option *ngFor="let paymentType of paymentTypes2" [value]="paymentType[1]">
+                                    {{ paymentType[0] }}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+
+                        <div *ngIf="form.get('step4.payment_type_2').value == paymentTypes[1][1]">
+                            <h2 class="tp16">Wire Total Deposit</h2>
+                            <div fxLayout="row" fxLayoutGap="16px">
+                                <mat-form-field fxFlex="50%" fxFlex.lt-md="100%" appearance="outline">
+                                    <mat-label>Wire/EFT #</mat-label>
+                                    <input matInput type="number" formControlName="wire_number">
+                                    <mat-error *ngIf="form.get('step4.wire_number').hasError('required')">Wire
+                                        number is required</mat-error>
+                                </mat-form-field>
+                    
+                                <mat-form-field fxFlex="50%" fxFlex.lt-md="100%" appearance="outline">
+                                    <span matPrefix>$&nbsp;</span>
+                                    <mat-label>Wire Total Deposit</mat-label>
+                                    <input matInput type="number" formControlName="wire_deposit">
+                                    <mat-error *ngIf="form.get('step4.wire_deposit').hasError('required')">Wire total
+                                        deposit is required</mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div *ngIf="form.get('step4.payment_type_2').value == paymentTypes[0][1]">
+                            <h2 class="tp16">Check Total Deposit</h2>
+                            <div fxLayout="row" fxLayoutGap="16px">
+                                <mat-form-field fxFlex="50%" fxFlex.lt-md="100%" appearance="outline">
+                                    <mat-label>Check #</mat-label>
+                                    <input matInput type="number" formControlName="check_number">
+                                    <mat-error *ngIf="form.get('step4.check_number').hasError('required')">Check
+                                        number is required</mat-error>
+                                </mat-form-field>
+                    
+                                <mat-form-field fxFlex="50%" fxFlex.lt-md="100%" appearance="outline">
+                                    <span matPrefix>$&nbsp;</span>
+                                    <mat-label>Check Total Deposit</mat-label>
+                                    <input matInput type="number" formControlName="check_deposit">
+                                    <mat-error *ngIf="form.get('step4.check_deposit').hasError('required')">Check total
+                                        deposit is required</mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div *ngIf="form.get('step4.payment_type_2').value == paymentTypes[3][1]">
+                            <h2 class="tp16">Rep Gratis Deposit</h2>
+                            <div fxLayout="row" fxLayoutGap="16px">
+                                <mat-form-field fxFlex="50%" fxFlex.lt-md="100%" appearance="outline">
+                                    <span matPrefix>$&nbsp;</span>
+                                    <mat-label>Rep Gratis Deposit</mat-label>
+                                    <input matInput type="number" formControlName="rep_gratis_deposit">
+                                    <mat-error *ngIf="form.get('step4.rep_gratis_deposit').hasError('required')">Rep Gratis total
+                                        deposit is required</mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div *ngIf="form.get('step4.payment_type_2').value == paymentTypes[4][1]">
+                            <h2 class="tp16">Bill Rep Office @ NET Deposit</h2>
+                            <div fxLayout="row" fxLayoutGap="16px">
+                                <mat-form-field fxFlex="50%" fxFlex.lt-md="100%" appearance="outline">
+                                    <span matPrefix>$&nbsp;</span>
+                                    <mat-label>Bill Rep Office @ NET Deposit</mat-label>
+                                    <input matInput type="number" formControlName="bill_rep_office_deposit">
+                                    <mat-error *ngIf="form.get('step4.bill_rep_office_deposit').hasError('required')">Bill Rep Office @ NET total
+                                        deposit is required</mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div fxLayout="column" *ngIf="form.get('step4.payment_type_2').value == paymentTypes[2][1]">
+                            <h2 class="tp16">Chase Deposits</h2>
+                            <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="16px">
+                                <!-- <mat-form-field fxFlex="50%" appearance="outline">
+                                    <mat-label>Chase #</mat-label>
+                                    <input matInput type="number" formControlName="chase_number">
+                                    <mat-error *ngIf="form.get('step4.chase_number').hasError('required')">Chase
+                                        number is required</mat-error>
+                                </mat-form-field> -->
+                                <div class="bm16" fxLayout="row" fxFlex fxLayoutGap="8px">
+                                    <div class="rp-label" >
+                                        Chase deposit:</div>
+                                    <div >$&nbsp; {{ chaseAmount }}
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div fxLayout="row">
+                                <mat-form-field fxFlex="grow" appearance="outline">
+                                    <mat-label>Chase information</mat-label>
+                                    <textarea matInput formControlName="chase_info" cdkTextareaAutosize
+                                        cdkAutosizeMinRows="3"></textarea>
+                                </mat-form-field>
+                            </div> -->
+                            <div fxLayout="row" fxLayoutAlign="start center">
+                                <h3 class="tp16">Chase Transactions</h3>
+                                <button color="accent" *ngIf="form.get('step4.chase_transactions').value.length > 0" 
+                                    mat-icon-button (click)="addTransaction()">
+                                    <mat-icon>add_circle</mat-icon>
+                                </button>
+                            </div>
+                            <div fxLayout="column" fxLayoutAlign="start center" *ngIf="form.get('step4.chase_transactions').value.length < 1">
+                                <h4>There are no chase transactions yet</h4>
+                                <button mat-stroked-button (click)="addTransaction()">
+                                    ADD TRANSACTION
+                                </button>
+                            </div>
+                            <mat-list *ngIf="form.get('step4.chase_transactions').value.length > 0">
+                                <mat-list-item  *ngFor="let transaction of form.get('step4.chase_transactions').value; let i=index">
+                                    <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="8px">
+                                        <mat-form-field fxFlex="30%" appearance="outline">
+                                            <span matPrefix>$&nbsp;</span>
+                                            <mat-label>Transaction Deposit</mat-label>
+                                            <input matInput type="number" name="{{ i + '.deposit' }}" [(ngModel)]="transaction.deposit" [ngModelOptions]="{standalone: true}">
+                                            <mat-error >Transaction deposit is required</mat-error>
+                                        </mat-form-field>
+
+                                        <mat-form-field fxFlex="30%" appearance="outline">
+                                            <mat-label>Transaction Date</mat-label>
+                                            <input matInput [matDatepicker]="picker2" name="{{ i + '.date' }}" [(ngModel)]="transaction.date" [ngModelOptions]="{standalone: true}">
+                                            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                                            <mat-datepicker #picker2></mat-datepicker>
+                                        </mat-form-field>
+
+                                        <mat-form-field fxFlex="35%" appearance="outline">
+                                            <mat-label>Transaction #</mat-label>
+                                            <input matInput type="number" name="{{ i + '.number' }}" [(ngModel)]="transaction.number" [ngModelOptions]="{standalone: true}">
+                                            <mat-error >Transaction number is required</mat-error>
+                                        </mat-form-field>
+                                        <button color="accent" class="bm16" mat-icon-button (click)="deleteTransaction(i)">
+                                            <mat-icon>delete</mat-icon>
+                                        </button>
+                                    </div>
+                                </mat-list-item>
+                            </mat-list>
+                        </div>
+
+                        <div fxLayout="column" *ngIf="form.get('step4.payment_type_2').value">
+                            <mat-form-field class="tp16" fxFlex="grow" appearance="outline">
+                                <mat-label>Payment option 3</mat-label>
+                                <mat-select formControlName="payment_type_3">
+                                    <mat-option [value]="null">
+                                        Not selected...                             
+                                    </mat-option>
+                                    <mat-option *ngFor="let paymentType of paymentTypes3" [value]="paymentType[1]">
+                                        {{ paymentType[0] }}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+    
+                            <div *ngIf="form.get('step4.payment_type_3').value == paymentTypes[1][1]">
+                                <h2 class="tp16">Wire Total Deposit</h2>
+                                <div fxLayout="row" fxLayoutGap="16px">
+                                    <mat-form-field fxFlex="50%" fxFlex.lt-md="100%" appearance="outline">
+                                        <mat-label>Wire/EFT #</mat-label>
+                                        <input matInput type="number" formControlName="wire_number">
+                                        <mat-error *ngIf="form.get('step4.wire_number').hasError('required')">Wire
+                                            number is required</mat-error>
+                                    </mat-form-field>
+                        
+                                    <mat-form-field fxFlex="50%" fxFlex.lt-md="100%" appearance="outline">
+                                        <span matPrefix>$&nbsp;</span>
+                                        <mat-label>Wire Total Deposit</mat-label>
+                                        <input matInput type="number" formControlName="wire_deposit">
+                                        <mat-error *ngIf="form.get('step4.wire_deposit').hasError('required')">Wire total
+                                            deposit is required</mat-error>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div *ngIf="form.get('step4.payment_type_3').value == paymentTypes[0][1]">
+                                <h2 class="tp16">Check Total Deposit</h2>
+                                <div fxLayout="row" fxLayoutGap="16px">
+                                    <mat-form-field fxFlex="50%" fxFlex.lt-md="100%" appearance="outline">
+                                        <mat-label>Check #</mat-label>
+                                        <input matInput type="number" formControlName="check_number">
+                                        <mat-error *ngIf="form.get('step4.check_number').hasError('required')">Check
+                                            number is required</mat-error>
+                                    </mat-form-field>
+                        
+                                    <mat-form-field fxFlex="50%" fxFlex.lt-md="100%" appearance="outline">
+                                        <span matPrefix>$&nbsp;</span>
+                                        <mat-label>Check Total Deposit</mat-label>
+                                        <input matInput type="number" formControlName="check_deposit">
+                                        <mat-error *ngIf="form.get('step4.check_deposit').hasError('required')">Check total
+                                            deposit is required</mat-error>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div *ngIf="form.get('step4.payment_type_3').value == paymentTypes[3][1]">
+                                <h2 class="tp16">Rep Gratis Deposit</h2>
+                                <div fxLayout="row" fxLayoutGap="16px">
+                                    <mat-form-field fxFlex="50%" fxFlex.lt-md="100%" appearance="outline">
+                                        <span matPrefix>$&nbsp;</span>
+                                        <mat-label>Rep Gratis Deposit</mat-label>
+                                        <input matInput type="number" formControlName="rep_gratis_deposit">
+                                        <mat-error *ngIf="form.get('step4.rep_gratis_deposit').hasError('required')">Rep Gratis total
+                                            deposit is required</mat-error>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div *ngIf="form.get('step4.payment_type_3').value == paymentTypes[4][1]">
+                                <h2 class="tp16">Bill Rep Office @ NET Deposit</h2>
+                                <div fxLayout="row" fxLayoutGap="16px">
+                                    <mat-form-field fxFlex="50%" fxFlex.lt-md="100%" appearance="outline">
+                                        <span matPrefix>$&nbsp;</span>
+                                        <mat-label>Bill Rep Office @ NET Deposit</mat-label>
+                                        <input matInput type="number" formControlName="bill_rep_office_deposit">
+                                        <mat-error *ngIf="form.get('step4.bill_rep_office_deposit').hasError('required')">Bill Rep Office @ NET total
+                                            deposit is required</mat-error>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div fxLayout="column" *ngIf="form.get('step4.payment_type_3').value == paymentTypes[2][1]">
+                                <h2 class="tp16">Chase Deposits</h2>
+                                <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="16px">
+                                    <!-- <mat-form-field fxFlex="50%" appearance="outline">
+                                        <mat-label>Chase #</mat-label>
+                                        <input matInput type="number" formControlName="chase_number">
+                                        <mat-error *ngIf="form.get('step4.chase_number').hasError('required')">Chase
+                                            number is required</mat-error>
+                                    </mat-form-field> -->
+                                    <div class="bm16" fxLayout="row" fxFlex fxLayoutGap="8px">
+                                        <div class="rp-label" >
+                                            Chase deposit:</div>
+                                        <div >$&nbsp; {{ chaseAmount }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- <div fxLayout="row">
+                                    <mat-form-field fxFlex="grow" appearance="outline">
+                                        <mat-label>Chase information</mat-label>
+                                        <textarea matInput formControlName="chase_info" cdkTextareaAutosize
+                                            cdkAutosizeMinRows="3"></textarea>
+                                    </mat-form-field>
+                                </div> -->
+                                <div fxLayout="row" fxLayoutAlign="start center">
+                                    <h3 class="tp16">Chase Transactions</h3>
+                                    <button color="accent" *ngIf="form.get('step4.chase_transactions').value.length > 0" 
+                                        mat-icon-button (click)="addTransaction()">
+                                        <mat-icon>add_circle</mat-icon>
+                                    </button>
+                                </div>
+                                <div fxLayout="column" fxLayoutAlign="start center" *ngIf="form.get('step4.chase_transactions').value.length < 1">
+                                    <h4>There are no chase transactions yet</h4>
+                                    <button mat-stroked-button (click)="addTransaction()">
+                                        ADD TRANSACTION
+                                    </button>
+                                </div>
+                                <mat-list *ngIf="form.get('step4.chase_transactions').value.length > 0">
+                                    <mat-list-item  *ngFor="let transaction of form.get('step4.chase_transactions').value; let i=index">
+                                        <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="8px">
+                                            <mat-form-field fxFlex="30%" appearance="outline">
+                                                <span matPrefix>$&nbsp;</span>
+                                                <mat-label>Transaction Deposit</mat-label>
+                                                <input matInput type="number" name="{{ i + '.deposit' }}" [(ngModel)]="transaction.deposit" [ngModelOptions]="{standalone: true}">
+                                                <mat-error >Transaction deposit is required</mat-error>
+                                            </mat-form-field>
+    
+                                            <mat-form-field fxFlex="30%" appearance="outline">
+                                                <mat-label>Transaction Date</mat-label>
+                                                <input matInput [matDatepicker]="picker2" name="{{ i + '.date' }}" [(ngModel)]="transaction.date" [ngModelOptions]="{standalone: true}">
+                                                <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                                                <mat-datepicker #picker2></mat-datepicker>
+                                            </mat-form-field>
+    
+                                            <mat-form-field fxFlex="35%" appearance="outline">
+                                                <mat-label>Transaction #</mat-label>
+                                                <input matInput type="number" name="{{ i + '.number' }}" [(ngModel)]="transaction.number" [ngModelOptions]="{standalone: true}">
+                                                <mat-error >Transaction number is required</mat-error>
+                                            </mat-form-field>
+                                            <button color="accent" class="bm16" mat-icon-button (click)="deleteTransaction(i)">
+                                                <mat-icon>delete</mat-icon>
+                                            </button>
+                                        </div>
+                                    </mat-list-item>
+                                </mat-list>
+                            </div>
+                        </div>
+
+                        <div fxLayout="column" *ngIf="form.get('step4.payment_type_3').value">
+                            <mat-form-field class="tp16" fxFlex="grow" appearance="outline">
+                                <mat-label>Payment option 4</mat-label>
+                                <mat-select formControlName="payment_type_4">
+                                    <mat-option [value]="null">
+                                        Not selected...                             
+                                    </mat-option>
+                                    <mat-option *ngFor="let paymentType of paymentTypes4" [value]="paymentType[1]">
+                                        {{ paymentType[0] }}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+    
+                            <div *ngIf="form.get('step4.payment_type_4').value == paymentTypes[1][1]">
+                                <h2 class="tp16">Wire Total Deposit</h2>
+                                <div fxLayout="row" fxLayoutGap="16px">
+                                    <mat-form-field fxFlex="50%" fxFlex.lt-md="100%" appearance="outline">
+                                        <mat-label>Wire/EFT #</mat-label>
+                                        <input matInput type="number" formControlName="wire_number">
+                                        <mat-error *ngIf="form.get('step4.wire_number').hasError('required')">Wire
+                                            number is required</mat-error>
+                                    </mat-form-field>
+                        
+                                    <mat-form-field fxFlex="50%" fxFlex.lt-md="100%" appearance="outline">
+                                        <span matPrefix>$&nbsp;</span>
+                                        <mat-label>Wire Total Deposit</mat-label>
+                                        <input matInput type="number" formControlName="wire_deposit">
+                                        <mat-error *ngIf="form.get('step4.wire_deposit').hasError('required')">Wire total
+                                            deposit is required</mat-error>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div *ngIf="form.get('step4.payment_type_4').value == paymentTypes[0][1]">
+                                <h2 class="tp16">Check Total Deposit</h2>
+                                <div fxLayout="row" fxLayoutGap="16px">
+                                    <mat-form-field fxFlex="50%" fxFlex.lt-md="100%" appearance="outline">
+                                        <mat-label>Check #</mat-label>
+                                        <input matInput type="number" formControlName="check_number">
+                                        <mat-error *ngIf="form.get('step4.check_number').hasError('required')">Check
+                                            number is required</mat-error>
+                                    </mat-form-field>
+                        
+                                    <mat-form-field fxFlex="50%" fxFlex.lt-md="100%" appearance="outline">
+                                        <span matPrefix>$&nbsp;</span>
+                                        <mat-label>Check Total Deposit</mat-label>
+                                        <input matInput type="number" formControlName="check_deposit">
+                                        <mat-error *ngIf="form.get('step4.check_deposit').hasError('required')">Check total
+                                            deposit is required</mat-error>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div *ngIf="form.get('step4.payment_type_4').value == paymentTypes[3][1]">
+                                <h2 class="tp16">Rep Gratis Deposit</h2>
+                                <div fxLayout="row" fxLayoutGap="16px">
+                                    <mat-form-field fxFlex="50%" fxFlex.lt-md="100%" appearance="outline">
+                                        <span matPrefix>$&nbsp;</span>
+                                        <mat-label>Rep Gratis Deposit</mat-label>
+                                        <input matInput type="number" formControlName="rep_gratis_deposit">
+                                        <mat-error *ngIf="form.get('step4.rep_gratis_deposit').hasError('required')">Rep Gratis total
+                                            deposit is required</mat-error>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div *ngIf="form.get('step4.payment_type_4').value == paymentTypes[4][1]">
+                                <h2 class="tp16">Bill Rep Office @ NET Deposit</h2>
+                                <div fxLayout="row" fxLayoutGap="16px">
+                                    <mat-form-field fxFlex="50%" fxFlex.lt-md="100%" appearance="outline">
+                                        <span matPrefix>$&nbsp;</span>
+                                        <mat-label>Bill Rep Office @ NET Deposit</mat-label>
+                                        <input matInput type="number" formControlName="bill_rep_office_deposit">
+                                        <mat-error *ngIf="form.get('step4.bill_rep_office_deposit').hasError('required')">Bill Rep Office @ NET total
+                                            deposit is required</mat-error>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div fxLayout="column" *ngIf="form.get('step4.payment_type_4').value == paymentTypes[2][1]">
+                                <h2 class="tp16">Chase Deposits</h2>
+                                <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="16px">
+                                    <!-- <mat-form-field fxFlex="50%" appearance="outline">
+                                        <mat-label>Chase #</mat-label>
+                                        <input matInput type="number" formControlName="chase_number">
+                                        <mat-error *ngIf="form.get('step4.chase_number').hasError('required')">Chase
+                                            number is required</mat-error>
+                                    </mat-form-field> -->
+                                    <div class="bm16" fxLayout="row" fxFlex fxLayoutGap="8px">
+                                        <div class="rp-label" >
+                                            Chase deposit:</div>
+                                        <div >$&nbsp; {{ chaseAmount }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- <div fxLayout="row">
+                                    <mat-form-field fxFlex="grow" appearance="outline">
+                                        <mat-label>Chase information</mat-label>
+                                        <textarea matInput formControlName="chase_info" cdkTextareaAutosize
+                                            cdkAutosizeMinRows="3"></textarea>
+                                    </mat-form-field>
+                                </div> -->
+                                <div fxLayout="row" fxLayoutAlign="start center">
+                                    <h3 class="tp16">Chase Transactions</h3>
+                                    <button color="accent" *ngIf="form.get('step4.chase_transactions').value.length > 0" 
+                                        mat-icon-button (click)="addTransaction()">
+                                        <mat-icon>add_circle</mat-icon>
+                                    </button>
+                                </div>
+                                <div fxLayout="column" fxLayoutAlign="start center" *ngIf="form.get('step4.chase_transactions').value.length < 1">
+                                    <h4>There are no chase transactions yet</h4>
+                                    <button mat-stroked-button (click)="addTransaction()">
+                                        ADD TRANSACTION
+                                    </button>
+                                </div>
+                                <mat-list *ngIf="form.get('step4.chase_transactions').value.length > 0">
+                                    <mat-list-item  *ngFor="let transaction of form.get('step4.chase_transactions').value; let i=index">
+                                        <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="8px">
+                                            <mat-form-field fxFlex="30%" appearance="outline">
+                                                <span matPrefix>$&nbsp;</span>
+                                                <mat-label>Transaction Deposit</mat-label>
+                                                <input matInput type="number" name="{{ i + '.deposit' }}" [(ngModel)]="transaction.deposit" [ngModelOptions]="{standalone: true}">
+                                                <mat-error >Transaction deposit is required</mat-error>
+                                            </mat-form-field>
+    
+                                            <mat-form-field fxFlex="30%" appearance="outline">
+                                                <mat-label>Transaction Date</mat-label>
+                                                <input matInput [matDatepicker]="picker2" name="{{ i + '.date' }}" [(ngModel)]="transaction.date" [ngModelOptions]="{standalone: true}">
+                                                <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                                                <mat-datepicker #picker2></mat-datepicker>
+                                            </mat-form-field>
+    
+                                            <mat-form-field fxFlex="35%" appearance="outline">
+                                                <mat-label>Transaction #</mat-label>
+                                                <input matInput type="number" name="{{ i + '.number' }}" [(ngModel)]="transaction.number" [ngModelOptions]="{standalone: true}">
+                                                <mat-error >Transaction number is required</mat-error>
+                                            </mat-form-field>
+                                            <button color="accent" class="bm16" mat-icon-button (click)="deleteTransaction(i)">
+                                                <mat-icon>delete</mat-icon>
+                                            </button>
+                                        </div>
+                                    </mat-list-item>
+                                </mat-list>
+                            </div>
+                        </div>
+                    </form>
+                </mat-step>
+                <mat-step class="scrolled-block">
+                    <div
+                        *ngIf="{fs1: form.get('step1').value, fs2: form.get('step2').value, fs3: form.get('step3').value, fs4: form.get('step4').value} as fs4ctx">
+                        <ng-template matStepLabel>Review</ng-template>
+                        <div fxLayout="column" fxLayoutGap="1em" class="rp-labeled-container">
+                            <div fxLayout="column" fxLayoutGap="1em" class="rp-labeled-container">
+                                <div fxLayout="row">
+                                    <div class="rp-label" fxFlex="40%">Number of Orders:</div>
+                                    <div fxFlex="60%">{{ fs4ctx.fs3.count_of_orders }}</div>
+                                </div>
+                            </div>
+
+                            <div fxLayout="column" fxLayoutGap="1em" class="rp-labeled-container"
+                                *ngIf="fs4ctx.fs4.payment_type == paymentTypes[1][1] || fs4ctx.fs4.payment_type_2 == paymentTypes[1][1] 
+                                || fs4ctx.fs4.payment_type_3 == paymentTypes[1][1] || fs4ctx.fs4.payment_type_4 == paymentTypes[1][1]">
+                                <div fxLayout="row">
+                                    <div class="rp-label" fxFlex="40%">
+                                        Wire/EFT #:</div>
+                                    <div fxFlex="60%">{{ fs4ctx.fs4.wire_number }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div fxLayout="column" fxLayoutGap="1em" class="rp-labeled-container"
+                                *ngIf="fs4ctx.fs4.payment_type == paymentTypes[1][1] || fs4ctx.fs4.payment_type_2 == paymentTypes[1][1]
+                                || fs4ctx.fs4.payment_type_3 == paymentTypes[1][1] || fs4ctx.fs4.payment_type_4 == paymentTypes[1][1]">
+                                <div fxLayout="row">
+                                    <div class="rp-label" fxFlex="40%">Wire deposit:</div>
+                                    <div fxFlex="60%">{{ fs4ctx.fs4.wire_deposit | currency }}</div>
+                                </div>
+                            </div>
+                        
+                            <div fxLayout="column" fxLayoutGap="1em" class="rp-labeled-container"
+                                *ngIf="fs4ctx.fs4.payment_type == paymentTypes[0][1] || fs4ctx.fs4.payment_type_2 == paymentTypes[0][1]
+                                || fs4ctx.fs4.payment_type_3 == paymentTypes[0][1] || fs4ctx.fs4.payment_type_4 == paymentTypes[0][1]">
+                                <div fxLayout="row">
+                                    <div class="rp-label" fxFlex="40%">
+                                        Check #:</div>
+                                    <div fxFlex="60%">{{ fs4ctx.fs4.check_number }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div fxLayout="column" fxLayoutGap="1em" class="rp-labeled-container"
+                                *ngIf="fs4ctx.fs4.payment_type == paymentTypes[0][1] || fs4ctx.fs4.payment_type_2 == paymentTypes[0][1]
+                                || fs4ctx.fs4.payment_type_3 == paymentTypes[0][1] || fs4ctx.fs4.payment_type_4 == paymentTypes[0][1]">
+                                <div fxLayout="row">
+                                    <div class="rp-label" fxFlex="40%">Check deposit:</div>
+                                    <div fxFlex="60%">{{ fs4ctx.fs4.check_deposit | currency }}</div>
+                                </div>
+                            </div>
+                        
+                            <div fxLayout="column" fxLayoutGap="1em" class="rp-labeled-container"
+                                *ngIf="fs4ctx.fs4.payment_type == paymentTypes[2][1] || fs4ctx.fs4.payment_type_2 == paymentTypes[2][1]
+                                || fs4ctx.fs4.payment_type_3 == paymentTypes[2][1] || fs4ctx.fs4.payment_type_4 == paymentTypes[2][1]">
+                                <div fxLayout="row">
+                                    <div class="rp-label" fxFlex="40%">
+                                        Chase #:</div>
+                                    <div fxFlex="60%">{{ fs4ctx.fs4.chase_number }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div fxLayout="column" fxLayoutGap="1em" class="rp-labeled-container"
+                                *ngIf="fs4ctx.fs4.payment_type == paymentTypes[2][1] || fs4ctx.fs4.payment_type_2 == paymentTypes[2][1]
+                                || fs4ctx.fs4.payment_type_3 == paymentTypes[2][1] || fs4ctx.fs4.payment_type_4 == paymentTypes[2][1]">
+                                <div fxLayout="row">
+                                    <div class="rp-label" fxFlex="40%">Chase deposit:</div>
+                                    <div fxFlex="60%">{{ chaseAmount | currency }}</div>
+                                </div>
+                            </div>
+                            <div fxLayout="column" fxLayoutGap="1em" class="rp-labeled-container"
+                                *ngIf="fs4ctx.fs4.payment_type == paymentTypes[2][1] || fs4ctx.fs4.payment_type_2 == paymentTypes[2][1]
+                                || fs4ctx.fs4.payment_type_3 == paymentTypes[2][1] || fs4ctx.fs4.payment_type_4 == paymentTypes[2][1]">
+                                <div fxLayout="row">
+                                    <div class="rp-label" fxFlex="40%">Transactions:</div>
+                                    <div fxFlex="60%">{{ fs4ctx.fs4.chase_transactions.length }}</div>
+                                </div>
+                            </div>
+
+                            <div fxLayout="column" fxLayoutGap="1em" class="rp-labeled-container"
+                                *ngIf="fs4ctx.fs4.payment_type == paymentTypes[3][1] || fs4ctx.fs4.payment_type_2 == paymentTypes[3][1]
+                                || fs4ctx.fs4.payment_type_3 == paymentTypes[3][1] || fs4ctx.fs4.payment_type_4 == paymentTypes[3][1]">
+                                <div fxLayout="row">
+                                    <div class="rp-label" fxFlex="40%">Rep Gratis deposit:</div>
+                                    <div fxFlex="60%">{{ fs4ctx.fs4.rep_gratis_deposit | currency }}</div>
+                                </div>
+                            </div>
+
+                            <div fxLayout="column" fxLayoutGap="1em" class="rp-labeled-container"
+                                *ngIf="fs4ctx.fs4.payment_type == paymentTypes[4][1] || fs4ctx.fs4.payment_type_2 == paymentTypes[4][1]
+                                || fs4ctx.fs4.payment_type_3 == paymentTypes[4][1] || fs4ctx.fs4.payment_type_4 == paymentTypes[4][1]">
+                                <div fxLayout="row">
+                                    <div class="rp-label" fxFlex="40%">Bill Rep Office @ NET deposit:</div>
+                                    <div fxFlex="60%">{{ fs4ctx.fs4.bill_rep_office_deposit | currency }}</div>
+                                </div>
+                            </div>
+                        
+                            <div fxLayout="column" fxLayoutGap="1em" class="rp-labeled-container">
+                                <div fxLayout="row">
+                                    <div class="rp-label" fxFlex="40%">Total deposits:</div>
+                                    <div fxFlex="60%">{{ totalDeposist | currency }}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <h2 class="tp16">Routing information</h2>
+                        <div fxLayout="column" fxLayoutGap="1em" class="rp-labeled-container">
+                            <div fxLayout="row">
+                                <div class="rp-label" fxFlex="40%">Routing type:</div>
+                                <div fxFlex="60%">{{ fs4ctx.fs1.routing?.type }}</div>
+                            </div>
+                            <div fxLayout="row">
+                                <div class="rp-label" fxFlex="40%">Trade in Enclosed:</div>
+                                <div fxFlex="60%">
+                                    <mat-icon [color]="fs4ctx.fs1.routing?.trade_in_enclosed ? 'primary' : 'error'">
+                                        {{ fs4ctx.fs1.routing?.trade_in_enclosed ? 'done' : 'close' }}
+                                    </mat-icon>
+                                </div>
+                            </div>
+                            <div fxLayout="row">
+                                <div class="rp-label" fxFlex="40%">Office number:</div>
+                                <div fxFlex="60%">{{ fs4ctx.fs1.office_number }}</div>
+                            </div>
+                            <div fxLayout="row">
+                                <div class="rp-label" fxFlex="40%">Sales Rep Name:</div>
+                                <div fxFlex="60%">{{ fs4ctx.fs1.rep_name }}</div>
+                            </div>
+                            <div fxLayout="row">
+                                <div class="rp-label" fxFlex="40%">Organization:</div>
+                                <div fxFlex="60%">{{ fs4ctx.fs1.org?.name }}, {{ fs4ctx.fs1.org?.number }}</div>
+                            </div>
+                            <div fxLayout="row">
+                                <div class="rp-label" fxFlex="40%">Type:</div>
+                                <div fxFlex="60%">{{ fs4ctx.fs1.type }}</div>
+                            </div>
+                            <div fxLayout="row">
+                                <div class="rp-label" fxFlex="40%">Request Ship Date:</div>
+                                <div fxFlex="60%">{{ fs4ctx.fs1.request_ship_date | date:'shortDate' }}</div>
+                            </div>
+                            <div fxLayout="row">
+                                <div class="rp-label" fxFlex="40%">High School Event Date:</div>
+                                <div fxFlex="60%">{{ fs4ctx.fs1.event_date | date:'shortDate' }}</div>
+                            </div>
+                            <div fxLayout="row">
+                                <div class="rp-label" fxFlex="40%">Champ Ceremony Date:</div>
+                                <div fxFlex="60%">{{ fs4ctx.fs1.ceremony_date | date:'shortDate' }}</div>
+                            </div>
+                            <div fxLayout="row">
+                                <div class="rp-label" fxFlex="40%">Champ Short Schedule Request Submited:</div>
+                                <div fxFlex="60%">
+                                    <mat-icon [color]="fs4ctx.fs1.champ_short ? 'primary' : 'error'">
+                                        {{ fs4ctx.fs1.champ_short ? 'done' : 'close' }}
+                                    </mat-icon>
+                                </div>
+                            </div>
+                        </div>
+                        <h2 class="tp16">Bill to</h2>
+                        <div fxLayout="column" fxLayoutGap="1em" class="rp-labeled-container">
+                            <div fxLayout="row">
+                                <div class="rp-label" fxFlex="40%">
+                                    {{ vendorOrderBillTos[fs4ctx.fs2.bill_to] }}:</div>
+                                <div fxFlex="60%" >{{ fs4ctx.fs2.account_number }} -
+                                    {{ fs4ctx.fs2.account_name }}
+                                </div>
+                            </div>
+                            <div fxLayout="row">
+                                <div class="rp-label" fxFlex="40%">Tax Exempt:</div>
+                                <div fxFlex="60%">
+                                    <mat-icon [color]="fs4ctx.fs2.tax_exempt ? 'primary' : 'error'">
+                                        {{ fs4ctx.fs2.tax_exempt ? 'done' : 'close' }}
+                                    </mat-icon>
+                                </div>
+                            </div>
+                        </div>
+                        <h2 class="tp16">Ship to</h2>
+                        <div fxLayout="column" fxLayoutGap="1em" class="rp-labeled-container">
+                            <div fxLayout="row">
+                                <div class="rp-label" fxFlex="40%">
+                                    {{ VendorOrderShipDestType[fs4ctx.fs2.ship_dest_type] }}:</div>
+                                <div fxFlex="60%" *ngIf="fs4ctx.fs2.ship_dest_type !== 'cu'">{{ fs4ctx.fs2.ship_address }},
+                                    {{ fs4ctx.fs2.ship_city }}, {{ fs4ctx.fs2.ship_state }}, {{ fs4ctx.fs2.ship_zip }}
+                                    -
+                                    {{ fs4ctx.fs2.ship_name }}, {{ fs4ctx.fs2.ship_phone }}
+                                </div>
+                                <div fxFlex="60%" *ngIf="fs4ctx.fs2.ship_dest_type == 'cu'">
+                                    See addresses in orders
+                                </div>
+                            </div>
+                            <div fxLayout="row">
+                                <div class="rp-label" fxFlex="40%">Attention:</div>
+                                <div fxFlex="60%">{{ fs4ctx.fs2.ship_attention || '-' }}</div>
+                            </div>
+                        </div>
+                    </div>
+                </mat-step>
+            </mat-horizontal-stepper>
+        </rp-document-content>
+        <rp-document-footer *ngIf="!ctx.loading" class="mat-elevation-z6">
+            <div class="rp-document-footer-content" fxFlex="grow" fxLayout="row" fxLayoutGap="16px">
+                <button mat-stroked-button (click)="onCancel()">{{ cancelButtonText }}</button>
+                <div fxFlex="auto"></div>
+                <button mat-stroked-button color="primary" *ngIf="stepIndex != 0"
+                    (click)="stepper?.previous()">Previous</button>
+                <button mat-stroked-button color="primary" *ngIf="stepIndex != 4"
+                    (click)="stepper?.next()">Next</button>
+                <button mat-flat-button color="primary" *ngIf="stepIndex == 4 && isSaveVisible" color="primary"
+                    (click)="saveVendorOrder()">{{ ctx.editState === 'create' ? 'Create' : 'Save' }}</button>
+            </div>
+        </rp-document-footer>
+    </rp-document-layout>
+</ng-container>

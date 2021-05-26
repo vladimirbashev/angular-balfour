@@ -1,0 +1,17 @@
+<h2 mat-dialog-title>Excel Summary</h2>
+<div mat-dialog-content>
+  <div fxLayout="column">
+    <span>Status:</span>
+    <div fxLayoutAlign="start start" fxFlex="grow">
+      <mat-radio-group [(ngModel)]="status" fxLayoutGap="16px">
+        <mat-radio-button color="primary" *ngFor="let item of allStatuses" [value]="item">{{ item }}
+        </mat-radio-button>
+      </mat-radio-group>
+    </div>
+  </div>
+</div>
+<div mat-dialog-actions fxLayout="row">
+  <div fxFlex></div>
+  <button mat-button color="primary" (click)="closeDialog()">CANCEL</button>
+  <button mat-button color="primary" (click)="chooseStatus()">PRINT</button>
+</div>

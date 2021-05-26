@@ -1,0 +1,59 @@
+:host {
+    display: block;
+    padding: 24px 12px;
+    box-sizing: border-box;
+
+    .org-icon {
+        text-align: center;
+        font-size: 50px;
+    }
+}
+
+.org-name {
+    position: relative;
+
+    .mat-progress-spinner {
+        position: absolute;
+        right: 3px;
+        top: 10px;
+    }
+}
+
+.attention-message {
+    line-height: 24px;
+    font-size: 14px;
+    font-weight: bolder;
+}
+
+mat-option.org-option {
+    height: 56px;
+    padding: 8px;
+    .org-option-title {
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: bolder;
+    }
+
+    .org-option-details {
+        font-size: 14px;
+        line-height: 16px;    
+    }
+}
+
+::ng-deep {
+    .mat-horizontal-content-container {
+        overflow-y: auto;
+    }
+
+    .mat-form-field-appearance-outline .mat-form-field-prefix,.mat-form-field-suffix {
+        transition: top 0.25s ease;
+    }
+
+    .mat-form-field-appearance-outline.mat-form-field-hide-placeholder .mat-form-field-prefix,.mat-form-field-suffix {
+        top: -0.25em !important;
+    }
+
+    .mat-form-field-appearance-outline:not(.mat-form-field-hide-placeholder) .mat-form-field-prefix,.mat-form-field-suffix {
+        top: 0;
+    }
+}

@@ -1,0 +1,24 @@
+// Define mat component common styles
+
+.mat-divider {
+    border-top-color: #cccccc; // $balfour-border-color;
+}
+
+.rp-label {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+.error-snackbar {
+    background: #B00020!important;
+    color: white!important;
+
+    .mat-button {
+        color: white!important;
+    }
+}
+
+.mn-relative-dialog {
+    position: relative!important;
+}

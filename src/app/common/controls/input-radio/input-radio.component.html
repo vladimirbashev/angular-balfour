@@ -1,0 +1,11 @@
+<div class="q-name">{{ question?.display_name['en_US'] == null 
+    ||  question?.display_name['en_US'] == '' ? question?.name : question?.display_name['en_US'] }}</div>
+<div class="q-extra-note" *ngIf="question?.extra_note">{{ question?.extra_note }}</div>
+<mat-radio-group class="rp-input-radio" [required]="question?.required" [formControl]="ctrl" fxLayout="row wrap" fxLayoutGap="16px">
+    <mat-radio-button *ngFor="let option of options" [ngClass]="'rp-option-' + option?.id" [value]="option"
+        [checked]="ctrl?.value?.id === option?.id || isDefault(option?.id)">
+        {{ option?.display_name['en_US'] == null 
+        ||  option?.display_name['en_US'] == '' ? option?.name : option?.display_name['en_US'] }}
+        <span>{{ option?.extra_message['en_US'] }}</span>
+    </mat-radio-button>
+</mat-radio-group>

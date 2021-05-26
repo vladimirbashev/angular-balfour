@@ -1,0 +1,160 @@
+:host {
+    flex: 1;
+    overflow: hidden;
+
+    ::ng-deep {
+        .mat-horizontal-stepper-header-container {
+            flex-wrap: wrap;
+            justify-content: flex-start;
+
+            .mat-stepper-horizontal-line {
+                max-width: 128px;
+            }
+        }
+
+        .rp-order-input {
+            .mat-form-field {
+                margin-bottom: 16px;
+            }
+        }
+    }
+
+    rp-document-content {
+        display: flex !important;
+        overflow: hidden;
+
+        mat-horizontal-stepper {
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            flex: 1;
+        }
+
+        ::ng-deep {
+            .mat-horizontal-content-container {
+                overflow-y: auto;
+            }
+
+            .mat-form-field-appearance-outline .mat-form-field-prefix {
+                transition: top 0.25s ease;
+            }
+
+            .mat-form-field-appearance-outline.mat-form-field-hide-placeholder .mat-form-field-prefix {
+                top: -0.25em;
+            }
+
+            .mat-form-field-appearance-outline:not(.mat-form-field-hide-placeholder) .mat-form-field-prefix {
+                top: 0;
+            }
+        }
+
+        h3 {
+            font-weight: 900;
+            font-size: 16px;
+            line-height: 19px;
+            margin: 0;
+            &.margin-bottom {
+                margin-bottom: 20px;
+            }
+        }
+
+        .rp-label {
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .rp-radio-labeled {
+            display: flex;
+            flex-direction: column;
+
+            div:first-of-type {
+                font-weight: 500;
+                font-size: 12px;
+                line-height: 14px;
+                padding-bottom: 8px;
+            }
+
+            div:last-of-type {
+                font-weight: 600;
+                font-size: 16px;
+                line-height: 19px;
+            }
+        }
+
+        .rp-form-field-without-hints ::ng-deep .mat-form-field-wrapper {
+            padding-bottom: 0;
+        }
+
+        .rp-radio-group-vertical .mat-radio-button~.mat-radio-button {
+            margin-left: 0px;
+        }
+
+        .rp-question-visible {
+            opacity: 1;
+            height: auto;
+            transition: height 0.3 ease-in-out;
+        }
+
+        .rp-question-hidden {
+            opacity: 0;
+            height: 0;
+            transition: height 0.3 ease-in-out;
+        }
+
+        
+    }
+}
+
+form {
+    padding: 16px;
+
+    .mat-radio-button~.mat-radio-button {
+        margin-left: 16px;
+    }
+}
+
+rp-document-footer {
+    padding: 16px;
+
+    button {
+        text-transform: uppercase;
+    }
+}
+
+:host ::ng-deep {
+    h3 {
+        font-weight: 900;
+        font-size: 16px;
+        line-height: 19px;
+        margin: 0;
+        &.margin-bottom {
+            margin-bottom: 20px;
+        }
+    }
+
+    .rp-flex {
+        display: flex;
+    }
+    
+    .rp-flex-align-items-center {
+        align-items: center;
+    }
+    
+    .rp-flex-justify-content-space-between {
+        justify-content: space-between;
+    }
+    
+    .mat-radio-button:not(:first-of-type) {
+        margin-left: 16px;
+    }
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+    
+    input[type=number] {
+        -moz-appearance: textfield;
+    }
+}

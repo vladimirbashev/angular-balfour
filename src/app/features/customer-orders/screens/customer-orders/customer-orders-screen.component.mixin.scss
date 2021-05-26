@@ -1,0 +1,11 @@
+@mixin rp-customer-orders-screen($theme) {
+    $primary: map-get($theme, primary);
+
+    .rp-customer-orders-header {
+        background-color: mat-color($primary, 100);
+        color: mat-color($primary, '100-contrast');
+    }
+}
+
+// @include rp-customer-orders-screen($theme);
+ 

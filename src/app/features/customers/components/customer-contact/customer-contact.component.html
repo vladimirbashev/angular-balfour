@@ -1,0 +1,131 @@
+<ng-container>
+    <form [formGroup]="form">
+        <div fxLayout="row" fxLayoutGap="16px">
+            <mat-form-field fxFlex="50%" appearance="outline">
+                <mat-label>First name</mat-label>
+                <input matInput [placeholder]="'First name'" formControlName="first_name" required>
+                <mat-error *ngIf="hasError('first_name', 'required')">
+                    First name is required!
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field fxFlex="50%" appearance="outline">
+                <mat-label>Last name</mat-label>
+                <input matInput [placeholder]="'Last name'" formControlName="last_name" required>
+                <mat-error *ngIf="hasError('last_name', 'required')">
+                    Last name is required!
+                </mat-error>
+            </mat-form-field>
+        </div>
+
+        <div fxLayout="row" fxLayoutGap="20px" fxLayoutAlign="start center">
+            <mat-form-field fxFlex="100%" appearance="outline">
+                <mat-label>Organization/School name</mat-label>
+                <rp-organization-picker formControlName="org" required disabled="true"></rp-organization-picker>
+                <mat-error *ngIf="hasError('org', 'required')">
+                    Organization name is required!
+                </mat-error>
+            </mat-form-field>
+            <button mat-mini-fab color="primary" class="btn-choose" (click)="onSelectOrganization()" title="Choose Organization">
+                <mat-icon>account_balance</mat-icon>
+            </button>
+            <!-- <button mat-stroked-button color="acent" fxFlex="10%" class="btn-choose" (click)="onSelectOrganization()">
+                Choose
+            </button> -->
+        </div>
+    </form>
+    <mat-tab-group #tabGroup (selectedTabChange)="tabChanged($event)" [selectedIndex]="tabIndex"
+        (selectedIndexChange)="onTabChange($event)" fxFlex="fill">
+        <mat-tab>
+            <ng-template mat-tab-label>
+                Contacts
+            </ng-template>
+            <ng-template matTabContent>
+                <ng-container>
+                    <form [formGroup]="form">
+                        <div fxLayout="row" fxLayoutGap="16px">
+                            <mat-form-field fxFlex="50%" appearance="outline">
+                                <mat-label>Address</mat-label>
+                                <input matInput [placeholder]="'Address'" formControlName="address">
+                            </mat-form-field>
+                            <mat-form-field fxFlex="50%" appearance="outline">
+                                <mat-label>Apt. number</mat-label>
+                                <input matInput [placeholder]="'Apt. number'" formControlName="apt_num">
+                            </mat-form-field>
+                        </div>
+
+                        <div fxLayout="row" fxLayoutGap="16px">
+                            <mat-form-field fxFlex="50%" appearance="outline">
+                                <mat-label>City</mat-label>
+                                <input matInput [placeholder]="'City'" formControlName="city">
+                            </mat-form-field>
+                            <div fxFlex="50%">
+                                <mat-form-field fxFlex="50%" appearance="outline">
+                                    <mat-label>State</mat-label>
+                                    <input matInput [placeholder]="'State'" formControlName="state">
+                                </mat-form-field>
+                                <mat-form-field fxFlex="50%" appearance="outline">
+                                    <mat-label>Zip</mat-label>
+                                    <input matInput maxlength="6" [placeholder]="'Zip'" formControlName="zip">
+                                    <mat-error *ngIf="hasError('zip', 'pattern')">
+                                        Zip in not valid!
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+
+                        <div fxLayout="row" fxLayoutGap="16px">
+                            <mat-form-field fxFlex="50%" appearance="outline">
+                                <mat-label>Primary/Parents Phone Number</mat-label>
+                                <input matInput maxlength="13" minlength="10" [placeholder]="'Primary/Parents Phone Number'"
+                                    formControlName="phone" required>
+                                <mat-error
+                                    *ngIf="hasError('phone', 'required') || hasError('phone', 'pattern')">
+                                    Phone number is not valid!
+                                </mat-error>
+                            </mat-form-field>
+                            <mat-form-field fxFlex="50%" appearance="outline">
+                                <mat-label>Additional/Students Phone Number</mat-label>
+                                <input matInput maxlength="13" minlength="10" [placeholder]="'Additional/Students Phone Number'" 
+                                formControlName="additional_phone">
+                                <mat-error *ngIf="hasError('additional_phone', 'pattern')">
+                                    Phone number is not valid!
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+
+                        <div fxLayout="row" fxLayoutGap="16px">
+                            <mat-form-field fxFlex="50%" appearance="outline">
+                                <mat-label>Primary/Parents Email</mat-label>
+                                <input matInput [placeholder]="'Primary/Parents Email'"
+                                    formControlName="email" required>
+                                <mat-error
+                                    *ngIf="hasError('email', 'required') || hasError('email', 'pattern')">
+                                    Email is not valid!
+                                </mat-error>
+                            </mat-form-field>
+                            <mat-form-field fxFlex="50%" appearance="outline">
+                                <mat-label>Additional/Students Email</mat-label>
+                                <input matInput [placeholder]="'Additional/Students Email'" formControlName="additional_email">
+                                <mat-error *ngIf="hasError('additional_email', 'pattern')">
+                                    Email is not valid!
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                    </form>
+                </ng-container>
+            </ng-template>
+        </mat-tab>
+
+        <mat-tab disabled="true">
+            <ng-template mat-tab-label>
+                Orders
+            </ng-template>
+            <ng-template matTabContent>
+                Orders works!
+                <br>
+                Orders List in progress!
+            </ng-template>
+        </mat-tab>
+    </mat-tab-group>
+</ng-container>

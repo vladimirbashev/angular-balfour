@@ -1,0 +1,50 @@
+[
+    {
+        "id": "5f227e083d11c3fab8606e51",
+        "first_name": "Karelle",
+        "last_name": "Last",
+        "organization_id": "5f1abfc0f739deab4553b192",
+        "organization_name": "Scosdale Organization",
+        "address": "6357 N Scosdale Ave",
+        "apt_num": "83-432467",
+        "city": "Scosdale",
+        "state": "79",
+        "zip": "80221",
+        "phone": "123456789000",
+        "email": "test@mail.com",
+        "additional_phone": "009876543211",
+        "additional_email": "test@mail.com"
+    },
+    {
+        "id": "5f227e083d11c3fab8606e5f",
+        "first_name": "Jonh",
+        "last_name": "Doe",
+        "organization_id": "5f1abfc0f090debb05b98d62",
+        "organization_name": "Organization of Phoenix",
+        "address": "1234 Phoenix St",
+        "number": "432467",
+        "city": "Phoenix",
+        "state": "52",
+        "zip": "80323",
+        "phone": "123456789000",
+        "email": "jd@mail.com",
+        "additional_phone": "000987654321",
+        "additional_email": "parentjd@mail.com"
+    },
+    {
+        "id": "5f227e083d11c3fab8606e70",
+        "first_name": "User",
+        "last_name": "Loren",
+        "organization_id": "5f1abfc068a0ab73dcdff0ac",
+        "organization_name": "New York Test Organization",
+        "address": "34 New York St",
+        "number": "890-2467",
+        "city": "New York",
+        "state": "15",
+        "zip": "80123",
+        "phone": "112345678900",
+        "email": "user@mail.com",
+        "additional_phone": "000987654321",
+        "additional_email": "user_parents@mail.com"
+    }
+]

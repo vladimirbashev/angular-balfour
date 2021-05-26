@@ -1,0 +1,16 @@
+@mixin rp-customer-orders-wizard($theme) {
+    $primary: map-get($theme, primary);
+    $warn: map-get($theme, warn);
+
+    rp-customer-orders-wizard {
+        .rp-radio-labeled {
+            div:first-of-type {
+                color: mat-color($primary, default);
+            }
+        }
+
+        .rp-tax-validation {
+            color: mat-color($warn, default);
+        }
+    }
+}

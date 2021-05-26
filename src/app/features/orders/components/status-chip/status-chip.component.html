@@ -1,0 +1,5 @@
+<div fxLayout="row" fxLayoutGap="8px" fxLayoutAlign="start center">
+    <span class="status">{{ text }}</span>
+    <mat-spinner diameter="18" *ngIf="showAssignee && (groupUserState$ | async) === 'progress'"></mat-spinner>
+    <span *ngIf="showAssignee && (groupUserState$ | async) === 'data'"> to {{ assigneeName }}</span>
+</div>

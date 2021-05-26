@@ -1,0 +1,14 @@
+:host {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    overflow: scroll;
+}
+
+.rp-pic {
+    padding: 16px;
+    width: 250px;
+}

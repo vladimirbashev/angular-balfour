@@ -1,0 +1,43 @@
+<h2 mat-dialog-title>Change status</h2>
+<div mat-dialog-content [formGroup]="form" style="overflow-y: hidden;" fxLayout="column" >
+
+  <mat-progress-bar *ngIf="loading$ | async" mode="indeterminate">
+  </mat-progress-bar>
+  <div fxFlex fxLayout="column" fxLayoutGap="16px">
+    <mat-form-field floatLabel="never" fxFlex appearance="outline">
+      <mat-label>Status</mat-label>
+      <mat-select formControlName="status">
+        <mat-option *ngFor="let status of statuses" [value]="status[0]">
+            {{ status[1] }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field floatLabel="never" class="assignee" appearance="outline" 
+      *ngIf="form.get('status').value == 'assigned' && !inGroup(data.groups, ['OE'])">
+      <mat-label>Assignee</mat-label>
+      <input type="text" [placeholder]="placeholder" matInput [formControl]="assigneeCtrl" [matAutocomplete]="auto">
+      <mat-progress-spinner diameter="18" [ngStyle]="{opacity: searching ? 1 : 0}" mode="indeterminate">
+      </mat-progress-spinner>
+      <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayUser">
+        <mat-option *ngFor="let user of (users$ | async)" [value]="user.id" (onSelectionChange)="setUser(user)">
+          <div class="assignee-option-title">{{ user.last_name != null && user.first_name != null ?
+            (user.last_name + ', ' + user.first_name) : user.full_name }} </div>
+          <div class="assignee-option-details">{{ user.email }}</div>
+        </mat-option>
+      </mat-autocomplete>
+      <mat-error *ngIf="hasError('assignee_id', 'required')">
+        Assignee is required!
+      </mat-error>
+    </mat-form-field>
+  </div>
+  
+
+</div>
+<div mat-dialog-actions fxLayout="row">
+  <div fxFlex></div>
+  <button mat-button mat-dialog-close color="primary" (click)="onCancel()" [disabled]="loading$ | async">Cancel</button>
+  <button mat-button color="primary"
+    [disabled]="(loading$ | async) || form.invalid"
+    (click)="onChange()">Change</button>
+</div>
